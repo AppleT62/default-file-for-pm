@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미래는 가중되어 있다 — 시간·차원·운명 검증 보고서</title>
+<style>
+  :root{
+    --ground:#F8F7F4; --panel:#FFFFFF; --panel-2:#F1EFE9;
+    --ink:#23262C; --ink-2:#585D68; --ink-3:#8B8F99;
+    --line:#E3DFD5; --line-2:#D2CDC0;
+    --indigo:#3A5BA0; --teal:#178A66; --ochre:#B07C1F; --plum:#8A4A78;
+    --red:#B3402E; --green:#2F7D4F; --gray:#767B85;
+    --indigo-tint:#EBEFF8; --teal-tint:#E6F3EE; --ochre-tint:#F6EEDD;
+    --plum-tint:#F3E9F0; --red-tint:#F7E7E3; --green-tint:#E7F1EA; --gray-tint:#ECECEE;
+    --bar-track:#E9E6DD;
+    --serif:'Noto Serif KR','Nanum Myeongjo','AppleMyungjo','Batang',serif;
+    --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ground:#171B24; --panel:#1E2330; --panel-2:#232939;
+      --ink:#E8E9ED; --ink-2:#A9ADBA; --ink-3:#7A7F8D;
+      --line:#2C3242; --line-2:#3A4154;
+      --indigo:#6B8FE0; --teal:#2FA987; --ochre:#BD8823; --plum:#BB6BA6;
+      --red:#D4604C; --green:#4CA36E; --gray:#8E93A0;
+      --indigo-tint:#232C42; --teal-tint:#1D3330; --ochre-tint:#332B1B;
+      --plum-tint:#332430; --red-tint:#3A2521; --green-tint:#1F3227; --gray-tint:#272B35;
+      --bar-track:#272D3C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#171B24; --panel:#1E2330; --panel-2:#232939;
+    --ink:#E8E9ED; --ink-2:#A9ADBA; --ink-3:#7A7F8D;
+    --line:#2C3242; --line-2:#3A4154;
+    --indigo:#6B8FE0; --teal:#2FA987; --ochre:#BD8823; --plum:#BB6BA6;
+    --red:#D4604C; --green:#4CA36E; --gray:#8E93A0;
+    --indigo-tint:#232C42; --teal-tint:#1D3330; --ochre-tint:#332B1B;
+    --plum-tint:#332430; --red-tint:#3A2521; --green-tint:#1F3227; --gray-tint:#272B35;
+    --bar-track:#272D3C;
+  }
+  :root[data-theme="light"]{
+    --ground:#F8F7F4; --panel:#FFFFFF; --panel-2:#F1EFE9;
+    --ink:#23262C; --ink-2:#585D68; --ink-3:#8B8F99;
+    --line:#E3DFD5; --line-2:#D2CDC0;
+    --indigo:#3A5BA0; --teal:#178A66; --ochre:#B07C1F; --plum:#8A4A78;
+    --red:#B3402E; --green:#2F7D4F; --gray:#767B85;
+    --indigo-tint:#EBEFF8; --teal-tint:#E6F3EE; --ochre-tint:#F6EEDD;
+    --plum-tint:#F3E9F0; --red-tint:#F7E7E3; --green-tint:#E7F1EA; --gray-tint:#ECECEE;
+    --bar-track:#E9E6DD;
+  }
+  html{background:var(--ground);}
+  body{
+    font-family:var(--sans); color:var(--ink); background:var(--ground);
+    line-height:1.78; font-size:16px; -webkit-font-smoothing:antialiased;
+    margin:0; word-break:keep-all; overflow-wrap:break-word;
+  }
+  .wrap{max-width:768px; margin:0 auto; padding:0 24px 96px;}
+  .wide{max-width:960px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:72px 0 8px; border-bottom:1px solid var(--line); margin-bottom:56px;}
+  .eyebrow{font-size:12.5px; letter-spacing:.14em; color:var(--ink-3); margin:0 0 18px;}
+  .eyebrow b{color:var(--indigo); font-weight:600;}
+  h1{
+    font-family:var(--serif); font-weight:700; font-size:clamp(34px,6vw,52px);
+    line-height:1.28; margin:0 0 20px; letter-spacing:-.01em; text-wrap:balance;
+  }
+  .thesis{font-size:17.5px; color:var(--ink-2); max-width:40em; margin:0 0 40px; text-wrap:pretty;}
+  .thesis strong{color:var(--ink); font-weight:600;}
+  #heroviz{display:block; width:100%; height:190px; margin:0 0 10px;}
+  .viz-cap{font-size:12.5px; color:var(--ink-3); margin:0 0 28px;}
+  .viz-cap i{font-style:normal; color:var(--red);}
+
+  /* ---------- sections ---------- */
+  section{margin:0 0 84px;}
+  .sec-eyebrow{font-size:12.5px; letter-spacing:.14em; color:var(--indigo); font-weight:600; margin:0 0 10px;}
+  h2{font-family:var(--serif); font-weight:700; font-size:29px; line-height:1.4; margin:0 0 14px; letter-spacing:-.005em; text-wrap:balance;}
+  h3{font-family:var(--serif); font-weight:600; font-size:20px; margin:40px 0 10px; text-wrap:balance;}
+  p{margin:0 0 18px; text-wrap:pretty;}
+  .lead{color:var(--ink-2); font-size:16.5px; margin-bottom:34px;}
+  em{font-style:normal; font-weight:600; color:var(--ink);}
+  .muted{color:var(--ink-3); font-size:14px;}
+  sup{font-size:11px; color:var(--ink-3);}
+
+  /* ---------- verdict chips ---------- */
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:600; letter-spacing:.04em;
+    padding:3px 11px; border-radius:999px; white-space:nowrap;
+  }
+  .chip::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor;}
+  .chip.confirmed{color:var(--green); background:var(--green-tint);}
+  .chip.promising{color:var(--indigo); background:var(--indigo-tint);}
+  .chip.exploring{color:var(--ochre); background:var(--ochre-tint);}
+  .chip.metaphor{color:var(--gray); background:var(--gray-tint);}
+  .chip.rejected{color:var(--red); background:var(--red-tint);}
+  .chip.rejected::before{content:"×"; width:auto; height:auto; background:none; font-size:13px; line-height:1;}
+
+  /* ---------- summary board ---------- */
+  .board{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:26px 0 8px; background:var(--panel);}
+  .board-row{
+    display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:center;
+    padding:13px 18px; border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .board-row:last-child{border-bottom:none;}
+  .board-row .no{font-family:var(--serif); font-size:15px; color:var(--ink-3); font-variant-numeric:tabular-nums;}
+  .board-row .what{color:var(--ink-2);}
+  .board-row .what b{color:var(--ink); font-weight:600;}
+  @media (max-width:560px){
+    .board-row{grid-template-columns:32px 1fr; }
+    .board-row .chip{grid-column:2;}
+  }
+
+  /* ---------- connection cards ---------- */
+  .conn{padding:36px 0 30px; border-bottom:1px solid var(--line);}
+  .conn:last-of-type{border-bottom:none;}
+  .conn-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
+  .conn-no{font-family:var(--serif); font-size:34px; color:var(--line-2); font-weight:700; line-height:1;}
+  .conn-title{font-family:var(--serif); font-size:20.5px; font-weight:600; margin:0; flex:1 1 12em; text-wrap:balance;}
+  .conn dl{margin:0; display:grid; grid-template-columns:86px 1fr; column-gap:18px; row-gap:10px;}
+  .conn dt{font-size:12.5px; letter-spacing:.1em; color:var(--ink-3); font-weight:600; padding-top:4px;}
+  .conn dd{margin:0; font-size:15px; color:var(--ink-2);}
+  .conn dd b{color:var(--ink); font-weight:600;}
+  .conn dd .ok{color:var(--green); font-weight:600;}
+  .conn dd .warn{color:var(--red); font-weight:600;}
+  @media (max-width:560px){ .conn dl{grid-template-columns:1fr;} .conn dt{padding-top:8px;} }
+
+  /* ---------- tags ---------- */
+  .tag{font-size:11.5px; font-weight:600; padding:1px 7px; border-radius:4px; letter-spacing:.03em; white-space:nowrap;}
+  .tag.sci{color:var(--teal); background:var(--teal-tint);}
+  .tag.phi{color:var(--indigo); background:var(--indigo-tint);}
+  .tag.east{color:var(--plum); background:var(--plum-tint);}
+  .tag.psy{color:var(--ochre); background:var(--ochre-tint);}
+  .tag.min{color:var(--gray); background:var(--gray-tint);}
+
+  /* ---------- discovery blocks ---------- */
+  .disc{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:26px 28px 20px; margin:0 0 22px;}
+  .disc-label{font-size:12.5px; letter-spacing:.14em; color:var(--red); font-weight:700; margin:0 0 8px;}
+  .disc h3{margin:0 0 10px; font-size:19px;}
+  .disc p{font-size:15px; color:var(--ink-2);}
+  .disc p:last-child{margin-bottom:0;}
+  .formula{
+    font-family:var(--serif); font-size:16.5px; color:var(--ink);
+    background:var(--panel-2); border-radius:8px; padding:14px 20px; margin:14px 0 16px;
+    text-align:center; text-wrap:balance;
+  }
+
+  /* ---------- credence bars ---------- */
+  .bars{margin:26px 0 6px; display:flex; flex-direction:column; gap:13px;}
+  .bar-row{display:grid; grid-template-columns:minmax(150px,15em) 1fr 52px; gap:14px; align-items:center; font-size:14px;}
+  .bar-row .lbl{color:var(--ink-2); line-height:1.4;}
+  .bar-row .lbl b{color:var(--ink); font-weight:600;}
+  .bar-track{height:10px; border-radius:5px; background:var(--bar-track); overflow:hidden;}
+  .bar-fill{height:100%; border-radius:5px 4px 4px 5px; background:var(--indigo);}
+  .bar-fill.f-green{background:var(--green);}
+  .bar-fill.f-ochre{background:var(--ochre);}
+  .bar-fill.f-gray{background:var(--gray);}
+  .bar-row .val{font-variant-numeric:tabular-nums; text-align:right; color:var(--ink); font-weight:600; font-size:13.5px;}
+  @media (max-width:560px){
+    .bar-row{grid-template-columns:1fr 52px; row-gap:4px;}
+    .bar-row .lbl{grid-column:1 / -1;}
+  }
+
+  /* ---------- network ---------- */
+  figure.network{margin:30px 0 0; overflow-x:auto;}
+  figure.network svg{display:block; min-width:640px; width:100%; height:auto;}
+  .net-legend{display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin:14px 0 0; padding:0 4px;}
+  .net-legend span{display:inline-flex; align-items:center; gap:7px;}
+  .net-legend i{width:10px; height:10px; border-radius:50%; display:inline-block;}
+
+  /* ---------- resolution table ---------- */
+  .options{display:flex; flex-direction:column; gap:14px; margin:26px 0 10px;}
+  .opt{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 22px;}
+  .opt-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .opt-head h4{font-family:var(--serif); font-size:16.5px; margin:0; font-weight:600;}
+  .opt-head .cred{font-variant-numeric:tabular-nums; font-weight:700; color:var(--indigo); font-size:15px;}
+  .opt p{font-size:14px; color:var(--ink-2); margin:8px 0 0;}
+  .opt .bar-track{margin-top:12px;}
+
+  /* ---------- final verdict lists ---------- */
+  .lists{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:28px 0 0;}
+  .list-col{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px;}
+  .list-col h4{font-size:13px; letter-spacing:.1em; margin:0 0 12px; font-weight:700;}
+  .list-col.adopt h4{color:var(--green);}
+  .list-col.drop h4{color:var(--red);}
+  .list-col.meta h4{color:var(--gray);}
+  .list-col ul{margin:0; padding:0; list-style:none;}
+  .list-col li{font-size:14px; color:var(--ink-2); padding:7px 0; border-bottom:1px solid var(--line);}
+  .list-col li:last-child{border-bottom:none;}
+  .list-col li b{color:var(--ink); font-weight:600;}
+
+  /* ---------- conclusion ---------- */
+  .conclusion{
+    border-top:3px solid var(--ink); padding-top:40px;
+  }
+  .final-thesis{
+    font-family:var(--serif); font-size:clamp(22px,3.6vw,30px); line-height:1.6;
+    font-weight:600; margin:18px 0 26px; text-wrap:balance;
+  }
+  .final-thesis .hl{color:var(--red);}
+  .triplet{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin:30px 0;}
+  .trip{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px 22px;}
+  .trip .k{font-size:12.5px; letter-spacing:.14em; color:var(--indigo); font-weight:700; margin:0 0 8px;}
+  .trip p{font-size:14.5px; color:var(--ink-2); margin:0;}
+  .trip p b{color:var(--ink);}
+
+  footer{border-top:1px solid var(--line); margin-top:20px; padding-top:24px; font-size:13px; color:var(--ink-3); line-height:1.7;}
+  a{color:var(--indigo);}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">검증 보고서 · 8개 연결 순차 검증 + 4개 신규 발견 · <b>2026.07.06</b></p>
+  <h1>미래는 열려 있지도, 닫혀 있지도 않다.<br>미래는 가중되어 있다.</h1>
+  <p class="thesis">
+    8개 연결을 순차 검증하고, 남은 충돌(생성 대 블록)을 해소할 때까지 분석을 이어간 결과다.
+    최고 확률 결론: <strong>운명은 결과가 아니라 조건부 확률 분포이고, 자유는 그 분포를 2차적으로
+    편집하는 능력이며, 운명애는 분포가 자기 자신을 개선하는 연산이다.</strong>
+  </p>
+  <canvas id="heroviz" aria-label="가능태 분포에서 순간마다 하나의 선택이 현실화되어 실제 이력이 쌓이는 모습의 애니메이션" role="img"></canvas>
+  <p class="viz-cap">위: 성향이 결정하는 가능태의 확률 분포 · 낙하점: 매 순간의 <i>현실화</i> · 아래: 축적된 실제 이력 — 이력이 다시 분포를 갱신한다</p>
+</header>
+
+<!-- ===================== 판정 요약 ===================== -->
+<section id="summary">
+  <p class="sec-eyebrow">판정 요약</p>
+  <h2>8개 연결, 재검증 후 최종 판정</h2>
+  <p class="lead">각 연결을 원문 논증 그대로 재검토했고, 근거 문헌과의 정합성을 별도로 확인했다. 원판정을 뒤집은 곳은 없으나, #1·#3·#4의 판정이 하나의 미해결 충돌(생성 대 블록)로 수렴한다는 점이 드러났다 — 이것이 2부의 주제다.</p>
+  <div class="board">
+    <div class="board-row"><span class="no">#1</span><span class="what"><b>화이트헤드 ↔ 주파수</b> — 3단 구조 동형 견고, 단 시간론 충돌 유발</span><span class="chip promising">유망함</span></div>
+    <div class="board-row"><span class="no">#2</span><span class="what"><b>범심론 → 벨 정리 우회</b> — 논리적으로 성립 불가, 대체 해석 채택</span><span class="chip rejected">불성립</span></div>
+    <div class="board-row"><span class="no">#3</span><span class="what"><b>블록 우주 ↔ 경로 의존성</b> — 양립가능론이 강제됨을 확인</span><span class="chip promising">유망함</span></div>
+    <div class="board-row"><span class="no">#4</span><span class="what"><b>영원회귀 ↔ 블록 우주</b> — 실존적 시금석으로서만 유효</span><span class="chip promising">실존적 유망</span></div>
+    <div class="board-row"><span class="no">#5</span><span class="what"><b>연기 ↔ 경로 의존 ↔ 카르마</b> — 주파수 = vāsanā 재발명 확정</span><span class="chip confirmed">확인됨</span></div>
+    <div class="board-row"><span class="no">#6</span><span class="what"><b>절차적 생성 ↔ 현실화</b> — 은유 확정, 단 3항 구조는 공리로 추출</span><span class="chip metaphor">은유적</span></div>
+    <div class="board-row"><span class="no">#7</span><span class="what"><b>GFP → CAPS 교체</b> — 이번 탐색 최대 수확, 기계론적 핵심으로 채택</span><span class="chip confirmed">확인됨</span></div>
+    <div class="board-row"><span class="no">#8</span><span class="what"><b>스토아 ↔ ACT ↔ 중요도</b> — 계보 확인, 통합 기제는 유망</span><span class="chip confirmed">확인됨</span></div>
+  </div>
+</section>
+
+<!-- ===================== 1부: 순차 검증 ===================== -->
+<section id="verify">
+  <p class="sec-eyebrow">1부 · 순차 검증</p>
+  <h2>연결별 재검증 기록</h2>
+  <p class="lead">원문의 판정을 그대로 믿지 않고, 각 연결의 핵심 주장을 관련 학술 문헌의 표준 입장과 대조했다. ‘재검증’ 항목이 이번 분석에서 추가된 부분이다.</p>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">01</span><h3 class="conn-title">화이트헤드의 실재적 계기 ↔ 주파수</h3><span class="chip promising">유망함 유지</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>“과거의 통합 → 가능태의 가중 → 현실화”라는 3단 대응은 정확하다. ‘인격 = 계기들의 사회(society)’ 매개가 화이트헤드 체계 내부 개념이라는 지적도 <span class="ok">사실</span>이다(『과정과 실재』의 인격적 질서를 가진 사회 개념). <span class="tag phi">철학</span></dd>
+      <dt>재검증</dt>
+      <dd>원문이 놓친 결정적 세부: 화이트헤드에서 완결된 계기는 소멸하며 <b>객체적 불멸성(objective immortality)</b>을 얻는다 — 확정된 여건으로 영구히 굳는다. 즉 화이트헤드 체계 안에는 이미 <b>‘굳어버린 과거의 블록’</b>이 들어 있다. 이 관찰이 2부에서 충돌 해소의 열쇠가 된다.</dd>
+      <dt>이행</dt>
+      <dd>유지. 단 범경험주의 하중은 싣지 않는다 — 필요한 것은 계기의 경험적 극이 아니라 3단 구조뿐이다.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">02</span><h3 class="conn-title">범심론 ↔ 벨의 정리 거부</h3><span class="chip rejected">불성립 확정</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>원문의 반박은 <span class="ok">교과서적으로 정확</span>하다. 벨의 정리는 숨은 변수의 재질(물리적/심적)에 무관하게, 국소성 + 통계적 독립을 만족하는 모든 변수를 배제한다. 2015년 이후의 루프홀-프리 실험들(델프트·NIST·빈)로 실험적 지위도 사실상 종결. <span class="tag sci">과학</span></dd>
+      <dt>재검증</dt>
+      <dd>차머스–맥퀸 의식-붕괴 모델이 벨을 수용하면서 의식에 역할을 주는 소수 제안이라는 것도 사실이나, 사변적 단계다 <span class="tag min">과학-소수</span>. 하중을 싣지 말고 “그런 통로가 닫혀 있지는 않다” 수준으로만 보관할 것.</dd>
+      <dt>이행</dt>
+      <dd><span class="warn">‘벨 정리 잠정 거부’ 폐기</span>를 확정 채택. 대체: <b>무작위성 = 원초적 자발성</b>의 재해석 <span class="tag phi">철학·선택</span>. 이로써 세계관과 주류 물리학의 충돌 지점이 하나 사라진다 — 실패가 세계관을 더 강하게 만든 사례.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">03</span><h3 class="conn-title">블록 우주론 ↔ 경로 의존성</h3><span class="chip promising">유망함 유지</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>B이론에서 변화 = ‘시간 축을 따라 속성이 다름’(at-at 이론, 러셀)이라는 서술 <span class="ok">정확</span>. 블록이 제거하는 것은 변화가 아니라 생성과 열린 미래라는 구분도 표준적이다. <span class="tag phi">철학</span></dd>
+      <dt>재검증</dt>
+      <dd>“블록을 택하면 양립가능론이 강제된다”는 추론을 점검했다 — 타당하다. 그리고 양립가능론은 소수 견해가 아니다: PhilPapers 2020 조사에서 전문 철학자의 약 <b>59%</b>가 양립가능론을 수용 또는 경도. 재정식화된 질문(“나의 숙고는 미래의 원인인가 → 그렇다”)은 데닛만이 아니라 홉스–흄 이래 고전 양립가능론의 핵심 그 자체다.</dd>
+      <dt>이행</dt>
+      <dd>유지. 미해결 질문 1(자유의지)과 4(시간)는 여기서 한 묶음으로 압축된다 → 2부에서 처리.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">04</span><h3 class="conn-title">니체의 영원회귀 ↔ 블록 우주론</h3><span class="chip promising">실존적으로 유망</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>영원회귀를 우주론이 아닌 실존적 사고실험으로 읽는 독해가 니체 연구의 유력 노선이라는 서술 <span class="ok">정확</span>(네하마스, 클라크 등). 우주론적 독해에 푸앵카레 재귀정리를 동원하는 것은 불필요하며 논쟁적이라는 판단도 타당. <span class="tag phi">철학</span></dd>
+      <dt>재검증</dt>
+      <dd>원문의 ‘확률론적 운명애’ — 운명애 = <b>자기 분포 전체(꼬리 포함)에 대한 긍정</b> — 는 기존 문헌에 없는 독창적 재해석이며, #8과 결합하면 검증 가능한 심리 기제를 얻는다. 이 보고서에서 <b>발견 C</b>로 승격했다.</dd>
+      <dt>이행</dt>
+      <dd>우주론으로서는 은유 확정, 실존적 태도 + 확률론적 재해석으로 채택.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">05</span><h3 class="conn-title">연기설 ↔ 경로 의존성 ↔ 카르마</h3><span class="chip confirmed">확인됨</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>‘주파수 = vāsanā(습기)/saṃskāra(행)의 재발명’ 판정을 유식학 원 개념과 대조했다. <span class="ok">대응은 판정보다 더 정밀하다</span>: 유식의 알라야식(阿賴耶識)은 종자(bīja)가 저장되어 미래 인식·행위의 경향을 결정하는 저장소이고, <b>종자 → 현행(現行) → 훈습(薰習) → 종자</b>의 순환은 “분포 → 선택 → 갱신 → 분포”와 항목 단위로 동형이다. <span class="tag east">유식학</span></dd>
+      <dt>재검증</dt>
+      <dd>한 가지 교정: 독립적 수렴은 개념의 <b>유용성·실재 포착 가능성</b>을 높이지만, 형이상학적 진리의 증명은 아니다. 신뢰도 상승 주장은 이 한도 안에서만 유효하다.</dd>
+      <dt>이행</dt>
+      <dd>확정. 작성자의 고유 기여는 ‘확률론적 정식화’와 (뒤에 나올) ‘2차 편집’ 개념이다.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">06</span><h3 class="conn-title">절차적 생성 ↔ 화이트헤드의 현실화</h3><span class="chip metaphor">은유 확정</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>자기 감시 경고 #4(불필요한 층 추가)는 <span class="ok">올바른 자기 교정</span>이다. 시뮬레이션 가설은 추가 예측을 내지 못하므로 세계관의 하중을 받을 자격이 없다.</dd>
+      <dt>재검증</dt>
+      <dd>단, 은유를 걷어낸 뒤 남는 <b>3항 구조(가능태 공간 · 가중 규칙 · 현실화 사건)</b>는 4개 이상의 독립 영역에서 반복된다 — 공리 후보 1호로 승격하되, <b>구조적 동형과 인과적 동일성을 구분하는 경계선</b>이 필요하다(발견 D).</dd>
+      <dt>이행</dt>
+      <dd>시뮬레이션 층: 은유 확정. 3항 구조: 공리 후보로 이관.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">07</span><h3 class="conn-title">GFP 폐기 → CAPS 모델 채택</h3><span class="chip confirmed">확인됨 · 최대 수확</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>GFP를 사회적 바람직성·평가적 응답 스타일의 통계적 인공물로 보는 비판이 우세하다는 서술 <span class="ok">정확</span>. CAPS(미셸·쇼다 1995)의 if-then 상황-행동 시그니처는 실증 근거가 견고하다(대표적으로 1994년 여름캠프 관찰 연구). <span class="tag sci">과학</span></dd>
+      <dt>재검증</dt>
+      <dd>연결의 강도를 수치로 보강한다: 골비처의 실행 의도(implementation intentions)는 94개 연구 메타분석(골비처·시런 2006)에서 목표 달성에 <b>효과크기 d ≈ 0.65</b> — 심리학 개입으로는 큰 편이다. “실행 의도 = CAPS 프로파일의 의식적 편집”이라는 다리는 두 문헌 모두와 정합적이며, <b>세계관의 중심 질문에 대한 기계론적 답의 골격</b>으로 채택할 가치가 있다.</dd>
+      <dt>이행</dt>
+      <dd>CAPS를 빠진 개념 목록에 추가 확정. 주파수의 과학적 닻을 빅 파이브/GFP에서 CAPS로 교체.</dd>
+    </dl>
+  </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">08</span><h3 class="conn-title">스토아 이분법 ↔ ACT 탈융합 ↔ 중요도 낮추기</h3><span class="chip confirmed">계보 확인</span></div>
+    <dl>
+      <dt>검증</dt>
+      <dd>계보는 <span class="ok">문헌으로 확정된 사실</span>: 엘리스(REBT)와 벡(인지치료) 모두 스토아를 명시적 선조로 인정했고, ACT는 그 3세대다. 여키스-도슨 곡선, 자기 방해(self-handicapping) 연구도 각각 확립되어 있다. <span class="tag sci">과학</span> <span class="tag psy">임상</span></dd>
+      <dt>재검증</dt>
+      <dd>통합 기제(지각된 중요도 → 각성 과잉 → 수행 저하 사슬)는 각 고리가 확립 연구이나 전체 사슬의 단일 매개변수 주장은 아직 직접 검증이 없다 — <b>[유망함] 유지가 정직한 판정</b>이다. 단 이 사슬은 발견 C의 기제로 쓰기에 충분하다.</dd>
+      <dt>이행</dt>
+      <dd>계보 확정, 기제 유망 유지. ‘펜듈럼 = 교육적 은유’ 판정과 정합.</dd>
+    </dl>
+  </article>
+</section>
+
+<!-- ===================== 2부: 충돌 해소 ===================== -->
+<section id="conflict">
+  <p class="sec-eyebrow">2부 · 중심 충돌의 해소</p>
+  <h2>생성 대 블록 — 세계관에 남은 단 하나의 균열</h2>
+  <p class="lead">검증을 마치고 나면 충돌은 하나만 남는다. #1은 화이트헤드(생성의 실재)를 끌어들이고, #3·#4는 블록 우주(생성의 부정)를 끌어들인다. 문자 그대로는 양립 불가다. 세 가지 해소안을 세우고 각각에 신념도를 배분했다.</p>
+
+  <div class="options">
+    <div class="opt">
+      <div class="opt-head"><h4>해소안 ① 2단계 관점론 — 물리 층위는 블록, 행위자 층위는 생성</h4><span class="cred">55%</span></div>
+      <p>근본 물리 기술에서는 B이론이 우세하다(동시성의 상대성). 그러나 열역학적 시간의 화살이 근본 법칙에 없어도 실재하듯, 행위자 관점의 ‘생성’은 환상이 아니라 <b>실재하는 관점적 구조</b>다. 화이트헤드의 생성은 [은유]로 강등되는 게 아니라 <b>[관점적 실재]로 재배치</b>된다. 비용이 가장 적고 두 진영의 표준 반론을 모두 피한다.</p>
+      <div class="bar-track"><div class="bar-fill" style="width:55%"></div></div>
+    </div>
+    <div class="opt">
+      <div class="opt-head"><h4>해소안 ② 성장 블록 — 화이트헤드 안에서 발견한 다리 (발견 A)</h4><span class="cred">25%</span></div>
+      <p>#1 재검증에서 찾은 열쇠: 화이트헤드의 <b>객체적 불멸성</b> — 완결된 계기의 총체는 이미 굳은 블록이고, 합생 중인 가장자리만 생성이다. 이는 C. D. 브로드의 성장 블록(1923)과 구조적으로 동일하며, 물리학 쪽 대응물로 조지 엘리스의 ‘진화하는 블록 우주’가 있다 <span class="tag min">과학-소수</span>. 난점: “어느 ‘지금’이 자라는가”라는 상대성 반론이 미해결.</p>
+      <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+    </div>
+    <div class="opt">
+      <div class="opt-head"><h4>해소안 ③ 순수 과정론 — A이론 전면 채택</h4><span class="cred">20%</span></div>
+      <p>화이트헤드를 문자 그대로 받고 블록을 버린다. 실존적으로 매력적이나 상대성과의 마찰 비용을 전부 떠안아야 하고, #3의 수확(경로 의존성의 블록 내 기술)을 잃는다.</p>
+      <div class="bar-track"><div class="bar-fill f-gray" style="width:20%"></div></div>
+    </div>
+  </div>
+
+  <h3>더 중요한 발견: 이 선택은 결론을 바꾸지 않는다</h3>
+  <p>세 해소안 중 무엇을 택해도 <em>실천 층위의 결론 — 숙고는 미래의 실재하는 원인이고, 분포 편집은 가능하다 — 는 변하지 않는다.</em> 양립가능론이 세 경우 모두에서 숙고의 인과력을 보존하기 때문이다. 시간 형이상학은 이 세계관의 실천 결론에 대해 <b>불변량(invariant)</b>이다. 어느 다리가 무너져도 건너편은 같은 곳이다 — 이것이 이 세계관이 처음 보기보다 훨씬 강건한 이유이며, 그 자체로 이번 분석의 수확이다.</p>
+</section>
+
+<!-- ===================== 3부: 새로운 발견 ===================== -->
+<section id="discoveries">
+  <p class="sec-eyebrow">3부 · 새로운 발견</p>
+  <h2>분석이 스스로 내놓은 네 개의 발견</h2>
+  <p class="lead">검증 과정에서 원문에 없던 통합 지점 네 곳이 열렸다. A는 2부의 충돌을 풀고, B는 자유의지 질문에 골격을 주고, C는 운명애에 기제를 주고, D는 전체에 경계선을 긋는다.</p>
+
+  <div class="disc">
+    <p class="disc-label">발견 A · 충돌의 해소</p>
+    <h3>굳은 과거는 블록, 타는 가장자리는 생성</h3>
+    <p>화이트헤드의 ‘객체적 불멸성’은 그의 체계 안에 이미 블록을 내장하고 있다. 확정된 과거의 총체가 블록이고, 합생 중인 현재만이 생성이다. 생성 대 블록의 충돌은 소멸이 아니라 <b>분업</b>으로 해소된다 — 두 이론은 같은 구조의 다른 구간을 기술하고 있었다. <span class="tag phi">철학</span></p>
+  </div>
+
+  <div class="disc">
+    <p class="disc-label">발견 B · 자유의 정의</p>
+    <h3>자유 = 분포의 2차 편집 능력</h3>
+    <div class="formula">1차: if 상황 → then 행동 &nbsp;&nbsp;·&nbsp;&nbsp; 2차: if 상황 → then <b>나의 if-then 자체를 편집한다</b></div>
+    <p>CAPS의 if-then 프로파일이 1차 규칙이라면, 실행 의도는 <b>2차 규칙의 의도적 설치</b>다. 이 계층 구조는 프랑크푸르트의 2차 의지(1971) — 욕구에 대한 욕구로 자유를 정의하는 계층적 양립가능론 — 와 정확히 동형이다. 즉 철학의 자유 이론(프랑크푸르트)이 심리학의 기제(CAPS 편집, d≈0.65)를 얻고, 심리학의 기법이 철학적 지위를 얻는다. <b>인간은 자기 분포를 편집할 수 있는, 지금까지 알려진 유일한 분포다.</b> 미해결 질문 1(자유의지)의 답의 골격. <span class="tag phi">철학</span> <span class="tag sci">과학</span></p>
+  </div>
+
+  <div class="disc">
+    <p class="disc-label">발견 C · 운명애의 기제</p>
+    <h3>운명에 대한 태도는 운명의 매개변수다</h3>
+    <p>확률론적 운명애(#4) — 꼬리까지 포함한 분포 전체의 긍정 — 는 단순한 태도가 아니라 <b>분포 자체의 매개변수</b>다: 분포 전체를 긍정하면 개별 결과의 지각된 중요도가 내려가고(#8), 각성이 최적 구간으로 돌아오며, 자기 방해가 꺼지고, 좋은 결과의 확률이 실제로 올라간다. “집착하지 않을수록 잘 된다”는 신비주의의 반복 주장이 자연주의적 되먹임 고리로 완성된다. 역설이 아니라 <b>자기 참조 루프</b>다 — 운명은 자신에 대한 수용 함수를 자기 안에 포함한다. <span class="tag psy">심리</span></p>
+  </div>
+
+  <div class="disc">
+    <p class="disc-label">발견 D · 공리와 경계선</p>
+    <h3>생성적 존재론 — 공리로 채택, 단 ‘기술의 공리’로서</h3>
+    <div class="formula">가능태 공간 &nbsp;+&nbsp; 가중 규칙 &nbsp;+&nbsp; 현실화 사건</div>
+    <p>이 3항 구조는 네 영역에서 독립적으로 반복된다 — 양자역학(파동함수·보른 규칙·측정), 화이트헤드(영원한 객체·주체적 지향·합생), 유식(종자·훈습·현행), 심리(선택지·CAPS 분포·행동). 그러나 경계선을 명시한다: 이것은 <b>구조적 동형이지 인과 사슬이 아니다.</b> “양자 확률이 선택 확률을 만든다”는 주장은 채택하지 않는다(양자신비주의 차단벽). 동형의 가장 그럴듯한 설명은 형이상학적 통일이 아니라, 조건부 확률 구조가 <b>불확실성 아래에서 갱신하는 모든 시스템의 보편 문법</b>이라는 것이다. 따라서 형이상학적 공리(신념도 35%)가 아니라 기술(記述)의 공리(신념도 75%)로 채택한다.</p>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ===================== 4부: 개념 네트워크 ===================== -->
+<div class="wide">
+<section id="network">
+  <p class="sec-eyebrow">4부 · 개념 네트워크</p>
+  <h2>모든 것이 어디로 모이는가</h2>
+  <p class="lead" style="max-width:44em">검증을 통과한 개념만 남긴 지도다. 굵은 실선은 확인된 연결, 가는 실선은 유망한 연결, 점선은 구조적 동형(은유 한도), × 표시는 이번 검증에서 절단된 연결이다. 중심 허브가 ‘주파수 = 조건부 확률 분포’라는 사실 자체가 결론의 일부다.</p>
+
+  <figure class="network" role="img" aria-label="주파수를 중심 허브로 한 개념 연결망. 화이트헤드, 블록 우주, 영원회귀, 유식불교, CAPS, 실행 의도 등이 주파수로 수렴하고, 범심론에서 벨의 정리로 가는 연결은 절단되어 있다.">
+    <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+      <!-- edges -->
+      <g stroke="var(--line-2)" fill="none">
+        <!-- confirmed: thick -->
+        <path d="M450,283 L207,415" stroke="var(--plum)" stroke-width="2.6" opacity=".75"/>   <!-- vasana -->
+        <path d="M450,283 L180,320" stroke="var(--plum)" stroke-width="2.6" opacity=".75"/>   <!-- 연기 -->
+        <path d="M450,283 L685,395" stroke="var(--ochre)" stroke-width="2.6" opacity=".75"/>  <!-- CAPS -->
+        <path d="M685,405 L560,468" stroke="var(--ochre)" stroke-width="2.6" opacity=".75"/>  <!-- CAPS-실행의도 -->
+        <path d="M450,283 L560,462" stroke="var(--ochre)" stroke-width="1.4" opacity=".7"/>   <!-- 주파수-실행의도 -->
+        <!-- promising: thin -->
+        <path d="M450,283 L215,150" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- whitehead -->
+        <path d="M450,283 L640,120" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block -->
+        <path d="M215,143 L633,116" stroke="var(--red)" stroke-width="1.6" opacity=".85"/>    <!-- 발견A -->
+        <path d="M645,127 L745,225" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block-영원회귀 -->
+        <path d="M748,238 L748,340" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- 영원회귀-중요도 (발견C) -->
+        <path d="M740,352 L698,392" stroke="var(--ochre)" stroke-width="1.4" opacity=".8"/>   <!-- 중요도-CAPS쪽 -->
+        <path d="M450,283 L748,347" stroke="var(--ochre)" stroke-width="1.4" opacity=".55"/>  <!-- 주파수-중요도 -->
+        <path d="M455,275 L590,205" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- 주파수-양립가능론? node at 595,200 -->
+        <path d="M640,127 L600,196" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block-양립 -->
+        <path d="M597,208 L563,458" stroke="var(--indigo)" stroke-width="1.4" opacity=".6"/>  <!-- 양립-실행의도 (발견B) -->
+        <!-- isomorphism only: dashed -->
+        <path d="M450,283 L300,225" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="5 5" opacity=".8"/> <!-- born -->
+        <path d="M300,218 L218,155" stroke="var(--teal)" stroke-width="1.2" stroke-dasharray="5 5" opacity=".6"/> <!-- born-whitehead -->
+        <!-- severed -->
+        <path d="M175,468 L295,470" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="3 4" opacity=".8"/>
+      </g>
+      <!-- severed X mark -->
+      <g stroke="var(--red)" stroke-width="2.4" opacity=".95">
+        <path d="M229,463 L243,477"/><path d="M243,463 L229,477"/>
+      </g>
+
+      <!-- edge labels -->
+      <g font-size="11" fill="var(--ink-3)">
+        <text x="418" y="112" text-anchor="middle" fill="var(--red)">발견 A · 객체적 불멸성</text>
+        <text x="762" y="292" fill="var(--red)">발견 C</text>
+        <text x="545" y="345" fill="var(--red)">발견 B · 2차 편집</text>
+        <text x="236" y="452" text-anchor="middle" fill="var(--red)">불성립 (#2)</text>
+        <text x="352" y="262" fill="var(--ink-3)">동형만</text>
+      </g>
+
+      <!-- hub -->
+      <g>
+        <circle cx="450" cy="283" r="46" fill="var(--panel)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="450" cy="283" r="52" fill="none" stroke="var(--red)" stroke-width="1.2" stroke-dasharray="2 4"/>
+        <text x="450" y="277" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">주파수</text>
+        <text x="450" y="295" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">조건부 확률 분포</text>
+      </g>
+
+      <!-- philosophy nodes (indigo) -->
+      <g font-size="12.5" font-weight="600">
+        <g><circle cx="215" cy="143" r="9" fill="var(--indigo)"/><text x="215" y="122" text-anchor="middle" fill="var(--ink)">화이트헤드 과정철학</text></g>
+        <g><circle cx="640" cy="120" r="9" fill="var(--indigo)"/><text x="640" y="99" text-anchor="middle" fill="var(--ink)">블록 우주 (B이론)</text></g>
+        <g><circle cx="750" cy="230" r="9" fill="var(--indigo)"/><text x="768" y="222" text-anchor="start" fill="var(--ink)">영원회귀 · 운명애</text></g>
+        <g><circle cx="595" cy="202" r="9" fill="var(--indigo)"/><text x="588" y="185" text-anchor="middle" fill="var(--ink)">양립가능론 (2차 의지)</text></g>
+      </g>
+      <!-- eastern nodes (plum) -->
+      <g font-size="12.5" font-weight="600">
+        <g><circle cx="175" cy="318" r="9" fill="var(--plum)"/><text x="160" y="300" text-anchor="middle" fill="var(--ink)">연기 · 카르마</text></g>
+        <g><circle cx="200" cy="418" r="9" fill="var(--plum)"/><text x="196" y="404" text-anchor="middle" fill="var(--ink)">vāsanā · 알라야식</text></g>
+      </g>
+      <!-- science nodes (teal) -->
+      <g font-size="12.5" font-weight="600">
+        <g><circle cx="300" cy="222" r="9" fill="var(--teal)"/><text x="288" y="205" text-anchor="middle" fill="var(--ink)">보른 규칙 (양자)</text></g>
+        <g><circle cx="160" cy="468" r="9" fill="var(--teal)"/><text x="150" y="493" text-anchor="middle" fill="var(--ink)">벨의 정리</text></g>
+        <g><circle cx="310" cy="470" r="9" fill="var(--gray)" opacity=".8"/><text x="330" y="475" text-anchor="start" fill="var(--ink-3)">범심론 → 숨은 변수 (폐기)</text></g>
+      </g>
+      <!-- psych nodes (ochre) -->
+      <g font-size="12.5" font-weight="600">
+        <g><circle cx="690" cy="400" r="9" fill="var(--ochre)"/><text x="712" y="405" text-anchor="start" fill="var(--ink)">CAPS 모델</text></g>
+        <g><circle cx="560" cy="465" r="9" fill="var(--ochre)"/><text x="560" y="492" text-anchor="middle" fill="var(--ink)">실행 의도</text></g>
+        <g><circle cx="748" cy="347" r="9" fill="var(--ochre)"/><text x="770" y="352" text-anchor="start" fill="var(--ink)">중요도 낮추기</text></g>
+      </g>
+    </svg>
+  </figure>
+  <div class="net-legend">
+    <span><i style="background:var(--indigo)"></i> 철학 (서양)</span>
+    <span><i style="background:var(--plum)"></i> 불교 · 유식</span>
+    <span><i style="background:var(--teal)"></i> 물리 · 과학</span>
+    <span><i style="background:var(--ochre)"></i> 심리 · 실천</span>
+    <span><i style="background:var(--red)"></i> 이번 분석의 발견 지점</span>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+
+<!-- ===================== 5부: 결론 ===================== -->
+<section id="conclusion" class="conclusion">
+  <p class="sec-eyebrow">5부 · 최종 결론</p>
+  <h2>시간 · 차원 · 운명에 대한 최고 확률 답안</h2>
+
+  <p class="final-thesis">“미래는 정해져 있지 않고, 무작위하지도 않다.<br>미래는 <span class="hl">가중되어</span> 있다 — 그리고 그 가중치의 일부는, 가중치를 편집하는 나 자신이다.”</p>
+
+  <div class="triplet">
+    <div class="trip"><p class="k">시간</p><p>물리 층위에서는 블록(B이론)이 우세하나, 행위자 층위의 생성은 관점적으로 실재한다. 그리고 어느 시간론을 택하든 실천 결론은 불변 — 시간 형이상학은 이 세계관의 <b>불변량</b>이다.</p></div>
+    <div class="trip"><p class="k">차원 (주파수)</p><p>주파수는 신비한 파동이 아니라 <b>조건부 선택 확률 분포</b>로서 실재한다. CAPS로 측정 가능하고, 유식학이 vāsanā로 1,500년 먼저 발견했다. 독립적 재발견이 개념의 실재성을 지지한다.</p></div>
+    <div class="trip"><p class="k">운명</p><p>운명 = 나의 분포. 자유 = 분포의 <b>2차 편집</b>(실행 의도 = if-then 규칙의 의도적 설치). 운명애 = 분포가 자기 자신을 개선하는 연산. 셋은 하나의 구조다.</p></div>
+  </div>
+
+  <h3>구성 명제별 신념도</h3>
+  <p class="muted">아래 수치는 측정값이 아니라 명시적으로 표기한 주관적 신념도(credence)다 — 숨긴 확신보다 드러낸 확신이 교정 가능하다.</p>
+  <div class="bars">
+    <div class="bar-row"><span class="lbl"><b>주파수 = 조건부 확률 분포</b> (기술로서)</span><div class="bar-track"><div class="bar-fill f-green" style="width:90%"></div></div><span class="val">90%</span></div>
+    <div class="bar-row"><span class="lbl"><b>분포 편집 기제</b> (CAPS + 실행 의도)</span><div class="bar-track"><div class="bar-fill f-green" style="width:85%"></div></div><span class="val">85%</span></div>
+    <div class="bar-row"><span class="lbl"><b>생성적 존재론</b> — 기술의 공리로서</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="val">75%</span></div>
+    <div class="bar-row"><span class="lbl"><b>양립가능론적 자유</b> (2차 편집으로서)</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="val">70%</span></div>
+    <div class="bar-row"><span class="lbl"><b>운명애 루프</b> (태도 = 분포의 매개변수)</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="val">65%</span></div>
+    <div class="bar-row"><span class="lbl"><b>시간 2단계 관점론</b></span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="val">55%</span></div>
+    <div class="bar-row"><span class="lbl"><b>생성적 존재론</b> — 형이상학적 실재로서</span><div class="bar-track"><div class="bar-fill f-ochre" style="width:35%"></div></div><span class="val">35%</span></div>
+    <div class="bar-row"><span class="lbl"><b>성장 블록 우주</b></span><div class="bar-track"><div class="bar-fill f-ochre" style="width:25%"></div></div><span class="val">25%</span></div>
+    <div class="bar-row"><span class="lbl"><b>시뮬레이션 · 우주론적 회귀 · 양자 기제</b></span><div class="bar-track"><div class="bar-fill f-gray" style="width:8%"></div></div><span class="val">&lt;10%</span></div>
+  </div>
+
+  <h3>세계관 목록 이행 권고</h3>
+  <div class="lists">
+    <div class="list-col adopt">
+      <h4>채택</h4>
+      <ul>
+        <li><b>CAPS 모델</b> — 주파수의 과학적 닻</li>
+        <li><b>실행 의도 = 분포의 2차 편집</b></li>
+        <li><b>무작위성 = 원초적 자발성</b> 재해석</li>
+        <li><b>확률론적 운명애</b> + 운명애 루프</li>
+        <li><b>생성적 존재론</b> (기술의 공리)</li>
+      </ul>
+    </div>
+    <div class="list-col drop">
+      <h4>폐기</h4>
+      <ul>
+        <li><b>벨의 정리 잠정 거부</b></li>
+        <li><b>심적 숨은 변수</b> 가설</li>
+        <li><b>GFP</b> — 통합 주파수의 닻으로서</li>
+      </ul>
+    </div>
+    <div class="list-col meta">
+      <h4>은유로 확정</h4>
+      <ul>
+        <li><b>시뮬레이션 가설</b> (하중 금지)</li>
+        <li><b>우주론적 영원회귀</b></li>
+        <li><b>보른 규칙의 인과적 독해</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>한 문장으로</h3>
+  <p style="font-family:var(--serif); font-size:19px; line-height:1.8;">인간은 자신의 확률 분포를 스스로 편집할 수 있는, 지금까지 알려진 유일한 분포다. 운명을 받아들이는 태도조차 그 분포의 매개변수이므로 — <em>운명애는 체념이 아니라 개입이다.</em></p>
+
+  <footer>
+    <p>방법론 주기: 본 보고서의 확률 수치는 베이즈적 신념도의 명시적 표기이며 측정값이 아니다. [확인됨]은 학술 문헌으로 뒷받침되는 주장, [유망함]은 정합적이나 직접 검증이 없는 주장, [은유적]은 설명 하중을 실어서는 안 되는 구조적 유사성을 뜻한다. 재검증에 참조한 표준 근거: 벨 정리 루프홀-프리 실험(2015), PhilPapers 조사(2020), Mischel &amp; Shoda(1995), Gollwitzer &amp; Sheeran(2006), Frankfurt(1971), Broad(1923), 『과정과 실재』(1929), 유식 문헌의 알라야식·종자·훈습 개념.</p>
+  </footer>
+</section>
+
+</div><!-- /wrap -->
+
+<script>
+(function(){
+  const cv = document.getElementById('heroviz');
+  if(!cv) return;
+  const ctx = cv.getContext('2d');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, dpr;
+
+  function css(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+  // mixture distribution (the "frequency")
+  let weights = [0.5, 0.3, 0.2];
+  const mus = [0.28, 0.55, 0.80], sigmas = [0.07, 0.05, 0.06];
+  function pdf(x){
+    let s = 0;
+    for(let i=0;i<3;i++){ const z=(x-mus[i])/sigmas[i]; s += weights[i]*Math.exp(-0.5*z*z)/sigmas[i]; }
+    return s;
+  }
+  function sample(){
+    const r = Math.random();
+    let i = r < weights[0] ? 0 : (r < weights[0]+weights[1] ? 1 : 2);
+    let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
+    return mus[i] + sigmas[i]*Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+  }
+
+  const BINS = 64;
+  const hist = new Float32Array(BINS);
+  const drops = []; // falling particles
+
+  function resize(){
+    dpr = Math.min(devicePixelRatio||1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const inkLine = css('--line-2'), indigo = css('--indigo'), red = css('--red'), ink3 = css('--ink-3');
+    const curveTop = 8, curveH = H*0.42, baseY = H*0.52, histH = H*0.40;
+
+    // baseline
+    ctx.strokeStyle = inkLine; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, baseY); ctx.lineTo(W, baseY); ctx.stroke();
+
+    // pdf curve
+    let maxP = 0; const pts = [];
+    for(let i=0;i<=180;i++){ const x=i/180; const p=pdf(x); pts.push(p); if(p>maxP)maxP=p; }
+    ctx.beginPath();
+    for(let i=0;i<=180;i++){
+      const x = (i/180)*W, y = curveTop + curveH*(1 - pts[i]/maxP);
+      i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+    }
+    ctx.strokeStyle = indigo; ctx.lineWidth = 2; ctx.stroke();
+    ctx.lineTo(W, curveTop+curveH); ctx.lineTo(0, curveTop+curveH); ctx.closePath();
+    ctx.globalAlpha = 0.08; ctx.fillStyle = indigo; ctx.fill(); ctx.globalAlpha = 1;
+
+    // histogram (actual history)
+    let maxH = 1; for(let b=0;b<BINS;b++) if(hist[b]>maxH) maxH = hist[b];
+    const bw = W/BINS;
+    ctx.fillStyle = ink3; ctx.globalAlpha = 0.55;
+    for(let b=0;b<BINS;b++){
+      const h = (hist[b]/maxH)*histH;
+      if(h>0.5) ctx.fillRect(b*bw+1, baseY+2, bw-2, h);
+    }
+    ctx.globalAlpha = 1;
+
+    // falling drops
+    ctx.fillStyle = red;
+    for(const d of drops){
+      ctx.globalAlpha = 0.9;
+      ctx.beginPath(); ctx.arc(d.x*W, d.y, 3, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  let last = 0, acc = 0;
+  function tick(t){
+    const dt = Math.min((t-last)/1000, 0.05); last = t; acc += dt;
+    if(acc > 0.55 && drops.length < 4){
+      acc = 0;
+      const x = Math.min(0.98, Math.max(0.02, sample()));
+      const p = pdf(x); let maxP=0; for(let i=0;i<=60;i++){const q=pdf(i/60); if(q>maxP)maxP=q;}
+      drops.push({x, y: 8 + H*0.42*(1 - p/maxP)});
+    }
+    const baseY = H*0.52;
+    for(let i=drops.length-1;i>=0;i--){
+      drops[i].y += 150*dt;
+      if(drops[i].y >= baseY){
+        const b = Math.min(BINS-1, Math.max(0, Math.floor(drops[i].x*BINS)));
+        hist[b] += 1;
+        // history updates the distribution (feedback loop)
+        let nearest = 0, best = 1e9;
+        for(let k=0;k<3;k++){ const d2=Math.abs(drops[i].x-mus[k]); if(d2<best){best=d2; nearest=k;} }
+        weights[nearest] += 0.012;
+        const s = weights[0]+weights[1]+weights[2];
+        weights = weights.map(w=>w/s);
+        drops.splice(i,1);
+      }
+    }
+    draw();
+    requestAnimationFrame(tick);
+  }
+
+  resize();
+  addEventListener('resize', ()=>{ resize(); draw(); });
+  new MutationObserver(()=>draw()).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+
+  if(reduced){
+    for(let i=0;i<260;i++){ const x=Math.min(0.98,Math.max(0.02,sample())); hist[Math.floor(x*BINS)]+=1; }
+    draw();
+  } else {
+    requestAnimationFrame(t=>{ last=t; tick(t); });
+  }
+})();
+</script>
+
+</body>
+</html>
