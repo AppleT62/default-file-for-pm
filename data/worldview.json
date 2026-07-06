@@ -4,7 +4,9 @@
     "convergence_rule": "연속 2회차 신념도 변화 없음 → 수렴 판정, 루프 종료",
     "last_cycle": 7,
     "convergence_count": 2,
-    "converged": true
+    "converged": true,
+    "phase": 2,
+    "phase_note": "1기(검증) 수렴 완료. 사용자 지시로 2기(확장 탐구) 진행 중 — 확정 핵심은 동결, 확장 주제만 추가"
   },
   "credences": {
     "주파수 = 조건부 확률 분포 (기술로서)": { "value": 90, "history": [{ "cycle": 1, "value": 90 }, { "cycle": 2, "value": 90, "note": "삼중 재발명 확인으로 상향 압력 있으나 90% 상한 유지(과신 방지 캡)" }] },
