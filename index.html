@@ -157,6 +157,13 @@
   .bar-fill.f-ochre{background:var(--ochre);}
   .bar-fill.f-gray{background:var(--gray);}
   .bar-row .val{font-variant-numeric:tabular-nums; text-align:right; color:var(--ink); font-weight:600; font-size:13.5px;}
+  .delta{color:var(--green); font-size:12px; font-weight:700; white-space:nowrap;}
+  .cycle-log{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:24px 0 0; background:var(--panel);}
+  .cycle-row{display:grid; grid-template-columns:70px 1fr; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line); font-size:14px;}
+  .cycle-row:last-child{border-bottom:none;}
+  .cycle-row .cyc{font-family:var(--serif); font-weight:700; color:var(--indigo); font-variant-numeric:tabular-nums;}
+  .cycle-row .desc{color:var(--ink-2);}
+  .cycle-row .desc b{color:var(--ink);}
   @media (max-width:560px){
     .bar-row{grid-template-columns:1fr 52px; row-gap:4px;}
     .bar-row .lbl{grid-column:1 / -1;}
@@ -216,7 +223,7 @@
 <div class="wrap">
 
 <header class="hero">
-  <p class="eyebrow">검증 보고서 · 8개 연결 순차 검증 + 4개 신규 발견 · <b>2026.07.06</b></p>
+  <p class="eyebrow">검증 루프 · <b>회차 2</b> · 9개 연결 + 5개 발견 · 2026.07.06</p>
   <h1>미래는 열려 있지도, 닫혀 있지도 않다.<br>미래는 가중되어 있다.</h1>
   <p class="thesis">
     8개 연결을 순차 검증하고, 남은 충돌(생성 대 블록)을 해소할 때까지 분석을 이어간 결과다.
@@ -241,6 +248,7 @@
     <div class="board-row"><span class="no">#6</span><span class="what"><b>절차적 생성 ↔ 현실화</b> — 은유 확정, 단 3항 구조는 공리로 추출</span><span class="chip metaphor">은유적</span></div>
     <div class="board-row"><span class="no">#7</span><span class="what"><b>GFP → CAPS 교체</b> — 이번 탐색 최대 수확, 기계론적 핵심으로 채택</span><span class="chip confirmed">확인됨</span></div>
     <div class="board-row"><span class="no">#8</span><span class="what"><b>스토아 ↔ ACT ↔ 중요도</b> — 계보 확인, 통합 기제는 유망</span><span class="chip confirmed">확인됨</span></div>
+    <div class="board-row"><span class="no">#9</span><span class="what"><b>예측 처리 ↔ 주파수</b> — 회차 2 신규: 주파수의 신경계산적 대응물 발견</span><span class="chip promising">유망함 · 신규</span></div>
   </div>
 </section>
 
@@ -345,6 +353,20 @@
       <dd>계보 확정, 기제 유망 유지. ‘펜듈럼 = 교육적 은유’ 판정과 정합.</dd>
     </dl>
   </article>
+
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">09</span><h3 class="conn-title">예측 처리·자유에너지 원리 ↔ 주파수 <span class="tag sci" style="vertical-align:middle">회차 2 신규</span></h3><span class="chip promising">유망함</span></div>
+    <dl>
+      <dt>연결</dt>
+      <dd>현대 신경과학의 예측 처리(predictive processing) 이론에서 뇌는 <b>생성 모델의 사전분포(prior)로 세계를 예측하고, 예측 오차로 그 분포를 갱신하는 베이즈 기계</b>다. 능동적 추론(active inference)은 여기서 한 걸음 더 나간다: 유기체는 모델을 세계에 맞추는 것(지각)만이 아니라, <b>세계를 모델에 맞추는 행동(행위)</b>으로도 오차를 줄인다. <span class="tag sci">과학</span></dd>
+      <dt>검증</dt>
+      <dd>대응이 항목 단위로 성립한다: 사전분포 = 주파수(경험이 누적된 성향 분포), 예측 오차 갱신 = 경로 의존적 분포 갱신, 능동적 추론 = 현실화가 다시 분포를 훈습하는 되먹임. 즉 <b>주파수의 신경계산적 대응물 후보는 ‘생성 모델의 사전분포’</b>다. 프리스턴의 자유에너지 원리는 논쟁적 부분(만물 이론화)이 있으므로 <span class="tag min">그 부분엔 하중 금지</span> — 채택하는 것은 실증적으로 확립된 예측 처리·베이즈 뇌 코어만이다.</dd>
+      <dt>수확</dt>
+      <dd>두 가지. ① 재발명 사례가 <b>이중에서 삼중으로</b> 늘었다: vāsanā(유식, 5세기) · CAPS(심리학, 1995) · 베이즈 사전분포(신경과학, 2000년대) — 발견 E. ② 예측 처리의 <b>정밀도 가중(precision weighting)</b> — 어떤 예측 오차를 얼마나 심각하게 받아들일지의 가중치 — 은 #8의 ‘지각된 중요도’와 같은 자리에 있다. 중요도 낮추기의 신경계산적 기제 후보가 생겼다.</dd>
+      <dt>충돌</dt>
+      <dd>없음. 오히려 생성적 존재론 3항 구조(가능태 공간 = 생성 모델의 가설 공간, 가중 규칙 = 사전분포 × 정밀도, 현실화 = 지각/행동 선택)의 <b>다섯 번째 독립 사례</b>가 되어 공리의 신념도를 끌어올린다.</dd>
+    </dl>
+  </article>
 </section>
 
 <!-- ===================== 2부: 충돌 해소 ===================== -->
@@ -404,7 +426,15 @@
     <p class="disc-label">발견 D · 공리와 경계선</p>
     <h3>생성적 존재론 — 공리로 채택, 단 ‘기술의 공리’로서</h3>
     <div class="formula">가능태 공간 &nbsp;+&nbsp; 가중 규칙 &nbsp;+&nbsp; 현실화 사건</div>
-    <p>이 3항 구조는 네 영역에서 독립적으로 반복된다 — 양자역학(파동함수·보른 규칙·측정), 화이트헤드(영원한 객체·주체적 지향·합생), 유식(종자·훈습·현행), 심리(선택지·CAPS 분포·행동). 그러나 경계선을 명시한다: 이것은 <b>구조적 동형이지 인과 사슬이 아니다.</b> “양자 확률이 선택 확률을 만든다”는 주장은 채택하지 않는다(양자신비주의 차단벽). 동형의 가장 그럴듯한 설명은 형이상학적 통일이 아니라, 조건부 확률 구조가 <b>불확실성 아래에서 갱신하는 모든 시스템의 보편 문법</b>이라는 것이다. 따라서 형이상학적 공리(신념도 35%)가 아니라 기술(記述)의 공리(신념도 75%)로 채택한다.</p>
+    <p>이 3항 구조는 네 영역에서 독립적으로 반복된다 — 양자역학(파동함수·보른 규칙·측정), 화이트헤드(영원한 객체·주체적 지향·합생), 유식(종자·훈습·현행), 심리(선택지·CAPS 분포·행동). 그러나 경계선을 명시한다: 이것은 <b>구조적 동형이지 인과 사슬이 아니다.</b> “양자 확률이 선택 확률을 만든다”는 주장은 채택하지 않는다(양자신비주의 차단벽). 동형의 가장 그럴듯한 설명은 형이상학적 통일이 아니라, 조건부 확률 구조가 <b>불확실성 아래에서 갱신하는 모든 시스템의 보편 문법</b>이라는 것이다. 따라서 형이상학적 공리(신념도 35%)가 아니라 기술(記述)의 공리(신념도 75→80%, 회차 2에서 상향)로 채택한다.</p>
+  </div>
+
+  <div class="disc">
+    <p class="disc-label">발견 E · 회차 2 신규</p>
+    <h3>삼중 재발명 — 그리고 중요도의 신경계산적 정체</h3>
+    <div class="formula">vāsanā (유식, 5세기) &nbsp;≅&nbsp; if-then 시그니처 (CAPS, 1995) &nbsp;≅&nbsp; 사전분포 (베이즈 뇌, 2000년대)</div>
+    <p>연결 #9의 검증으로 ‘주파수’의 독립적 재발견이 두 전통에서 세 전통으로 늘었다 — 서로 인용 관계가 없는 관상 전통, 성격심리학, 계산신경과학이 같은 구조에 도달했다. 수렴 증거의 논리에 따라 개념의 실재성 신념도에 상향 압력이 생긴다(단 90% 캡 유지 — 수렴은 유용성을 지지하지 형이상학을 증명하지 않는다는 회차 1의 교정을 존중).</p>
+    <p>더 날카로운 수확은 두 번째다: 예측 처리의 <b>정밀도 가중</b>은 “이 오차를 얼마나 중요하게 취급할 것인가”의 파라미터이며, 이는 #8 통합 기제의 ‘지각된 중요도’와 기능적으로 같은 자리다. 즉 <b>중요도 낮추기 = 정밀도 재조정</b>이라는 신경계산적 독해가 가능해진다. 실제로 마음챙김·ACT를 정밀도 조절로 모형화하는 문헌이 존재한다 <span class="tag sci">과학</span>. 발견 C(운명애 루프)가 심리 기제에 이어 계산 기제 후보까지 얻었다 — 신념도 65→70% 상향의 근거.</p>
   </div>
 </section>
 
@@ -443,6 +473,9 @@
         <path d="M300,218 L218,155" stroke="var(--teal)" stroke-width="1.2" stroke-dasharray="5 5" opacity=".6"/> <!-- born-whitehead -->
         <!-- severed -->
         <path d="M175,468 L295,470" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="3 4" opacity=".8"/>
+        <!-- cycle 2: predictive processing -->
+        <path d="M450,283 L390,428" stroke="var(--teal)" stroke-width="1.6" opacity=".85"/>
+        <path d="M378,437 L212,421" stroke="var(--teal)" stroke-width="1.2" stroke-dasharray="5 5" opacity=".6"/>
       </g>
       <!-- severed X mark -->
       <g stroke="var(--red)" stroke-width="2.4" opacity=".95">
@@ -481,6 +514,7 @@
       <!-- science nodes (teal) -->
       <g font-size="12.5" font-weight="600">
         <g><circle cx="300" cy="222" r="9" fill="var(--teal)"/><text x="288" y="205" text-anchor="middle" fill="var(--ink)">보른 규칙 (양자)</text></g>
+        <g><circle cx="385" cy="437" r="9" fill="var(--teal)"/><text x="385" y="460" text-anchor="middle" fill="var(--ink)">예측 처리 (베이즈 뇌)</text><text x="408" y="370" font-size="11" font-weight="400" fill="var(--red)">발견 E · 회차 2</text></g>
         <g><circle cx="160" cy="468" r="9" fill="var(--teal)"/><text x="150" y="493" text-anchor="middle" fill="var(--ink)">벨의 정리</text></g>
         <g><circle cx="310" cy="470" r="9" fill="var(--gray)" opacity=".8"/><text x="330" y="475" text-anchor="start" fill="var(--ink-3)">범심론 → 숨은 변수 (폐기)</text></g>
       </g>
@@ -522,9 +556,9 @@
   <div class="bars">
     <div class="bar-row"><span class="lbl"><b>주파수 = 조건부 확률 분포</b> (기술로서)</span><div class="bar-track"><div class="bar-fill f-green" style="width:90%"></div></div><span class="val">90%</span></div>
     <div class="bar-row"><span class="lbl"><b>분포 편집 기제</b> (CAPS + 실행 의도)</span><div class="bar-track"><div class="bar-fill f-green" style="width:85%"></div></div><span class="val">85%</span></div>
-    <div class="bar-row"><span class="lbl"><b>생성적 존재론</b> — 기술의 공리로서</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="val">75%</span></div>
+    <div class="bar-row"><span class="lbl"><b>생성적 존재론</b> — 기술의 공리로서 <span class="delta">▲ +5 (회차 2: 5번째 사례)</span></span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="val">80%</span></div>
     <div class="bar-row"><span class="lbl"><b>양립가능론적 자유</b> (2차 편집으로서)</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="val">70%</span></div>
-    <div class="bar-row"><span class="lbl"><b>운명애 루프</b> (태도 = 분포의 매개변수)</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="val">65%</span></div>
+    <div class="bar-row"><span class="lbl"><b>운명애 루프</b> (태도 = 분포의 매개변수) <span class="delta">▲ +5 (회차 2: 정밀도 기제)</span></span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="val">70%</span></div>
     <div class="bar-row"><span class="lbl"><b>시간 2단계 관점론</b></span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="val">55%</span></div>
     <div class="bar-row"><span class="lbl"><b>생성적 존재론</b> — 형이상학적 실재로서</span><div class="bar-track"><div class="bar-fill f-ochre" style="width:35%"></div></div><span class="val">35%</span></div>
     <div class="bar-row"><span class="lbl"><b>성장 블록 우주</b></span><div class="bar-track"><div class="bar-fill f-ochre" style="width:25%"></div></div><span class="val">25%</span></div>
@@ -561,11 +595,18 @@
     </div>
   </div>
 
+  <h3>검증 루프 회차 로그</h3>
+  <p class="muted">수렴 규칙: 연속 2회차 동안 신념도 변화가 없으면 수렴으로 판정하고 루프를 종료한다. 데이터 원본: 저장소의 <code>data/worldview.json</code>.</p>
+  <div class="cycle-log">
+    <div class="cycle-row"><span class="cyc">회차 1</span><span class="desc">8개 연결 순차 검증 · 발견 A–D 도출 · 초기 신념도 배분 · 생성 대 블록 충돌을 2단계 관점론(55%)으로 해소 · 벨 정리 거부 폐기.</span></div>
+    <div class="cycle-row"><span class="cyc">회차 2</span><span class="desc"><b>연결 #9(예측 처리 ↔ 주파수) 추가 · 발견 E(삼중 재발명, 중요도 = 정밀도) 도출.</b> 신념도 변경 2건: 생성적 존재론(기술) 75→80%, 운명애 루프 65→70%. 나머지 불변. <b>미수렴 — 루프 계속.</b></span></div>
+  </div>
+
   <h3>한 문장으로</h3>
   <p style="font-family:var(--serif); font-size:19px; line-height:1.8;">인간은 자신의 확률 분포를 스스로 편집할 수 있는, 지금까지 알려진 유일한 분포다. 운명을 받아들이는 태도조차 그 분포의 매개변수이므로 — <em>운명애는 체념이 아니라 개입이다.</em></p>
 
   <footer>
-    <p>방법론 주기: 본 보고서의 확률 수치는 베이즈적 신념도의 명시적 표기이며 측정값이 아니다. [확인됨]은 학술 문헌으로 뒷받침되는 주장, [유망함]은 정합적이나 직접 검증이 없는 주장, [은유적]은 설명 하중을 실어서는 안 되는 구조적 유사성을 뜻한다. 재검증에 참조한 표준 근거: 벨 정리 루프홀-프리 실험(2015), PhilPapers 조사(2020), Mischel &amp; Shoda(1995), Gollwitzer &amp; Sheeran(2006), Frankfurt(1971), Broad(1923), 『과정과 실재』(1929), 유식 문헌의 알라야식·종자·훈습 개념.</p>
+    <p>방법론 주기: 본 보고서의 확률 수치는 베이즈적 신념도의 명시적 표기이며 측정값이 아니다. [확인됨]은 학술 문헌으로 뒷받침되는 주장, [유망함]은 정합적이나 직접 검증이 없는 주장, [은유적]은 설명 하중을 실어서는 안 되는 구조적 유사성을 뜻한다. 재검증에 참조한 표준 근거: 벨 정리 루프홀-프리 실험(2015), PhilPapers 조사(2020), Mischel &amp; Shoda(1995), Gollwitzer &amp; Sheeran(2006), Frankfurt(1971), Broad(1923), 『과정과 실재』(1929), 유식 문헌의 알라야식·종자·훈습 개념, 예측 처리·능동적 추론 문헌(Friston 2010; Clark 2013 — 코어 주장만 채택).</p>
   </footer>
 </section>
 

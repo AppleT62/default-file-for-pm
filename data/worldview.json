@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "시간·차원·운명 세계관 검증 루프",
+    "convergence_rule": "연속 2회차 신념도 변화 없음 → 수렴 판정, 루프 종료",
+    "last_cycle": 2,
+    "converged": false
+  },
+  "credences": {
+    "주파수 = 조건부 확률 분포 (기술로서)": { "value": 90, "history": [{ "cycle": 1, "value": 90 }, { "cycle": 2, "value": 90, "note": "삼중 재발명 확인으로 상향 압력 있으나 90% 상한 유지(과신 방지 캡)" }] },
+    "분포 편집 기제 (CAPS + 실행 의도)": { "value": 85, "history": [{ "cycle": 1, "value": 85 }, { "cycle": 2, "value": 85 }] },
+    "생성적 존재론 — 기술의 공리": { "value": 80, "history": [{ "cycle": 1, "value": 75 }, { "cycle": 2, "value": 80, "note": "예측 처리(생성모델·정밀도·능동적 추론)가 5번째 독립 사례로 추가" }] },
+    "양립가능론적 자유 (2차 편집)": { "value": 70, "history": [{ "cycle": 1, "value": 70 }, { "cycle": 2, "value": 70 }] },
+    "운명애 루프 (태도 = 분포의 매개변수)": { "value": 70, "history": [{ "cycle": 1, "value": 65 }, { "cycle": 2, "value": 70, "note": "'지각된 중요도 = 정밀도 가중' 대응으로 신경계산적 기제 후보 확보" }] },
+    "시간 2단계 관점론": { "value": 55, "history": [{ "cycle": 1, "value": 55 }, { "cycle": 2, "value": 55 }] },
+    "생성적 존재론 — 형이상학적 실재": { "value": 35, "history": [{ "cycle": 1, "value": 35 }, { "cycle": 2, "value": 35 }] },
+    "성장 블록 우주": { "value": 25, "history": [{ "cycle": 1, "value": 25 }, { "cycle": 2, "value": 25 }] },
+    "시뮬레이션·우주론적 회귀·양자 기제": { "value": 8, "history": [{ "cycle": 1, "value": 8 }, { "cycle": 2, "value": 8 }] }
+  },
+  "connections": [
+    { "id": 1, "name": "화이트헤드 실재적 계기 ↔ 주파수", "verdict": "유망함", "cycle_added": 1 },
+    { "id": 2, "name": "범심론 → 벨 정리 우회", "verdict": "불성립", "cycle_added": 1 },
+    { "id": 3, "name": "블록 우주 ↔ 경로 의존성", "verdict": "유망함", "cycle_added": 1 },
+    { "id": 4, "name": "영원회귀 ↔ 블록 우주", "verdict": "실존적 유망 / 우주론 은유", "cycle_added": 1 },
+    { "id": 5, "name": "연기 ↔ 경로 의존 ↔ 카르마", "verdict": "확인됨", "cycle_added": 1 },
+    { "id": 6, "name": "절차적 생성 ↔ 현실화", "verdict": "은유적", "cycle_added": 1 },
+    { "id": 7, "name": "GFP 폐기 → CAPS 채택", "verdict": "확인됨", "cycle_added": 1 },
+    { "id": 8, "name": "스토아 ↔ ACT ↔ 중요도 낮추기", "verdict": "확인됨(계보) / 유망함(기제)", "cycle_added": 1 },
+    { "id": 9, "name": "예측 처리·자유에너지 원리 ↔ 주파수", "verdict": "유망함", "cycle_added": 2 }
+  ],
+  "discoveries": [
+    { "id": "A", "name": "객체적 불멸성 = 블록의 재료 (생성 대 블록 해소)", "cycle": 1 },
+    { "id": "B", "name": "자유 = 분포의 2차 편집 (프랑크푸르트 ↔ CAPS)", "cycle": 1 },
+    { "id": "C", "name": "운명애 루프 — 태도는 분포의 매개변수", "cycle": 1 },
+    { "id": "D", "name": "생성적 존재론 — 기술의 공리로 채택, 인과 독해 차단", "cycle": 1 },
+    { "id": "E", "name": "삼중 재발명(vāsanā·CAPS·베이즈 사전분포) + 중요도 = 정밀도 가중", "cycle": 2 }
+  ],
+  "cycle_log": [
+    { "cycle": 1, "date": "2026-07-06", "summary": "8개 연결 순차 검증, 발견 A–D 도출, 초기 신념도 배분. 생성 대 블록 충돌을 2단계 관점론(55%)으로 해소." },
+    { "cycle": 2, "date": "2026-07-06", "summary": "연결 #9(예측 처리 ↔ 주파수) 추가 검증, 발견 E 도출. 생성적 존재론(기술) 75→80%, 운명애 루프 65→70% 상향. 나머지 불변." }
+  ]
+}
