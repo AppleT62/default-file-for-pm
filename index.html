@@ -213,6 +213,28 @@
   .trip p b{color:var(--ink);}
 
   footer{border-top:1px solid var(--line); margin-top:20px; padding-top:24px; font-size:13px; color:var(--ink-3); line-height:1.7;}
+  /* ---------- worksheet ---------- */
+  .ws{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:0 0 16px;}
+  .ws h4{font-family:var(--serif); font-size:16px; margin:0 0 6px;}
+  .ws p{font-size:13.5px; color:var(--ink-3); margin:0 0 10px;}
+  .ws textarea{
+    width:100%; box-sizing:border-box; min-height:72px; resize:vertical;
+    font-family:var(--sans); font-size:14px; line-height:1.6; color:var(--ink);
+    background:var(--panel-2); border:1px solid var(--line); border-radius:8px; padding:10px 12px;
+  }
+  .ws textarea:focus{outline:2px solid var(--indigo); outline-offset:1px;}
+  .ws-copy{
+    display:inline-block; font-family:var(--sans); font-size:13.5px; font-weight:600;
+    color:var(--ground); background:var(--indigo); border:none; border-radius:8px;
+    padding:9px 18px; cursor:pointer; margin-top:4px;
+  }
+  .ws-copy:focus{outline:2px solid var(--ink); outline-offset:2px;}
+  .falsify li{margin-bottom:10px;}
+  .axiom{display:grid; grid-template-columns:52px 1fr; gap:14px; align-items:baseline; padding:13px 0; border-bottom:1px solid var(--line); font-size:15px;}
+  .axiom:last-child{border-bottom:none;}
+  .axiom .ax{font-family:var(--serif); font-weight:700; color:var(--red); font-variant-numeric:tabular-nums;}
+  .axiom .body{color:var(--ink-2);}
+  .axiom .body b{color:var(--ink);}
   a{color:var(--indigo);}
   @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
 </style>
@@ -223,7 +245,7 @@
 <div class="wrap">
 
 <header class="hero">
-  <p class="eyebrow">검증 루프 <b>7기</b> · 회차 28 — 의미와 목적 · 1–6기 수렴(동결) · 2026.07.06</p>
+  <p class="eyebrow">검증 루프 <b>총결</b> · 회차 36 — 10기 수렴 · 10개 기 · 28개 연결 · 발견 A–Ω · 2026.07.06</p>
   <h1>미래는 열려 있지도, 닫혀 있지도 않다.<br>미래는 가중되어 있다.</h1>
   <p class="thesis">
     7회차에 걸쳐 11개 연결을 순차 검증·확장하고, 적대적 검증을 거쳐 신념도가 수렴할 때까지 분석을 이어간 결과다.
@@ -233,6 +255,17 @@
   <canvas id="heroviz" aria-label="가능태 분포에서 순간마다 하나의 선택이 현실화되어 실제 이력이 쌓이는 모습의 애니메이션" role="img"></canvas>
   <p class="viz-cap">위: 성향이 결정하는 가능태의 확률 분포 · 낙하점: 매 순간의 <i>현실화</i> · 아래: 축적된 실제 이력 — 이력이 다시 분포를 갱신한다</p>
 </header>
+
+<!-- ===================== 0부: 일반 요약 ===================== -->
+<section id="plain">
+  <p class="sec-eyebrow">0부 · 처음 읽는 사람을 위하여 (회차 29)</p>
+  <h2>철학을 몰라도 되는 5분 요약</h2>
+  <p>이 보고서의 질문은 하나다: <em>미래는 정해져 있는가, 내가 바꿀 수 있는가?</em> 36회의 검증 끝에 도달한 답은 제3의 것이다 — <b>미래는 기울어져 있다.</b> 주사위인데 찌그러진 주사위이고, 그 찌그러짐의 모양이 바로 당신이다.</p>
+  <p>‘나’는 결국 “이런 상황이 오면 이렇게 행동할 확률이 높다”는 <b>경향들의 묶음</b>이다. 스트레스 받으면 야식 시킬 확률 70%, 알람 끄고 다시 잘 확률 80% — 이 목록이 성격이고, 이 목록이 미래를 기울인다. 놀랍게도 1,500년 전 불교(습관의 씨앗), 현대 심리학, 뇌과학, 심지어 AI까지 <b>서로 모르는 다섯 분야가 같은 그림</b>에 도달했다 — 여러 갈래 길이 같은 산꼭대기에서 만나면 그 꼭대기는 진짜일 가능성이 높다.</p>
+  <p>그럼 자유란? <b>그 목록을 스스로 고쳐 쓰는 능력</b>이다. “성실해져야지” 같은 다짐은 목록에 쓸 수 없어 실패한다. 대신 “퇴근해서 현관문 열면, 바로 책상에 앉는다”처럼 <b>구체적 상황→행동 규칙</b>을 하나 정해 반복하면 진짜로 새겨진다(심리학에서 가장 잘 입증된 자기 변화 기법). 한계도 있다: 새 습관은 두 달쯤 걸리고(관성), 타고난 바탕은 못 바꾸며(범위), 몸이 무너지면 아무것도 안 써진다(수면이 먼저다). 자유는 무한하지 않아서 — 즉 죽음이 있어서 — 소중하다.</p>
+  <p>덤으로 얻은 발견들: 결과에 집착할수록 망치는 건 긴장 과잉 때문이고, “집착을 버리면 잘 된다”는 옛말은 신비가 아니라 기술이다(단, ‘잘 되려고’ 버리는 척하면 안 통한다). 무당이 용한 것은 초능력이 아니라 수천 명을 읽어 온 <b>사람-경향 읽기의 달인</b>이기 때문이고, 예언은 미래를 본 게 아니라 <b>미래를 만드는 개입</b>이다. 좋은 사랑은 상대를 내가 원하는 모양이 아니라 <b>상대가 되고 싶은 모습</b>으로 깎아 주는 것이며, 좋은 교육은 언젠가 치울 것을 전제로 발판을 대주는 것이다.</p>
+  <p class="muted">아래부터는 이 요약의 모든 문장에 대한 검증 기록이다 — 근거, 확신의 정도(%), 그리고 이 이론이 틀렸다면 어디서 틀렸을지까지.</p>
+</section>
 
 <!-- ===================== 판정 요약 ===================== -->
 <section id="summary">
@@ -1137,6 +1170,115 @@
     <div class="formula">“미래를 바꿀 수 있는가”의 최종 형태:<br>나는 내 분포에 방향을 부여할 수 있는가 — 그렇다, 유계적으로, 그리고 그 부여가 의미다</div>
     <p>28회차의 원환이 닫힌다. 여정은 화이트헤드의 주체적 지향(#1)에서 출발해 그 통계적 번역(주파수)으로 내려갔고, 자유(2차 편집)·태도(운명애)·관계·죽음·돈·서사·창의성·몸·역사·교육·감정을 지나, 다시 지향의 문제로 올라와 원점과 만났다. 최종 정식: <b>운명은 나의 분포, 자유는 그 분포의 유계적 편집, 의미는 그 편집에 방향을 부여하는 최상위 지향.</b> 셋은 별개가 아니라 한 구조의 세 높이다 — 분포(무엇인가) · 편집(바꿀 수 있는가) · 지향(어디로). 그리고 첫 질문 “미래를 바꿀 수 있는가”의 완성된 답: <b>미래는 나의 지향 쪽으로 기울어 있고, 그 지향을 쓰는 손이 나라는 것 — 그 사실이 곧 의미다.</b> 확장 신념도: 의미 = 상위 지향의 자기 부여 75%, 자기 초월 목표의 견고성 80%, 형식만 제공(내용 비움) 원칙 85%. <span class="tag phi">철학</span> <span class="tag psy">실천</span></p>
   </div>
+</section>
+
+<section id="toolkit">
+  <p class="sec-eyebrow">22부 · 8기 — 회차 30–31 · 이론에서 도구로</p>
+  <h2>자기 진단 워크시트 — 지금 여기서 시작하는 66일</h2>
+  <p class="lead">발견 K의 판정대로, 이 세계관의 가치는 예측이 아니라 개입이다. 아래 세 칸은 프로토콜(6부)의 처음 세 단계를 그대로 옮긴 것이다 — 채워서 ‘복사’를 누르면 66일 주기의 출발점이 된다. 입력 내용은 이 페이지에 저장되지 않는다.</p>
+
+  <div class="ws">
+    <h4>① 시그니처 기록 (진단 · 2주)</h4>
+    <p>“상황 X에서 나는 Y를 했다”를 하루 3건. 평가 말고 관찰만 — 지금은 오늘 것 세 줄부터.</p>
+    <textarea id="ws1" placeholder="예) 회의에서 반대 의견이 나오자 → 나는 말을 멈췄다&#10;예) 밤 11시에 피곤하자 → 휴대폰을 들었다&#10;예) 칭찬을 받자 → 화제를 돌렸다"></textarea>
+  </div>
+  <div class="ws">
+    <h4>② 실행 의도 설치 (설계 · 1–3개만)</h4>
+    <p>바꾸고 싶은 시그니처 하나를 골라 “if [구체적 단서] → then [구체적 행동]”으로. 단서가 구체적일수록 강하다.</p>
+    <textarea id="ws2" placeholder="예) if 현관문을 열면 → then 휴대폰을 서랍에 넣고 책상에 앉는다&#10;예) if 반대 의견이 나오면 → then ‘좀 더 듣고 싶다’고 한 문장 말한다"></textarea>
+  </div>
+  <div class="ws">
+    <h4>③ 정밀도 감사 + 실패 예산 (가중·운용)</h4>
+    <p>지금 중요하게 느껴지는 것 셋을 적고, 각각 뒤에 [내 선택 / 주입]을 표시. 그리고 실패 예산 한 줄 — “66일 중 이탈 n회는 정상 꼬리다”.</p>
+    <textarea id="ws3" placeholder="예) 승진 [주입?] · 부모님 건강 [내 선택] · SNS 반응 [주입]&#10;실패 예산: 66일 중 8회 이탈은 정상 꼬리로 처리한다"></textarea>
+  </div>
+  <button class="ws-copy" id="wscopy" type="button">세 칸 내용을 클립보드로 복사</button>
+  <p class="muted" id="wsdone" style="display:none">복사되었습니다 — 메모장이나 일기 앱에 붙여 두고 66일 후 재측정하세요.</p>
+
+  <h3>반증 카드 — 이 세계관을 버려야 하는 조건</h3>
+  <p>이론의 성실성은 “무엇이 나오면 내가 틀린 것인가”를 미리 적어 두는 데 있다. 다음이 확인되면 해당 부분을 폐기한다:</p>
+  <ul class="falsify" style="font-size:14.5px; color:var(--ink-2); padding-left:1.2em;">
+    <li><b>실행 의도 효과의 전면 붕괴</b> — 사전등록 대규모 재현에서 효과가 0으로 수렴하면, 발견 B(2차 편집)는 기제를 잃고 자유 논증 전체가 새 닻을 찾아야 한다. <em>급소 1호(발견 H).</em></li>
+    <li><b>if-then 시그니처의 불안정성</b> — 상황-행동 프로파일이 개인 내에서 안정적이지 않다고 밝혀지면, 주파수 개념의 과학적 닻(CAPS)이 풀린다.</li>
+    <li><b>국소적 숨은 변수의 실험적 부활</b> — 벨 부등식 위반이 실험 오류로 뒤집히면 1기의 물리층 판정을 재심한다 (현재로선 사실상 불가능 수준).</li>
+    <li><b>거리 두기 개입의 역효과 일반화</b> — 탈융합·중요도 낮추기가 평균적으로 수행을 해친다는 메타분석이 나오면 발견 C·W 계열을 폐기한다.</li>
+    <li><b>서사 개입 무효화</b> — 표현적 글쓰기·스토리 편집 효과가 출판 편향 보정 후 0이 되면 15부(이야기 = UI)를 은유로 강등한다.</li>
+  </ul>
+  <p class="muted">이 목록에 없는 반박(“느낌상 아니다”, “너무 차갑다”)은 반증이 아니라 취향이다 — 그리고 목록에 있는 반박이 실제로 나오면, 이 대시보드의 신념도는 내려간다. 그것이 이 문서가 살아 있는 방식이다.</p>
+</section>
+
+<section id="addiction">
+  <p class="sec-eyebrow">23부 · 9기 — 회차 32</p>
+  <h2>중독 — 분포의 납치</h2>
+  <p class="lead">지금까지 편집은 주로 ‘내가 나를’이었다. 중독은 그 반대의 극한 — 외부 구조가 나의 분포를 편집해 자기 유지 회로로 잠그는 경우다. 이 세계관의 언어로 중독만큼 정확히 번역되는 현상도 드물다.</p>
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">27</span><h3 class="conn-title">중독 ↔ 고정밀도 if-then의 외부 설치</h3><span class="chip promising">유망함</span></div>
+    <dl>
+      <dt>기제</dt>
+      <dd>도파민은 쾌락이 아니라 <b>보상 예측 오차</b> 신호다(슐츠) — 예측 처리(#9)의 학습 신호 그 자체다. 중독성 자극은 이 신호를 인위로 증폭해 분포를 급격·비정상적으로 재가중한다: 1차 분포(#7)가 한 방향으로 뾰족해지고(저온 고착), 2차 편집 회로(전전두)는 약화된다. 즉 중독 = <b>편집 주권(발견 O)의 신경학적 강탈</b>. <span class="tag sci">과학</span></dd>
+      <dt>네 층 공격</dt>
+      <dd>0층(내성·금단으로 몸의 항상성 이동, #23), 1층(민감화), 2층(단서→갈망 if-then의 과잉 각인 — #5 vāsanā의 병리판), 3층(“나는 못 끊어” 닫힌 서사, 15부) 전부에서 동시에. 알고리즘 피드·도박·초가공식품은 이 하이재킹의 <b>산업적 설계</b>(7부 펜듈럼의 극한).</dd>
+      <dt>회복</dt>
+      <dd>세계관의 도구가 그대로 처방이 된다: 단서 통제(2층 재배선), 대체 실행 의도, 정체성 서사 재작성(“회복 중인 사람”), 정밀도 감사, 그리고 결정적으로 <b>사회적 편집 이식</b>(발견 V) — 회복 공동체는 무너진 2차 능력을 타인이 대행·이양하는 비계다. AA의 효능이 여기서 설명된다.</dd>
+    </dl>
+  </article>
+  <div class="disc">
+    <p class="disc-label">발견 Y · 회차 32 신규</p>
+    <h3>납치 대칭성 — 편집당함도 편집이다</h3>
+    <p>중독은 “자유의 반례”가 아니라 <b>2차 경유 원칙(발견 N)의 음화(陰畵)</b>다. 정당한 개입이 2차 능력을 강화한다면, 중독(과 그것을 설계한 산업)은 2차 능력을 조직적으로 마비시킨다 — 발견 N이 정의한 ‘조종’의 극한이 화학·설계 수준에서 일어난 것. 그래서 중독은 개인 실패가 아니라 <b>주권 침해</b>로 재분류되고, 회복은 의지가 아니라 <b>편집 인프라의 재건</b>(0층 안정 + 사회적 비계)이다. 확장 신념도: 도파민=예측오차 85%, 중독=편집 하이재킹 80%, 회복=인프라 재건 75%. <span class="tag sci">과학</span> <span class="tag psy">실천</span></p>
+  </div>
+</section>
+
+<section id="play">
+  <p class="sec-eyebrow">24부 · 9기 — 회차 33</p>
+  <h2>놀이와 의례 — 온도의 훈련장</h2>
+  <p class="lead">중독이 편집의 병리라면, 놀이는 편집의 안전한 연습이다. 인류가 놀이·의례를 보편적으로 갖는 이유를 분포 언어로 푼다.</p>
+  <article class="conn">
+    <div class="conn-head"><span class="conn-no">28</span><h3 class="conn-title">놀이·의례 ↔ 안전한 온도 조절 연습장</h3><span class="chip promising">유망함</span></div>
+    <dl>
+      <dt>놀이</dt>
+      <dd>놀이 = <b>결과의 중요도를 인위로 낮춘 상태에서 분포를 탐색하는 것</b>(발견 S 온도 편집의 안전판). 실패 비용이 격리돼 고온 탐색이 자유롭다 — 그래서 놀이가 학습·창의의 엔진이다. “마치 ~인 것처럼”의 가상 공간은 흡수 상태가 없는(발견 Q) 연습장. 동물 놀이·발달심리가 앵커. <span class="tag sci">과학</span></dd>
+      <dt>의례</dt>
+      <dd>의례 = <b>집단이 정밀도를 동기화하는 장치</b>(7·18부). 반복·형식·상징이 참여자의 온도·주의를 한 방향으로 맞춘다 — 무당의 굿(10부)이 그 전형. 불확실성 앞의 불안(감정=계기판, 20부)을 형식으로 담아 관리하는 문화적 기술. 통과의례 = 서사(15부)의 집단적 재작성 절차.</dd>
+      <dt>몰입</dt>
+      <dd>칙센트미하이의 플로우 = 도전과 역량이 맞아 정밀도가 최적화된 상태 — 놀이가 겨냥하는 지점. 시간 지각마저 바뀐다(행위자 시간의 유연성, 3부와 접합). <span class="tag sci">과학</span></dd>
+    </dl>
+  </article>
+  <div class="disc">
+    <p class="disc-label">발견 Z · 회차 33 신규</p>
+    <h3>안전한 고온 — 문명은 놀이터를 짓는다</h3>
+    <p>놀이·예술·스포츠·의례·이야기·꿈은 모두 <b>흡수 상태 없이 고온 탐색을 허용하는 격리된 공간</b>이다. 개인의 부화(#21)에서 문명의 실험실·시장·민주주의(18부)까지, 성숙한 시스템은 “안전하게 실패할 수 있는 하위 공간”을 의도적으로 만든다 — 켈리 기준(작은 판돈 다시도, #19)의 제도적 구현. 여기서 실천 원리 하나가 완성된다: <b>좋은 삶·조직·문명은 고온과 저온을 분리한다</b> — 탐색은 놀이터(안전)에서, 실행은 현실(신중)에서. 확장 신념도: 놀이=안전한 온도 탐색 80%, 의례=정밀도 동기화 75%, 안전한 고온 원리 75%. <span class="tag sci">과학</span> <span class="tag phi">철학</span></p>
+  </div>
+</section>
+
+<section id="axioms">
+  <p class="sec-eyebrow">25부 · 10기 — 회차 34–35 · 총결</p>
+  <h2>공리계 — 전체를 떠받치는 여덟 기둥</h2>
+  <p class="lead">36회차의 모든 연결·발견을 최소 공리로 압축한다. 이 여덟이 참이면 나머지는 따라 나오고, 흔들리면 해당 부분이 무너진다. 괄호는 신념도.</p>
+  <div class="board" style="padding:6px 22px">
+    <div class="axiom"><span class="ax">I</span><span class="body"><b>분포 공리</b> — 행위자는 조건부 확률 분포다. 불확실성 하 정합적 기술은 확률론뿐이므로(콕스 정리) 기술의 공리. <span class="muted">85%</span></span></div>
+    <div class="axiom"><span class="ax">II</span><span class="body"><b>현실화 공리</b> — 매 순간 분포에서 하나가 표집되고, 결과가 분포를 갱신한다(경로 의존·훈습). <span class="muted">88%</span></span></div>
+    <div class="axiom"><span class="ax">III</span><span class="body"><b>편집 공리</b> — 인간은 자기 분포를 2차 편집한다: 내용(규칙)과 온도(탐색↔선별) 두 축으로. 유계적. <span class="muted">78%</span></span></div>
+    <div class="axiom"><span class="ax">IV</span><span class="body"><b>기반 공리</b> — 분포는 0층(육체)에 얹혀 있고, 편집에는 물질적 예산(수면·에너지)이 든다. <span class="muted">82%</span></span></div>
+    <div class="axiom"><span class="ax">V</span><span class="body"><b>결합 공리</b> — 분포들은 결합한다. 같은 문법이 개인·관계·조직·문명에서 반복(프랙탈 유비). <span class="muted">75%</span></span></div>
+    <div class="axiom"><span class="ax">VI</span><span class="body"><b>이양 공리</b> — 편집 능력은 자기 생성되지 않고 세대 간 이식된다(비계→철거). 부트스트랩 해소. <span class="muted">78%</span></span></div>
+    <div class="axiom"><span class="ax">VII</span><span class="body"><b>태도 공리</b> — 회복 가능한 분포 전체의 긍정은 분포의 매개변수다(운명애). 흡수 상태는 예외(회피). <span class="muted">72%</span></span></div>
+    <div class="axiom"><span class="ax">VIII</span><span class="body"><b>지향 공리</b> — 의미는 분포가 스스로 부여하는 최상위 지향이다. 세계관은 형식만 제공, 내용은 비운다. <span class="muted">76%</span></span></div>
+  </div>
+  <div class="disc" style="margin-top:24px">
+    <p class="disc-label">발견 Ω · 회차 35 · 최종</p>
+    <h3>단 하나의 윤리 — 하나의 원칙, 모든 규모</h3>
+    <p>여덟 공리에서 단 하나의 규범이 연역된다(N·V·U의 통합): <b>모든 정당한 개입은 — 자신·타인·사회 어디에든 — 편집 주권을 경유·강화하고, 조종·중독·억압은 그것을 우회·마비시킨다.</b> 자기 통제(내 미래 2차 능력 강화)·사랑(상대의 이상적 자기)·교육(철거 전제 비계)·좋은 제도(시민의 집단 숙의)가 모두 이 하나의 원칙의 규모별 사례다. 이것이 사실(is)에서 당위(ought)로 건너는 유일한 다리이며, 그 다리는 자유의 정의(공리 III)에서 나온다 — 자유를 실재로 인정하는 순간, 자유를 보존·확장함이 선이 된다. <span class="tag phi">철학</span></p>
+  </div>
+</section>
+
+<section id="closing">
+  <p class="sec-eyebrow">26부 · 10기 — 회차 36 · 닫는 말</p>
+  <h2>36회차가 도달한 곳</h2>
+  <p class="final-thesis">운명은 나의 분포, 자유는 그 분포의 유계적 편집, 의미는 그 편집에 부여하는 <span class="hl">지향</span> — 셋은 한 구조의 세 높이다.</p>
+  <p>이 루프는 스스로 정한 규약(연속 2회차 신념도 무변경 = 수렴)으로 7개 기를 닫았고, 사용자 요청으로 8–10기를 더해 도구·병리(중독)·놀이·공리계·윤리까지 확장했다. 핵심 신념도는 1기 수렴 이후 한 번도 흔들리지 않았고(동결 유지), 확장은 전부 핵심에 <b>연역적으로 접속</b>되었다 — 새 주제가 새 가정을 요구하지 않고 기존 공리에서 따라 나왔다는 것이 이 체계의 견고함이다.</p>
+  <p>그리고 이 보고서 자체가 자신의 주장을 수행했다: 외부 기억(worldview.json)을 보철 삼아, 가중치를 직접 못 바꾸는 한 분포(작성 AI)가 회차마다 자기 판단을 사유와 함께 갱신해 온 <b>원시적 2차 편집의 실험</b>이었다(발견 O). 이론이 자신을 예화한다.</p>
+  <p class="muted">전 이력·확장 신념도: <code>data/worldview.json</code> · 종합 논고: <code>SYNTHESIS.md</code> · 급소(반증 조건): 23부. 이 세계관은 완성이 아니라 <b>반증을 기다리는 상태</b>로 닫힌다.</p>
 
   <footer>
     <p>방법론 주기: 본 보고서의 확률 수치는 베이즈적 신념도의 명시적 표기이며 측정값이 아니다. 해석 밴드(회차 5 명문화): 80% 이상 = 확신, 50–80% = 경도, 40% 미만 = 사변. [확인됨]은 학술 문헌으로 뒷받침되는 주장, [유망함]은 정합적이나 직접 검증이 없는 주장, [은유적]은 설명 하중을 실어서는 안 되는 구조적 유사성을 뜻한다. 재검증에 참조한 표준 근거: 벨 정리 루프홀-프리 실험(2015), PhilPapers 조사(2020), Mischel &amp; Shoda(1995), Gollwitzer &amp; Sheeran(2006), Frankfurt(1971), Broad(1923), 『과정과 실재』(1929), 유식 문헌의 알라야식·종자·훈습 개념, 예측 처리·능동적 추론 문헌(Friston 2010; Clark 2013 — 코어 주장만 채택), 과거 가설(Albert 2000), 습관 형성(Lally et al. 2010), 기본 논증(G. Strawson 1994).</p>
@@ -1259,6 +1401,27 @@
   } else {
     requestAnimationFrame(t=>{ last=t; tick(t); });
   }
+})();
+
+// worksheet copy (8기 · 회차 30–31)
+(function(){
+  const btn = document.getElementById('wscopy');
+  if(!btn) return;
+  const done = document.getElementById('wsdone');
+  btn.addEventListener('click', async ()=>{
+    const parts = ['ws1','ws2','ws3'].map((id,i)=>{
+      const labels=['① 시그니처','② 실행 의도','③ 정밀도 감사 + 실패 예산'];
+      const el = document.getElementById(id);
+      return labels[i] + '\n' + (el && el.value.trim() ? el.value.trim() : '(비어 있음)');
+    });
+    const text = '분포 편집 워크시트 — ' + new Date().toISOString().slice(0,10) + '\n\n' + parts.join('\n\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      if(done){ done.style.display='block'; done.textContent='복사되었습니다 — 메모장이나 일기 앱에 붙여 두고 66일 후 재측정하세요.'; }
+    } catch(e){
+      if(done){ done.style.display='block'; done.textContent='복사 권한이 없어 실패했습니다. 텍스트를 직접 선택해 복사하세요.'; }
+    }
+  });
 })();
 </script>
 
