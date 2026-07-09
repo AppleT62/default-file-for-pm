@@ -15,7 +15,7 @@
 | [`PROTOCOL.md`](PROTOCOL.md) | **66일 실전 워크시트** — 이론을 자기 삶에서 검증하는 기록 템플릿 |
 | [`RED-TEAM.md`](RED-TEAM.md) | **독립 검증 프로토콜** — 다른 세션에서 이 세계관을 반증 시도하는 프롬프트 |
 | [`EXPERIMENTS.md`](EXPERIMENTS.md) | **고유 명제 실험 설계** — 반증 카드 2장의 사전등록 실험화 + 66일 자기 실측(ABA) 설계 |
-| [`data/worldview.json`](data/worldview.json) | **데이터 원본** — 신념도·연결 41개·발견 33개(A–Ω₆)·공리 8개·회차 로그 53행·red-team 반영 이력(1·2차) 전체 |
+| [`data/worldview.json`](data/worldview.json) | **데이터 원본** — 신념도·연결 43개·발견 34개(A–Ω₇)·공리 8개·회차 로그 53행·red-team 반영 이력(1·2차) 전체 |
 
 ## 현재 상태 (회차 53 · 판정 외주 가동 — 열린 문제 7건 닫힘)
 
