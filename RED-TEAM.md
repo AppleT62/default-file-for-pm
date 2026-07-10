@@ -7,8 +7,8 @@
 ## 사용법
 
 1. **접근 경로**: 새 세션이 GitHub(`AppleT62/default-file-for-pm`)를 읽을 수 있으면
-   **최신 회차 커밋이 있는 현행 브랜치**를 대상으로 준다(회차 58 현재
-   `claude/folder-contents-review-rf2iwq`; 병합 후라면 기본 브랜치 최신). 안 되면
+   **최신 회차 커밋이 있는 브랜치**를 대상으로 준다(회차 62 현재 **기본 브랜치 `main`
+   최신** — 각 회차는 검증 후 main에 병합된다). 안 되면
    `SYNTHESIS.md`와 `data/worldview.json` 내용을 붙여넣는다.
    **회차 58 정정(외부 보고서 #2가 실제로 겪은 문제)**: 이 항이 구판 브랜치
    (`claude/time-dimension-destiny-kdl77t`)를 하드코딩하고 있어 외부 감사가 구판
@@ -34,8 +34,8 @@
 칭찬·요약·공감은 금지. 오직 공격과 그 근거만 제출하라.
 
 [대상]
-GitHub: AppleT62/default-file-for-pm — 최신 회차 커밋이 있는 현행 브랜치
-(회차 58 현재 claude/folder-contents-review-rf2iwq; 시작 전 meta.last_cycle 확인)
+GitHub: AppleT62/default-file-for-pm — 최신 회차 커밋이 있는 브랜치
+(회차 62 현재 기본 브랜치 main 최신; 시작 전 meta.last_cycle 확인)
 - SYNTHESIS.md (종합 논고), data/worldview.json (신념도·연결·발견·공리 전체)
 접근이 안 되면 사용자가 붙여넣은 내용을 대상으로 삼는다.
 
