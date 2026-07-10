@@ -17,6 +17,7 @@
 | [`EXPERIMENTS.md`](EXPERIMENTS.md) | **고유 명제 실험 설계** — 반증 카드 2장의 사전등록 실험화 + 66일 자기 실측(ABA) 설계 |
 | [`data/worldview.json`](data/worldview.json) | **데이터 원본** — 신념도·연결 43개·발견 34개(A–Ω₇)·공리 7개+기제 가설 M1·회차 로그 58행·red-team 반영 이력(1·2차+외부 보고서 #2) 전체 |
 | [`redteam-archive/`](redteam-archive/) | **판정문·보고서 원본 보관소** — 외부 red-team 보고서 #2 원문(원문 보존 의무 첫 이행) |
+| [`external-redteam/`](external-redteam/) | **외부 모델 red-team 키트** — 다른 기반 모델(GPT·Gemini 등)에서 감사를 실행해 열린 문제 #18(모델 독립성)을 닫기 위한 프롬프트 + 회차 58 스냅샷 |
 
 ## 현재 상태 (회차 58 · 외부 보고서 #2 반영 — 실측 대기 상태 유지)
 
