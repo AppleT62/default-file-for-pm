@@ -170,11 +170,30 @@
   }
 
   /* ---------- network ---------- */
-  figure.network{margin:30px 0 0; overflow-x:auto;}
-  figure.network svg{display:block; min-width:640px; width:100%; height:auto;}
+  .net-controls{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 0; padding:12px 14px; background:var(--panel-2); border:1px solid var(--line); border-radius:10px;}
+  .net-play{font:inherit; font-size:13px; font-weight:600; color:var(--indigo); background:var(--indigo-tint); border:1px solid var(--line-2); border-radius:6px; padding:6px 12px; cursor:pointer;}
+  .net-play:hover{filter:brightness(0.97);}
+  .net-play[aria-pressed="true"]{color:var(--red); background:var(--red-tint);}
+  #netSlider{flex:1 1 220px; min-width:160px; accent-color:var(--indigo);}
+  .net-cyc-label{font-size:13px; color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .net-cyc-label b{color:var(--ink); font-weight:700;}
+  figure.network{margin:16px 0 0; overflow-x:auto;}
+  figure.network svg{display:block; min-width:760px; width:100%; height:auto;}
+  .net-zone-label{font-size:12.5px; font-weight:700; fill:var(--ink-2); letter-spacing:.02em;}
+  .net-node{cursor:pointer;}
+  .net-node circle{stroke:var(--panel); stroke-width:1.6; transition:opacity .35s ease, transform .25s ease;}
+  .net-node text{fill:var(--panel); font-size:10.5px; font-weight:700; text-anchor:middle; dominant-baseline:central; pointer-events:none;}
+  .net-node:hover circle{transform:scale(1.18); transform-box:fill-box; transform-origin:center;}
+  .net-node.net-hidden{opacity:0; pointer-events:none;}
   .net-legend{display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin:14px 0 0; padding:0 4px;}
   .net-legend span{display:inline-flex; align-items:center; gap:7px;}
   .net-legend i{width:10px; height:10px; border-radius:50%; display:inline-block;}
+  .net-detail{position:relative; margin:16px 4px 0; padding:14px 40px 14px 16px; background:var(--panel-2); border:1px solid var(--line-2); border-radius:10px;}
+  .net-detail-close{position:absolute; top:10px; right:12px; font-size:18px; line-height:1; background:none; border:none; color:var(--ink-3); cursor:pointer; padding:4px;}
+  .net-detail-no{font-family:var(--serif); font-size:13px; color:var(--ink-3); margin:0 0 4px; font-variant-numeric:tabular-nums;}
+  .net-detail-name{margin:0 0 6px; font-size:16px; color:var(--ink);}
+  .net-detail-verdict{margin:0 0 4px; font-size:13.5px; color:var(--ink-2);}
+  .net-detail-meta{margin:0; font-size:12.5px; color:var(--ink-3);}
 
   /* ---------- resolution table ---------- */
   .options{display:flex; flex-direction:column; gap:14px; margin:26px 0 10px;}
@@ -572,98 +591,31 @@
 <div class="wide">
 <section id="network">
   <p class="sec-eyebrow">4부 · 개념 네트워크</p>
-  <h2>모든 것이 어디로 모이는가</h2>
-  <p class="lead" style="max-width:44em">검증을 통과한 개념만 남긴 지도다. 굵은 실선은 확인된 연결, 가는 실선은 유망한 연결, 점선은 구조적 동형(은유 한도), × 표시는 이번 검증에서 절단된 연결이다. 중심 허브가 ‘주파수 = 조건부 확률 분포’라는 사실 자체가 결론의 일부다.</p>
+  <h2>44개 연결이 자란 자리</h2>
+  <p class="lead" style="max-width:48em">장부(<code>data/worldview.json</code>)의 연결 44개를 6개 주제 구역으로 묶어 직접 그린 지도다 — 손으로 그린 그림이 아니라 데이터에서 매 회차 자동으로 자란다. 슬라이더로 회차를 옮기면 그 시점까지 등재된 연결만 나타난다. 원은 판정 등급(범례 참조), 숫자는 연결 번호 — 클릭하면 아래에 전문이 뜬다.</p>
 
-  <figure class="network" role="img" aria-label="주파수를 중심 허브로 한 개념 연결망. 화이트헤드, 블록 우주, 영원회귀, 유식불교, CAPS, 실행 의도 등이 주파수로 수렴하고, 범심론에서 벨의 정리로 가는 연결은 절단되어 있다.">
-    <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
-      <!-- edges -->
-      <g stroke="var(--line-2)" fill="none">
-        <!-- confirmed: thick -->
-        <path d="M450,283 L207,415" stroke="var(--plum)" stroke-width="2.6" opacity=".75"/>   <!-- vasana -->
-        <path d="M450,283 L180,320" stroke="var(--plum)" stroke-width="2.6" opacity=".75"/>   <!-- 연기 -->
-        <path d="M450,283 L685,395" stroke="var(--ochre)" stroke-width="2.6" opacity=".75"/>  <!-- CAPS -->
-        <path d="M685,405 L560,468" stroke="var(--ochre)" stroke-width="2.6" opacity=".75"/>  <!-- CAPS-실행의도 -->
-        <path d="M450,283 L560,462" stroke="var(--ochre)" stroke-width="1.4" opacity=".7"/>   <!-- 주파수-실행의도 -->
-        <!-- promising: thin -->
-        <path d="M450,283 L215,150" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- whitehead -->
-        <path d="M450,283 L640,120" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block -->
-        <path d="M215,143 L633,116" stroke="var(--red)" stroke-width="1.6" opacity=".85"/>    <!-- 발견A -->
-        <path d="M645,127 L745,225" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block-영원회귀 -->
-        <path d="M748,238 L748,340" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- 영원회귀-중요도 (발견C) -->
-        <path d="M740,352 L698,392" stroke="var(--ochre)" stroke-width="1.4" opacity=".8"/>   <!-- 중요도-CAPS쪽 -->
-        <path d="M450,283 L748,347" stroke="var(--ochre)" stroke-width="1.4" opacity=".55"/>  <!-- 주파수-중요도 -->
-        <path d="M455,275 L590,205" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- 주파수-양립가능론? node at 595,200 -->
-        <path d="M640,127 L600,196" stroke="var(--indigo)" stroke-width="1.4" opacity=".8"/>  <!-- block-양립 -->
-        <path d="M597,208 L563,458" stroke="var(--indigo)" stroke-width="1.4" opacity=".6"/>  <!-- 양립-실행의도 (발견B) -->
-        <!-- isomorphism only: dashed -->
-        <path d="M450,283 L300,225" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="5 5" opacity=".8"/> <!-- born -->
-        <path d="M300,218 L218,155" stroke="var(--teal)" stroke-width="1.2" stroke-dasharray="5 5" opacity=".6"/> <!-- born-whitehead -->
-        <!-- severed -->
-        <path d="M175,468 L295,470" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="3 4" opacity=".8"/>
-        <!-- cycle 2: predictive processing -->
-        <path d="M450,283 L390,428" stroke="var(--teal)" stroke-width="1.6" opacity=".85"/>
-        <path d="M378,437 L212,421" stroke="var(--teal)" stroke-width="1.2" stroke-dasharray="5 5" opacity=".6"/>
-        <!-- cycle 3: thermodynamic arrow -->
-        <path d="M478,60 L636,113" stroke="var(--teal)" stroke-width="1.6" opacity=".85"/>
-        <path d="M468,63 L392,428" stroke="var(--teal)" stroke-width="1.2" opacity=".5"/>
-      </g>
-      <!-- severed X mark -->
-      <g stroke="var(--red)" stroke-width="2.4" opacity=".95">
-        <path d="M229,463 L243,477"/><path d="M243,463 L229,477"/>
-      </g>
+  <div class="net-controls">
+    <button type="button" id="netPlay" class="net-play" aria-label="회차 1부터 자동 재생">▶ 회차대로 재생</button>
+    <input type="range" id="netSlider" min="1" max="82" value="82" step="1" aria-label="회차 슬라이더">
+    <span class="net-cyc-label">회차 <b id="netCycVal">82</b> 까지 · <span id="netCount">44</span>개 연결</span>
+  </div>
 
-      <!-- edge labels -->
-      <g font-size="11" fill="var(--ink-3)">
-        <text x="418" y="112" text-anchor="middle" fill="var(--red)">발견 A · 객체적 불멸성</text>
-        <text x="762" y="292" fill="var(--red)">발견 C</text>
-        <text x="545" y="345" fill="var(--red)">발견 B · 2차 편집</text>
-        <text x="236" y="452" text-anchor="middle" fill="var(--red)">불성립 (#2)</text>
-        <text x="352" y="262" fill="var(--ink-3)">동형만</text>
-      </g>
-
-      <!-- hub -->
-      <g>
-        <circle cx="450" cy="283" r="46" fill="var(--panel)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="450" cy="283" r="52" fill="none" stroke="var(--red)" stroke-width="1.2" stroke-dasharray="2 4"/>
-        <text x="450" y="277" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">주파수</text>
-        <text x="450" y="295" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">조건부 확률 분포</text>
-      </g>
-
-      <!-- philosophy nodes (indigo) -->
-      <g font-size="12.5" font-weight="600">
-        <g><circle cx="215" cy="143" r="9" fill="var(--indigo)"/><text x="215" y="122" text-anchor="middle" fill="var(--ink)">화이트헤드 과정철학</text></g>
-        <g><circle cx="640" cy="120" r="9" fill="var(--indigo)"/><text x="640" y="99" text-anchor="middle" fill="var(--ink)">블록 우주 (B이론)</text></g>
-        <g><circle cx="750" cy="230" r="9" fill="var(--indigo)"/><text x="768" y="222" text-anchor="start" fill="var(--ink)">영원회귀 · 운명애</text></g>
-        <g><circle cx="595" cy="202" r="9" fill="var(--indigo)"/><text x="588" y="185" text-anchor="middle" fill="var(--ink)">양립가능론 (2차 의지)</text></g>
-      </g>
-      <!-- eastern nodes (plum) -->
-      <g font-size="12.5" font-weight="600">
-        <g><circle cx="175" cy="318" r="9" fill="var(--plum)"/><text x="160" y="300" text-anchor="middle" fill="var(--ink)">연기 · 카르마</text></g>
-        <g><circle cx="200" cy="418" r="9" fill="var(--plum)"/><text x="196" y="404" text-anchor="middle" fill="var(--ink)">vāsanā · 알라야식</text></g>
-      </g>
-      <!-- science nodes (teal) -->
-      <g font-size="12.5" font-weight="600">
-        <g><circle cx="300" cy="222" r="9" fill="var(--teal)"/><text x="288" y="205" text-anchor="middle" fill="var(--ink)">보른 규칙 (양자)</text></g>
-        <g><circle cx="385" cy="437" r="9" fill="var(--teal)"/><text x="385" y="460" text-anchor="middle" fill="var(--ink)">예측 처리 (베이즈 뇌)</text><text x="408" y="370" font-size="11" font-weight="400" fill="var(--red)">발견 E · 회차 2</text></g>
-        <g><circle cx="470" cy="57" r="9" fill="var(--teal)"/><text x="452" y="40" text-anchor="middle" fill="var(--ink)">열역학적 화살 (과거 가설)</text><text x="530" y="75" font-size="11" font-weight="400" fill="var(--ink-3)">#10 · 회차 3</text></g>
-        <g><circle cx="160" cy="468" r="9" fill="var(--teal)"/><text x="150" y="493" text-anchor="middle" fill="var(--ink)">벨의 정리</text></g>
-        <g><circle cx="310" cy="470" r="9" fill="var(--gray)" opacity=".8"/><text x="330" y="475" text-anchor="start" fill="var(--ink-3)">범심론 → 숨은 변수 (폐기)</text></g>
-      </g>
-      <!-- psych nodes (ochre) -->
-      <g font-size="12.5" font-weight="600">
-        <g><circle cx="690" cy="400" r="9" fill="var(--ochre)"/><text x="712" y="405" text-anchor="start" fill="var(--ink)">CAPS 모델</text></g>
-        <g><circle cx="560" cy="465" r="9" fill="var(--ochre)"/><text x="560" y="492" text-anchor="middle" fill="var(--ink)">실행 의도</text></g>
-        <g><circle cx="748" cy="347" r="9" fill="var(--ochre)"/><text x="770" y="352" text-anchor="start" fill="var(--ink)">중요도 낮추기</text></g>
-      </g>
-    </svg>
+  <figure class="network" role="img" aria-label="worldview.json 연결 44개를 6개 주제 구역(물리·형이상학, 불교·동양철학, 형식·행동과학, 독일철학 3인, 삶의 현상, 사회 스케일)으로 묶어 회차별로 그리는 데이터 기반 지도">
+    <svg id="netviz" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif"></svg>
   </figure>
   <div class="net-legend">
-    <span><i style="background:var(--indigo)"></i> 철학 (서양)</span>
-    <span><i style="background:var(--plum)"></i> 불교 · 유식</span>
-    <span><i style="background:var(--teal)"></i> 물리 · 과학</span>
-    <span><i style="background:var(--ochre)"></i> 심리 · 실천</span>
-    <span><i style="background:var(--red)"></i> 이번 분석의 발견 지점</span>
+    <span><i style="background:var(--green)"></i> 확인됨</span>
+    <span><i style="background:var(--indigo)"></i> 유망함</span>
+    <span><i style="background:var(--plum)"></i> 차용(지반 단절 명시)</span>
+    <span><i style="background:var(--gray)"></i> 은유·동형(하중 0)</span>
+    <span><i style="background:var(--red)"></i> 불성립(절단)</span>
+  </div>
+  <div id="netDetail" class="net-detail" hidden>
+    <button type="button" id="netDetailClose" class="net-detail-close" aria-label="닫기">×</button>
+    <p class="net-detail-no"></p>
+    <h4 class="net-detail-name"></h4>
+    <p class="net-detail-verdict"></p>
+    <p class="net-detail-meta"></p>
   </div>
 </section>
 </div>
@@ -1697,6 +1649,183 @@
     }
   });
 })();
+</script>
+
+<script>
+// 4부 개념 네트워크 — worldview.json connections 데이터 기반 자동 렌더 (회차 84)
+(function(){
+  const svg = document.getElementById('netviz');
+  if(!svg) return;
+
+  const DATA = [{"id": 1, "name": "화이트헤드 실재적 계기 ↔ 주파수", "verdict": "유망함", "cyc": 1, "cluster": "origin", "tier": "promising"}, {"id": 2, "name": "범심론 → 벨 정리 우회", "verdict": "불성립", "cyc": 1, "cluster": "origin", "tier": "cut"}, {"id": 3, "name": "블록 우주 ↔ 경로 의존성", "verdict": "유망함", "cyc": 1, "cluster": "origin", "tier": "promising"}, {"id": 4, "name": "영원회귀 ↔ 블록 우주", "verdict": "실존적 유망 / 우주론 은유", "cyc": 1, "cluster": "origin", "tier": "promising"}, {"id": 5, "name": "연기 ↔ 경로 의존 ↔ 카르마", "verdict": "확인됨(계보)·유망함(기제)", "cyc": 1, "cluster": "eastern", "tier": "confirmed"}, {"id": 6, "name": "절차적 생성 ↔ 현실화", "verdict": "은유적", "cyc": 1, "cluster": "origin", "tier": "metaphor"}, {"id": 7, "name": "GFP 폐기 → CAPS 채택", "verdict": "확인됨", "cyc": 1, "cluster": "formal", "tier": "confirmed"}, {"id": 8, "name": "스토아 ↔ ACT ↔ 중요도 낮추기", "verdict": "확인됨(계보) / 유망함(기제)", "cyc": 1, "cluster": "formal", "tier": "confirmed"}, {"id": 9, "name": "예측 처리·자유에너지 원리 ↔ 주파수", "verdict": "유망함", "cyc": 2, "cluster": "origin", "tier": "promising"}, {"id": 10, "name": "열역학적 시간의 화살 ↔ 2단계 관점론", "verdict": "유망함", "cyc": 3, "cluster": "origin", "tier": "promising"}, {"id": 11, "name": "무작위성 = 자발성 ↔ 자유 논증 (운의 반론 시험)", "verdict": "정합·무부하 확정", "cyc": 4, "cluster": "origin", "tier": "promising"}, {"id": 12, "name": "세인(Das Man)·펜듈럼 ↔ 결합된 분포들의 어트랙터 (사회적 차원)", "verdict": "유망함", "cyc": 9, "cluster": "social", "tier": "promising"}, {"id": 13, "name": "플리슨 밀도 분포 모델 ↔ 주파수 (4중 재발명 완성)", "verdict": "확인됨", "cyc": 10, "cluster": "formal", "tier": "confirmed"}, {"id": 14, "name": "하이데거의 죽음-지평 ↔ 편집 예산의 유한성 (세인 = 펜듈럼 접합)", "verdict": "차용(존재적 번역 — 지반 단절 명시)", "cyc": 12, "cluster": "social", "tier": "borrowed"}, {"id": 15, "name": "무당의 신점 ↔ 조건부 분포의 숙련된 읽기 + 예언을 통한 편집", "verdict": "유망함 (자연주의 번역)", "cyc": 13, "cluster": "eastern", "tier": "promising"}, {"id": 16, "name": "조종의 경계선 ↔ 2차 경유 원칙 (투명성 테스트)", "verdict": "유망함", "cyc": 14, "cluster": "formal", "tier": "promising"}, {"id": 17, "name": "LLM ↔ 조건부 확률 분포 (문자적 사례, 온도 = 정밀도 역수)", "verdict": "확인됨(수학적 사실: 출력 분포=조건부 분포)·유망함(존재론적 해석: 행위자 주파수로 읽기 — 회차 59 재기술)·유망함(온도=정밀도 역수)", "cyc": 16, "cluster": "formal", "tier": "confirmed"}, {"id": 18, "name": "사랑 ↔ 두 분포의 장기 상호 편집 (미켈란젤로 현상)", "verdict": "확인됨(현상)·유망함(정의 승격)", "cyc": 17, "cluster": "life", "tier": "confirmed"}, {"id": 19, "name": "에르고딕성 ↔ 단일 세계선의 운명 (시간 평균 ≠ 앙상블 평균)", "verdict": "유망함", "cyc": 19, "cluster": "social", "tier": "promising"}, {"id": 20, "name": "내러티브 정체성 ↔ 분포의 압축 코드 (매캐덤스 3층 동형)", "verdict": "유망함", "cyc": 20, "cluster": "social", "tier": "promising"}, {"id": 21, "name": "창의성 ↔ 분포의 온도 조절 (발산 = 고온 샘플링, 수렴 = 저온 선별)", "verdict": "유망함", "cyc": 21, "cluster": "formal", "tier": "promising"}, {"id": 22, "name": "알로스타시스·후성유전 ↔ 분포의 물질적 기반 (몸↔분포 양방향)", "verdict": "유망함", "cyc": 23, "cluster": "life", "tier": "promising"}, {"id": 23, "name": "제도·문명 ↔ 결합 분포의 경로 의존 (락인·중대 국면)", "verdict": "유망함", "cyc": 24, "cluster": "social", "tier": "promising"}, {"id": 24, "name": "양육·교육 ↔ 편집 능력의 이식 (비계·자기결정성)", "verdict": "유망함", "cyc": 25, "cluster": "social", "tier": "promising"}, {"id": 25, "name": "감정 ↔ 예측 오차·정밀도 신호 (구성된 감정+예측 처리)", "verdict": "유망함", "cyc": 27, "cluster": "formal", "tier": "promising"}, {"id": 26, "name": "의미·목적 ↔ 주체적 지향의 자기 부여 (화이트헤드 #1로의 원점 회귀)", "verdict": "유망함", "cyc": 28, "cluster": "life", "tier": "promising"}, {"id": 27, "name": "중독 ↔ 보상예측오차의 하이재킹 (편집 주권의 신경학적 강탈)", "verdict": "유망함", "cyc": 32, "cluster": "life", "tier": "promising"}, {"id": 28, "name": "놀이·의례 ↔ 안전한 온도 조절 연습장", "verdict": "유망함", "cyc": 33, "cluster": "life", "tier": "promising"}, {"id": 29, "name": "트라우마 ↔ 단일 사건의 과잉 각인 (정서적 각성 = 학습률 폭증); 회복 = 맥락 재국소화(재공고화)", "verdict": "유망함", "cyc": 37, "cluster": "life", "tier": "promising"}, {"id": 30, "name": "꿈 ↔ 오프라인 고온 시뮬레이션 (흡수 상태 차단 격리 놀이터)", "verdict": "유망함", "cyc": 38, "cluster": "life", "tier": "promising"}, {"id": 31, "name": "단어·개념 ↔ 분포의 공유 압축 코드 (분산 의미론 = LLM 임베딩 원리)", "verdict": "유망함", "cyc": 39, "cluster": "formal", "tier": "promising"}, {"id": 32, "name": "명상·무아 ↔ 사전분포의 일시적 이완 (자아 = 최상위 사전분포)", "verdict": "유망함", "cyc": 40, "cluster": "life", "tier": "promising"}, {"id": 33, "name": "미적 쾌 ↔ 예측 오차의 최적 곡선 (트라우마↔미 = 같은 축의 양극)", "verdict": "유망함", "cyc": 41, "cluster": "life", "tier": "promising"}, {"id": 34, "name": "의지(쇼펜하우어) ↔ 분포의 동력 항 (0층·1층의 선행 개념)", "verdict": "확인됨(계보)·불성립(기제)", "cyc": 47, "cluster": "german", "tier": "confirmed"}, {"id": 35, "name": "연민(Mitleid) 윤리 ↔ 주권 윤리의 관할 밖 의무", "verdict": "확인됨(간극) — 공리 수정 요구", "cyc": 47, "cluster": "german", "tier": "confirmed"}, {"id": 36, "name": "자기 극복(니체) ↔ 공리 III 2차 편집", "verdict": "확인됨(계보)·유망함(기제)", "cyc": 47, "cluster": "german", "tier": "confirmed"}, {"id": 37, "name": "행위 뒤에 행위자는 없다(니체) ↔ 공리 I 행위자=분포", "verdict": "확인됨(계보)·유망함(기제)", "cyc": 47, "cluster": "german", "tier": "confirmed"}, {"id": 38, "name": "피투성(하이데거) ↔ 기질·세트포인트·부트스트랩", "verdict": "확인됨(계보)·유망함(기제)", "cyc": 47, "cluster": "german", "tier": "confirmed"}, {"id": 39, "name": "기분·처해 있음(하이데거) ↔ 발견 W 계기판 원리", "verdict": "유망함(계보·기제)", "cyc": 47, "cluster": "german", "tier": "promising"}, {"id": 40, "name": "미적 관조·의지의 부정(쇼펜하우어) ↔ Ω₄ 명상·Ω₅ 예술", "verdict": "차용(도구적 번역 — 텔로스 단절 명시)", "cyc": 47, "cluster": "german", "tier": "borrowed"}, {"id": 41, "name": "힘에의 의지 ↔ 분포 동역학", "verdict": "불성립", "cyc": 47, "cluster": "german", "tier": "cut"}, {"id": 42, "name": "도덕운(윌리엄스·네이글) ↔ 환경 항·구성운·책임의 재배치", "verdict": "확인됨(간극) — 공리 수정 압박", "cyc": 52, "cluster": "social", "tier": "confirmed"}, {"id": 43, "name": "아비투스(부르디외) ↔ 조건부 분포 + 상황 분포의 계급 형성", "verdict": "확인됨(계보)·유망함(기제) — 낙관론 제한", "cyc": 52, "cluster": "social", "tier": "confirmed"}, {"id": 44, "name": "유전-환경 상관(rGE) ↔ 분포의 상황 조형(능동·유발 rGE)", "verdict": "확인됨(현상)·유망함(개입 가능 크기)", "cyc": 82, "cluster": "formal", "tier": "confirmed"}]
+;
+
+  const ZONES = {
+    origin: {x:20,  y:20,  w:373, h:330, label:'물리·형이상학 (회차 1–4)'},
+    eastern:{x:413, y:20,  w:373, h:330, label:'불교·동양철학'},
+    formal: {x:806, y:20,  w:374, h:330, label:'형식·행동과학 핵심'},
+    german: {x:20,  y:370, w:373, h:330, label:'독일철학 3인 (13기 · 회차 47)'},
+    life:   {x:413, y:370, w:373, h:330, label:'삶의 현상 (4~12기)'},
+    social: {x:806, y:370, w:374, h:330, label:'사회 스케일 (14기 포함)'}
+  };
+
+  const TIER_VAR = {
+    confirmed: '--green', promising: '--indigo', borrowed: '--plum',
+    metaphor: '--gray', cut: '--red'
+  };
+  const TIER_R = { confirmed: 13, promising: 11, borrowed: 11, metaphor: 10, cut: 10 };
+
+  function css(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  const NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs){
+    const e = document.createElementNS(NS, tag);
+    for(const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // group by cluster, sort by cycle_added for chronological packing
+  const byCluster = {};
+  for(const d of DATA){ (byCluster[d.cluster] = byCluster[d.cluster] || []).push(d); }
+  for(const k in byCluster) byCluster[k].sort((a,b)=>a.cyc-b.cyc);
+
+  const nodes = []; // {data, x, y, r}
+
+  for(const key in ZONES){
+    const z = ZONES[key];
+    const items = byCluster[key] || [];
+    const usableX = z.x + 20, usableY = z.y + 42;
+    const usableW = z.w - 40, usableH = z.h - 58;
+    const n = items.length;
+    const cols = Math.max(1, Math.ceil(Math.sqrt(n * usableW / usableH)));
+    const rows = Math.max(1, Math.ceil(n / cols));
+    const cellW = usableW / cols, cellH = usableH / rows;
+    items.forEach((d, i)=>{
+      const col = i % cols, row = Math.floor(i / cols);
+      nodes.push({
+        data: d,
+        x: usableX + cellW * (col + 0.5),
+        y: usableY + cellH * (row + 0.5),
+        r: TIER_R[d.tier] || 11
+      });
+    });
+  }
+
+  // zone backgrounds + labels
+  const zoneLayer = el('g', {});
+  for(const key in ZONES){
+    const z = ZONES[key];
+    zoneLayer.appendChild(el('rect', {
+      x: z.x, y: z.y, width: z.w, height: z.h, rx: 12,
+      fill: 'var(--panel-2)', stroke: 'var(--line)', 'stroke-width': 1
+    }));
+    const label = el('text', { x: z.x + 16, y: z.y + 24, class: 'net-zone-label' });
+    label.textContent = z.label;
+    zoneLayer.appendChild(label);
+  }
+  svg.appendChild(zoneLayer);
+
+  // nodes
+  const nodeLayer = el('g', {});
+  const nodeEls = {};
+  nodes.forEach(nd=>{
+    const d = nd.data;
+    const colorVar = TIER_VAR[d.tier] || '--indigo';
+    const g = el('g', { class: 'net-node', 'data-cyc': d.cyc, tabindex: '0', role: 'button',
+                          'aria-label': '#' + d.id + ' ' + d.name });
+    const circle = el('circle', {
+      cx: nd.x, cy: nd.y, r: nd.r,
+      fill: 'var(' + colorVar + ')',
+      'stroke-dasharray': d.tier === 'cut' ? '3 2' : (d.tier === 'metaphor' ? '4 3' : 'none')
+    });
+    const text = el('text', { x: nd.x, y: nd.y + 0.5 });
+    text.textContent = d.id;
+    g.appendChild(circle);
+    g.appendChild(text);
+    g.addEventListener('click', ()=>showDetail(d));
+    g.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); showDetail(d); } });
+    nodeLayer.appendChild(g);
+    nodeEls[d.id] = g;
+  });
+  svg.appendChild(nodeLayer);
+
+  // ---- detail panel ----
+  const panel = document.getElementById('netDetail');
+  const panelNo = panel ? panel.querySelector('.net-detail-no') : null;
+  const panelName = panel ? panel.querySelector('.net-detail-name') : null;
+  const panelVerdict = panel ? panel.querySelector('.net-detail-verdict') : null;
+  const panelMeta = panel ? panel.querySelector('.net-detail-meta') : null;
+  const panelClose = document.getElementById('netDetailClose');
+
+  const TIER_LABEL = {
+    confirmed: '확인됨 계열', promising: '유망함', borrowed: '차용(지반 단절 명시)',
+    metaphor: '은유·동형(하중 0)', cut: '불성립(절단)'
+  };
+  const ZONE_LABEL_PLAIN = {
+    origin:'물리·형이상학', eastern:'불교·동양철학', formal:'형식·행동과학 핵심',
+    german:'독일철학 3인(13기)', life:'삶의 현상(4~12기)', social:'사회 스케일(14기 포함)'
+  };
+
+  function showDetail(d){
+    if(!panel) return;
+    panel.hidden = false;
+    panelNo.textContent = '#' + d.id + ' · 회차 ' + d.cyc + ' 등재 · ' + ZONE_LABEL_PLAIN[d.cluster];
+    panelName.textContent = d.name;
+    panelVerdict.textContent = '판정: ' + d.verdict;
+    panelMeta.textContent = '분류: ' + (TIER_LABEL[d.tier] || d.tier) + ' — 원문은 data/worldview.json connections[' + (d.id-1) + '] 및 SYNTHESIS.md 부록 1 참조.';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  if(panelClose) panelClose.addEventListener('click', ()=>{ panel.hidden = true; });
+
+  // ---- cycle slider ----
+  const slider = document.getElementById('netSlider');
+  const cycVal = document.getElementById('netCycVal');
+  const countEl = document.getElementById('netCount');
+  const maxCyc = Math.max.apply(null, DATA.map(d=>d.cyc));
+  if(slider) slider.max = String(maxCyc);
+
+  function applyFilter(cyc){
+    let count = 0;
+    nodes.forEach(nd=>{
+      const visible = nd.data.cyc <= cyc;
+      nodeEls[nd.data.id].classList.toggle('net-hidden', !visible);
+      if(visible) count++;
+    });
+    if(cycVal) cycVal.textContent = String(cyc);
+    if(countEl) countEl.textContent = String(count);
+  }
+
+  if(slider){
+    applyFilter(parseInt(slider.value, 10));
+    slider.addEventListener('input', ()=> applyFilter(parseInt(slider.value, 10)));
+  }
+
+  // ---- play button (grows the network chronologically) ----
+  const playBtn = document.getElementById('netPlay');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let playTimer = null;
+
+  function stopPlay(){
+    if(playTimer){ clearInterval(playTimer); playTimer = null; }
+    if(playBtn){ playBtn.textContent = '▶ 회차대로 재생'; playBtn.setAttribute('aria-pressed', 'false'); }
+  }
+  function startPlay(){
+    if(!slider) return;
+    if(reduced){ slider.value = String(maxCyc); applyFilter(maxCyc); return; }
+    slider.value = '1'; applyFilter(1);
+    playBtn.textContent = '■ 정지'; playBtn.setAttribute('aria-pressed', 'true');
+    let cyc = 1;
+    playTimer = setInterval(()=>{
+      cyc++;
+      if(cyc > maxCyc){ stopPlay(); return; }
+      slider.value = String(cyc);
+      applyFilter(cyc);
+    }, 90);
+  }
+  if(playBtn){
+    playBtn.addEventListener('click', ()=>{ playTimer ? stopPlay() : startPlay(); });
+  }
+})();
+
 </script>
 
 </body>
