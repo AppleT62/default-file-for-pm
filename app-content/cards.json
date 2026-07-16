@@ -1,0 +1,1463 @@
+{
+  "meta": {
+    "version_tag": "이 콘텐츠는 회차 84 기준",
+    "last_cycle": 84,
+    "generated_note": "app-content/cards.json — canonical structured content for [세계관] tab card viewer and book.md derivation. See app-content/coverage.md for source-paragraph coverage mapping and honest completeness assessment.",
+    "credence_note": "credence_ref points to a key in data/worldview.json#credences — do not hardcode numeric values; render-time lookup only.",
+    "prediction_note": "prediction_ref points to an id (α–η) in data/worldview.json#registered_predictions — no credence badge; label '실험적 예측 — 미시험'.",
+    "functional_note": "column:'functional' cards use label '틀 채택 평가' (framework-adoption evaluation), never a % badge.",
+    "explainer_note": "column:'explainer' cards (ch7 soul/karma/chakra) are this-worldview's-response content, explicitly NOT worldview claims — not in the credence ledger.",
+    "unpriced_note": "column:'unpriced' cards reference a worldview.json key whose value is null/retired ([철거] — 무가격) — never render any badge, numeric or label, for these.",
+    "narrative_note": "column:'narrative' cards carry no ledger claim at all (framing, meta-commentary, procedural description) — no badge of any kind."
+  },
+  "cards": [
+    {
+      "id": "c0-01",
+      "chapter": 0,
+      "order": 1,
+      "title": "정해졌나 vs 바꾸나",
+      "body": "\"내 미래는 정해져 있나, 내가 바꿀 수 있나\" — 이 책은 이 오래된 질문에 제3의 답을 준다. 미래는 열려 있지도 닫혀 있지도 않다. 다만 한쪽으로 **기울어져** 있을 뿐이다. 그 기울기의 한 항이 바로 당신이다.",
+      "source_ref": "SYNTHESIS.md#§0-1문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-02",
+      "chapter": 0,
+      "order": 2,
+      "title": "이 책의 정직 약속",
+      "body": "이 책은 \"읽으면 인생이 바뀐다\"고 말하지 않는다. 대신 \"이 주장의 신뢰도는 몇 %이고, 다른 AI 세 곳이 이 이론을 어떻게 비판했는지, 어디서 이 이론이 틀릴 수 있는지\"까지 그대로 보여준다. 결과를 약속하지 않는 것이 이 책의 유일한 차별점이다.",
+      "source_ref": "SYNTHESIS.md#§0-차별화문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-03",
+      "chapter": 0,
+      "order": 3,
+      "title": "신념도란 무엇인가",
+      "body": "이 책 곳곳에 나오는 **신념도** — 이 주장을 얼마나 믿을 만한지의 %, 실측값이 아니라 정직한 자기 평가다. 80% 이상은 확신, 50~80%는 경도(기울어짐), 40% 미만은 사변으로 읽는다. 5포인트보다 작은 차이는 우열로 읽지 않는다.",
+      "source_ref": "SYNTHESIS.md#머리말-표기문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-04",
+      "chapter": 0,
+      "order": 4,
+      "title": "84번 두들겨 본 지도",
+      "body": "이 책의 내용은 84번의 검증 회차를 거쳤다. 그 중에는 외부 검증자에게 반박당해 확신을 내린 순간도, 완전히 틀려서 폐기된 주장도 있다. 이 책은 그 흠집까지 그대로 보여주는 지도다 — 매끈한 답이 아니라 다듬어지는 중인 지도.",
+      "source_ref": "SYNTHESIS.md#머리말-회차문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-05",
+      "chapter": 0,
+      "order": 5,
+      "title": "정확히 말하면, 기울기",
+      "body": "\"운명이 기울어져 있다\"는 말은 은유다. 정확히 말하면: 다음에 일어날 일들에 대해 어떤 결과가 다른 결과보다 일어날 **확률이 더 높게** 짜여 있다는 뜻이다 — 물리학의 확률이 아니라, 당신이 상황마다 어떻게 반응하는가의 통계적 경향이다.",
+      "source_ref": "SYNTHESIS.md#§0-한문장문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-06",
+      "chapter": 0,
+      "order": 6,
+      "title": "세 층의 구조",
+      "body": "운명(무엇인가) · 자유(바꿀 수 있는가) · 의미(어디로)는 따로 있는 세 가지가 아니라, 한 구조를 세 높이에서 본 것이다. 이 책은 이 순서로 나아간다 — 먼저 무엇인지 보고, 그 다음 얼마나 고칠 수 있는지, 마지막으로 그 편집이 어디를 향하는지.",
+      "source_ref": "SYNTHESIS.md#§0-한문장문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-07",
+      "chapter": 0,
+      "order": 7,
+      "title": "범위 한정 — 환경의 몫",
+      "body": "이 책이 \"운명은 나의 확률 분포\"라 말할 때도 한계는 분명하다. 내가 **어떤 상황을 만날지**(경제·질병·전쟁·타인의 결정 — 보통 말하는 '운명'의 대부분)는 대부분 환경의 몫이다. 이 책이 다루는 건 그 상황에서 내가 어떻게 반응하는가, 그 한 항뿐이다.",
+      "source_ref": "SYNTHESIS.md#§1.5-1문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-08",
+      "chapter": 0,
+      "order": 8,
+      "title": "9장을 먼저 알려드립니다",
+      "body": "이 책 9장은 이 세계관이 3개의 다른 AI에게 검증을 맡기고, 그 중 둘이 \"반증 불가능한 유사이론\"이라 판정한 기록을 그대로 싣는다. 미화하지 않는다. 이 책의 가장 중요한 장은 결론이 아니라 이 자기 재판 기록이다.",
+      "source_ref": "SYNTHESIS.md#§10-판정충돌문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c0-09",
+      "chapter": 0,
+      "order": 9,
+      "title": "이 책이 하지 않는 약속",
+      "body": "이 책은 병을 고친다고, 반드시 성공한다고, 누구에게나 통한다고 말하지 않는다. 대신 정확한 숫자와 반증 조건, 그리고 실패했을 때 무엇을 잃는지까지 미리 적어 둔다. 그것이 이 책이 줄 수 있는 유일하게 정직한 약속이다.",
+      "source_ref": "SYNTHESIS.md#§0-차별화문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-01",
+      "chapter": 1,
+      "order": 1,
+      "title": "주파수라는 지도",
+      "body": "이 세계관의 핵심 개념은 '주파수'다. **조건부 확률 분포** — \"이런 상황이면 이렇게 행동할 확률이 높다\"는 경향들의 묶음. 고정된 성격표가 아니라, 상황마다 다른 반응을 담은 지도가 바로 '나'다.",
+      "source_ref": "SYNTHESIS.md#§1-핵심개념문단",
+      "credence_ref": "주파수 = 조건부 확률 분포 (기술로서)",
+      "column": "functional",
+      "lock": false
+    },
+    {
+      "id": "c1-02",
+      "chapter": 1,
+      "order": 2,
+      "title": "정확히 말하면, 언어의 채택",
+      "body": "\"나는 확률 분포다\"는 강한 은유다. 정확히 말하면: 이것은 검증된 형이상학적 사실이 아니라, 나를 기술하는 데 이 언어를 **채택하는 것이 유용한가**에 대한 평가다 — 참/거짓이 아니라 쓸모의 문제로 읽어야 한다.",
+      "source_ref": "SYNTHESIS.md#§1-단락2",
+      "credence_ref": "생성적 존재론 — 기술의 공리",
+      "column": "functional",
+      "lock": false
+    },
+    {
+      "id": "c1-03",
+      "chapter": 1,
+      "order": 3,
+      "title": "다섯 전통, 알고 보니 둘",
+      "body": "불교의 습기(vāsanā)·성격심리학·베이즈 뇌·LLM까지 \"다섯 전통이 같은 구조에 닿았다\"고 처음엔 주장했다. 그러나 다시 세어 보니 독립된 갈래는 둘뿐이었다 — 나머지는 같은 확률론 도구상자를 돌려쓴 것. 신뢰도는 90%에서 지금 70%까지 정직하게 내려왔다.",
+      "source_ref": "SYNTHESIS.md#§1-회차45문단",
+      "credence_ref": "주파수 = 조건부 확률 분포 (기술로서)",
+      "column": "functional",
+      "lock": false
+    },
+    {
+      "id": "c1-04",
+      "chapter": 1,
+      "order": 4,
+      "title": "환경의 몫 — 슬로건의 한계",
+      "body": "\"운명은 나의 확률 분포\"라는 문장은 정확한 판본이 아니다. 정확한 판본: **운명의 한 항이** 나의 조건부 분포다. 내가 어떤 상황을 만날지는 대부분 내가 정하지 않는다 — 이 구분을 잊으면 성격을 운명 전체로 과대포장하게 된다.",
+      "source_ref": "SYNTHESIS.md#§1.5-1문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-05",
+      "chapter": 1,
+      "order": 5,
+      "title": "내가 상황에 손을 뻗는 방식",
+      "body": "다만 두 항이 완전히 남남은 아니다. 내 성향이 내가 만날 상황 자체를 편향시킨다는 증거가 있다(상황 선택·유발). 그래서 실천적으로는 '내 반응을 고치는 것'과 '내가 있는 자리 자체를 바꾸는 것' 둘 다가 지렛대다 — 후자가 종종 더 싸다.",
+      "source_ref": "SYNTHESIS.md#§1.5-2문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-06",
+      "chapter": 1,
+      "order": 6,
+      "title": "책임의 재배치",
+      "body": "분포도 상황도 대부분 내가 정한 게 아니라면, \"네 탓이다\"라는 과거형 책임은 이 틀 안에서 성립하지 않는다. 남는 것은 \"다음 편집의 담당자는 너다\"라는 **미래형 책임**뿐이다. 이것은 이 세계관의 관찰이지, 처벌을 정당화하는 도구가 아니다.",
+      "source_ref": "SYNTHESIS.md#§1.5-3문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-07",
+      "chapter": 1,
+      "order": 7,
+      "title": "층으로 쌓인 나",
+      "body": "이 분포는 허공에 있지 않다. 몸(0층)·기질(1층)·습관 규칙(2층)·자기 이야기(3층), 네 층에 새겨져 있다. 다음 장에서 이 네 층을 하나씩 본다.",
+      "source_ref": "SYNTHESIS.md#§2-도입문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-08",
+      "chapter": 1,
+      "order": 8,
+      "title": "이 지도는 감옥이 아니다",
+      "body": "\"나는 조건부 확률 분포다\"라는 말이 무섭게 들릴 수 있다 — 고정된 함수처럼 들리니까. 하지만 이 지도의 핵심은 그 지도 자체를 **고쳐 쓸 수 있다**는 것이다(4장). 지도라는 것과 고칠 수 있다는 것, 둘 다 이 책의 전제다.",
+      "source_ref": "SYNTHESIS.md#§0-한문장문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-09",
+      "chapter": 1,
+      "order": 9,
+      "title": "고신뢰 핵심의 정직한 정체",
+      "body": "이 책에서 가장 확신도가 높은 문장들(80% 이상)은 대개 동어반복이거나 남의 연구다. 이 세계관이 스스로 조립한 고유 주장(운명애 루프·단일 윤리 등)은 전부 55~68%대, 즉 아직 미검증 구간에 있다. 확신과 고유성은 반비례한다 — 이 책은 이것을 가리지 않는다.",
+      "source_ref": "SYNTHESIS.md#부록1-정직주석문단",
+      "column": "narrative",
+      "lock": false
+    },
+    {
+      "id": "c1-10",
+      "chapter": 1,
+      "order": 10,
+      "title": "이 개념이 파는 것",
+      "body": "'주파수' 개념을 지지하는 것은 이제 다섯 전통의 수렴이 아니라, **콕스의 규범 논증과 실용적 쓸모뿐**이다. 신비로운 통일 이론이 아니라, \"이렇게 나를 기술하면 쓸모 있다\"는 실용적 채택 평가로 읽어야 정확하다.",
+      "source_ref": "SYNTHESIS.md#§1-회차59문단",
+      "credence_ref": "주파수 = 조건부 확률 분포 (기술로서)",
+      "column": "functional",
+      "lock": false
+    },
+    {
+      "id": "c2-01",
+      "chapter": 2,
+      "order": 1,
+      "title": "생성적 존재론",
+      "body": "가능성의 공간 + 가중 규칙 + 실제로 일어난 사건. 이 세 부분 구조가 양자역학·유식불교·성격 심리학·LLM에서 반복된다. 콕스 정리가 이 반복의 후보 설명이다 — 단 이것은 형이상학의 증거가 아니라 **기술 언어로서의 채택 평가**임을 분명히 한다.",
+      "source_ref": "SYNTHESIS.md#§2-생성적존재론문단",
+      "credence_ref": "생성적 존재론 — 기술의 공리",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c2-02",
+      "chapter": 2,
+      "order": 2,
+      "title": "정확히 말하면, 공리 하나뿐",
+      "body": "\"수학은 확률론 하나뿐이다\"라는 구판 슬로건은 철회됐다. 콕스 정리는 특정 전제 아래에서만 성립하고, 양자확률처럼 그 전제를 위반하는 경우도 있다. 화려한 통일 주장과 소박한 채택 주장 사이를 오가지 않기로 못 박아 둔다.",
+      "source_ref": "SYNTHESIS.md#§2-생성적존재론문단",
+      "credence_ref": "생성적 존재론 — 기술의 공리",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c2-03",
+      "chapter": 2,
+      "order": 3,
+      "title": "3층 · 이야기",
+      "body": "자기 서사 — 내가 나에게 들려주는 이야기. 분포 전체를 한 번에 편집하는 일괄 인터페이스다. \"나는 원래 그런 사람이야\"라는 문장 하나가 수백 개의 개별 규칙을 한꺼번에 굳히거나 풀 수 있다.",
+      "source_ref": "SYNTHESIS.md#§2-층위표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c2-04",
+      "chapter": 2,
+      "order": 4,
+      "title": "2층 · if-then 분포",
+      "body": "조건부 확률 분포 — 상황마다 다르게 반응하는 규칙 묶음. 이 세계관의 운영체제 격이다. 다만 이 '운영체제' 비유는 아동 소표본 연구에서 시작돼 성인 일반화가 보강 중인 은유라는 점도 함께 적어 둔다 — 과대 승격 금지.",
+      "source_ref": "SYNTHESIS.md#§2-층위표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c2-05",
+      "chapter": 2,
+      "order": 5,
+      "title": "1층 · 기질",
+      "body": "세트포인트 — 타고난 하드웨어 격. 유전율은 대략 40~50%로 추정된다. 편집(4장)은 이 세트포인트 자체를 밀어 옮기는 게 아니라, 그 주변의 조건부 구조를 다시 배선하는 일에 더 가깝다.",
+      "source_ref": "SYNTHESIS.md#§2-층위표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c2-06",
+      "chapter": 2,
+      "order": 6,
+      "title": "0층 · 육체",
+      "body": "수면·회복·에너지 — 모든 편집의 하한선이자 가장 상류에 있는 지렛대. 몸 상태가 무너지면 어떤 실행 계획도 설치되지 않는다. 그래서 이 책의 실천 단계(11장)는 언제나 0층 점검에서 시작한다.",
+      "source_ref": "SYNTHESIS.md#§2-층위표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c2-07",
+      "chapter": 2,
+      "order": 7,
+      "title": "네 층이 겨루는 이유",
+      "body": "층이 나뉜 이유는 각 층의 개입 비용과 속도가 다르기 때문이다. 몸은 느리지만 값싸고, 이야기는 빠르지만 잘 미끄러진다. 어느 층에서 손을 대야 할지 아는 것이 편집의 첫 단계다.",
+      "source_ref": "SYNTHESIS.md#§2-층위표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c3-01",
+      "chapter": 3,
+      "order": 1,
+      "title": "블록 우주",
+      "body": "물리학에서는 블록 우주론(B이론)이 우세하다 — 내 인생 전체가 이미 4차원 구조 속 하나의 세계선으로 존재한다는 그림이다. 그러나 이 그림이 곧 \"넌 아무것도 못 바꾼다\"는 뜻은 아니다 — 다음 카드에서 이유를 본다.",
+      "source_ref": "SYNTHESIS.md#§3-블록우주문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c3-02",
+      "chapter": 3,
+      "order": 2,
+      "title": "관점적으로 실재하는 생성",
+      "body": "내가 매 순간 '지금 결정한다'고 느끼는 그 생성감은 관점에서 나온 것이지만, 그렇다고 환상은 아니다. 우주의 초기 저엔트로피 상태가 만든 시간의 화살(엔트로피 기울기)이 그 관점을 실재하는 범주로 뒷받침한다.",
+      "source_ref": "SYNTHESIS.md#§3-생성문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c3-03",
+      "chapter": 3,
+      "order": 3,
+      "title": "정확히 말하면, 엔트로피",
+      "body": "\"시간이 흐른다\"는 은유다. 정확히 말하면: 우주가 매우 질서 있는 상태에서 시작해 점점 무질서해지는 방향(엔트로피 증가)이 기록·기억·인과의 방향과 일치한다는 물리적 사실을 가리킨다 — 심리적 시간 체험을 물리 법칙이 증명한다는 뜻은 아니다.",
+      "source_ref": "SYNTHESIS.md#§3-생성문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c3-04",
+      "chapter": 3,
+      "order": 4,
+      "title": "어느 다리를 건너도 같은 곳",
+      "body": "블록 우주든, 열린 미래든, 과정 철학이든 — 어느 시간론을 택해도 실천적 결론은 똑같다. 양립가능론(운명이 정해져 있어도 숙고는 의미가 있다는 입장)이 세 경우 모두에서 살아남기 때문이다. 그래서 시간론 논쟁 자체가 이 책의 실천에는 불변량이다.",
+      "source_ref": "SYNTHESIS.md#§3-불변량문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c3-05",
+      "chapter": 3,
+      "order": 5,
+      "title": "철거된 것들 — 형이상학적 실재",
+      "body": "\"분포는 물리적으로 진짜 실재하는가\"라는 질문에는 값을 매기지 않는다. 이 항목은 67회차 동안 잘못 가격표가 붙어 있다가 철거됐다 — 무가격 상태로 남는 것도 정직한 답 중 하나다.",
+      "source_ref": "SYNTHESIS.md#부록1-표문단",
+      "credence_ref": "생성적 존재론 — 형이상학적 실재",
+      "column": "unpriced",
+      "lock": true
+    },
+    {
+      "id": "c3-06",
+      "chapter": 3,
+      "order": 6,
+      "title": "철거된 것들 — 성장 블록·시뮬레이션",
+      "body": "\"성장 블록 우주론\"과 \"이 세계는 시뮬레이션이 아닌가\" 같은 질문들도 같은 이유로 철거됐다 — 관측으로 값을 매길 수 없는 사변에 그동안 가격이 붙어 있었다는 자백이다. 신념도 표를 정직하게 비워 두는 것도 이 책의 태도다.",
+      "source_ref": "SYNTHESIS.md#부록1-표문단",
+      "credence_ref": "성장 블록 우주",
+      "column": "unpriced",
+      "lock": true
+    },
+    {
+      "id": "c4-01",
+      "chapter": 4,
+      "order": 1,
+      "title": "2차 편집이란",
+      "body": "자유란 \"if 상황 → then 반응\"이라는 규칙 자체를 다시 쓰는 능력이다. 이것을 **2차 편집**이라 부른다 — 규칙 안에서 행동하는 게 아니라, 규칙 자체를 고치는 한 단계 위의 손.",
+      "source_ref": "SYNTHESIS.md#§4-정의문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-02",
+      "chapter": 4,
+      "order": 2,
+      "title": "정확히 말하면, 유비일 뿐",
+      "body": "이 2차 편집을 철학자 프랑크푸르트의 '2차 의지'와 같은 것으로 처음엔 불렀다. 정확히 말하면: 이 둘은 **구조적 유비**일 뿐 동일한 개념이 아니다 — 하나는 지금 이 순간의 자기 승인이고, 다른 하나는 시간에 걸친 자기 수정이라 다른 축 위에 있다.",
+      "source_ref": "SYNTHESIS.md#§4-프랑크푸르트문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-03",
+      "chapter": 4,
+      "order": 3,
+      "title": "자유라는 말의 재정의",
+      "body": "\"왜 규칙을 고치는 능력이 '진짜 나'를 더 대변하는가\"라는 철학적 반론은 끝내 풀리지 않았다. 그래서 이 세계관은 '자유'라는 무거운 단어 대신, **자기 방향적 편집 능력**이라는 기능적 이름으로 조용히 축소했다 — 이건 문제를 푼 게 아니라 하중을 내린 것이다.",
+      "source_ref": "SYNTHESIS.md#§4-왓슨문제문단",
+      "credence_ref": "양립가능론적 자유 (2차 편집)",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c4-04",
+      "chapter": 4,
+      "order": 4,
+      "title": "실행 의도라는 도구",
+      "body": "심리학이 실제로 검증한 도구는 골비처의 **실행 의도**다 — \"if [구체적 단서] → then [구체적 행동]\" 형식으로 계획을 미리 짜 두는 것. 메타분석 효과크기는 d≈0.65 (다만 이는 상한 추정으로 봐야 한다).",
+      "source_ref": "SYNTHESIS.md#§4-실행의도문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-05",
+      "chapter": 4,
+      "order": 5,
+      "title": "직접 증거 셋 — 그리고 그 흠",
+      "body": "성격을 바꾸려는 의도적 노력을 실측한 세 연구가 있다. 변화는 실재하나 작고, 구체적 계획일 때만 유의미했으며(Hudson & Fraley), 실제로 실천을 완수한 사람만 바뀌었다(Hudson 외). 후자는 나중에 '완수 자체가 편향된 표본일 수 있다'는 흠이 발견됐다.",
+      "source_ref": "SYNTHESIS.md#§4-직접문헌문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-06",
+      "chapter": 4,
+      "order": 6,
+      "title": "가장 튼튼한 다리 하나",
+      "body": "세 연구 중 지금 남은 가장 강한 인과 증거는 3개월 앱 기반 무작위 실험(Stieger 외, 2021) 하나뿐이다 — 나머지 둘은 편향 가능성이 확인됐다. 이 세계관 고유의 기제(2차 편집·66일 등)는 이 연구가 지지하는 범위 밖이다.",
+      "source_ref": "SYNTHESIS.md#§4-회차61문단",
+      "credence_ref": "분포 편집 기제 (CAPS + 실행 의도)",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c4-07",
+      "chapter": 4,
+      "order": 7,
+      "title": "숫자가 실제로 움직인 순간",
+      "body": "이 신뢰도는 82%에서 시작해 외부 검증에 의해 70%로, 다시 65%로 두 번 내려왔다. 반증 없이 43회차 내내 그대로였던 다른 숫자들과 달리, 이 숫자는 실제 논증에 의해 움직인 몇 안 되는 값이다.",
+      "source_ref": "SYNTHESIS.md#§4-회차61문단",
+      "credence_ref": "분포 편집 기제 (CAPS + 실행 의도)",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c4-08",
+      "chapter": 4,
+      "order": 8,
+      "title": "내부 편집자는 없다",
+      "body": "\"내 안의 또 다른 내가 분포를 고친다\"는 그림은 틀렸다. 2차 편집은 분포 **바깥**의 주체가 아니라, 분포의 한 부분(학습된 규칙)이 다른 부분을 갱신하는 내부 과정이다. 이 하강은 결국 \"자기 생성되지 않는 바닥\"에서 멈춘다 — 풀린 게 아니라 받아들여진 것이다.",
+      "source_ref": "SYNTHESIS.md#§4-공시적주체문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-09",
+      "chapter": 4,
+      "order": 9,
+      "title": "자유의 세 축",
+      "body": "편집에는 세 손잡이가 있다. ① **내용 편집** — 규칙 자체를 고쳐 쓰기. ② **온도 편집** — 분포를 뾰족하게(선별) 또는 평평하게(탐색) 조절하기. ③ **학습률 편집** — 한 경험이 얼마나 강하게 각인되는지 조절하기.",
+      "source_ref": "SYNTHESIS.md#§4-세축문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-10",
+      "chapter": 4,
+      "order": 10,
+      "title": "자유의 세 한계 — 부트스트랩",
+      "body": "편집 능력 자체는 스스로 만들어진 게 아니다 — 누군가로부터 물려받았다. 세대 간 전달로 이 문제는 완화되지만, \"애초에 편집 능력의 첫 출처는 어디인가\"라는 논리적 회귀는 풀리지 않은 채 남는다.",
+      "source_ref": "SYNTHESIS.md#§4-세한계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-11",
+      "chapter": 4,
+      "order": 11,
+      "title": "자유의 세 한계 — 관성",
+      "body": "분포가 실제로 옮겨가는 데는 시간이 든다. 습관 자동화의 중앙값은 흔히 66일로 알려져 있지만, 정확히 말하면 이는 상수가 아니라 한 연구의 외삽 중앙값일 뿐이고 실측 범위는 18일에서 254일 까지 넓게 퍼져 있다.",
+      "source_ref": "SYNTHESIS.md#§4-세한계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-12",
+      "chapter": 4,
+      "order": 12,
+      "title": "자유의 세 한계 — 세트포인트",
+      "body": "편집은 타고난 기질(세트포인트)을 다른 곳으로 옮기는 일이 아니다. 그 세트포인트 **주변의 조건부 구조를 재배선**하는 일에 가깝다 — 완전히 다른 사람이 되는 게 아니라, 같은 재료로 다른 배선을 짜는 것.",
+      "source_ref": "SYNTHESIS.md#§4-세한계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c4-13",
+      "chapter": 4,
+      "order": 13,
+      "title": "왜 여기가 급소인가",
+      "body": "이 CAPS–실행의도 다리는 이 책 전체에서 경험 과학에 가장 크게 노출된 관절이다. 여기가 완전히 무너지면 '자유'라는 논증도 새 닻을 찾아야 한다. 이 책은 급소의 위치를 숨기지 않고 정확히 지목한다.",
+      "source_ref": "SYNTHESIS.md#§10-급소문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-01",
+      "chapter": 5,
+      "order": 1,
+      "title": "운명애란",
+      "body": "운명애 — 특정 좋은 결과가 아니라 **내 분포 전체(실패할 가능성 포함)를 긍정하는 태도**다. 전체를 긍정하면 개별 결과의 중요도가 낮아지고, 각성이 최적화되고, 자기 방해가 줄어든다는 가설이다.",
+      "source_ref": "SYNTHESIS.md#§5-정의문단",
+      "credence_ref": "운명애 루프 (태도 = 분포의 매개변수)",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c5-02",
+      "chapter": 5,
+      "order": 2,
+      "title": "회계 오류였던 70%",
+      "body": "이 사슬은 네 개의 고리로 이어진다. 각 고리를 후하게 80%씩 쳐도, 사슬 전체의 신뢰도는 곱셈 때문에 41%까지 떨어진다. 처음의 70%는 가장 약한 고리 하나의 신뢰도를 사슬 전체에 붙인 회계 오류였다.",
+      "source_ref": "SYNTHESIS.md#§5-회차44문단",
+      "credence_ref": "운명애 루프 (태도 = 분포의 매개변수)",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c5-03",
+      "chapter": 5,
+      "order": 3,
+      "title": "니체와 쇼펜하우어 사이",
+      "body": "니체의 운명애는 원래 염세주의(쇼펜하우어)에 대한 응답이었다 — 긍정의 자리를 결과에서 '생성' 자체로 옮긴 것. 이 세계관이 운명애를 '성과를 위한 사슬'로 읽은 것은 원산지를 왜곡한 것이었다는 계보학적 지적을 받아들인다.",
+      "source_ref": "SYNTHESIS.md#§5-회차47문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-04",
+      "chapter": 5,
+      "order": 4,
+      "title": "긍정의 대상은 과정으로",
+      "body": "쇼펜하우어의 반론(추구 자체가 곧 고통의 의지라는 지적)을 받은 뒤, 운명애가 살아남으려면 긍정의 대상을 '결과'가 아니라 '자기방해를 끄는 심리적 기제'로만 좁혀야 했다. 니체의 권위를 빌리지 않는, 심리학적 파생 가설로만 남긴다.",
+      "source_ref": "SYNTHESIS.md#§5-회차50문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-05",
+      "chapter": 5,
+      "order": 5,
+      "title": "경계 조건 ① 도구화 역설",
+      "body": "\"잘 되려고\" 운명애를 쓰면 그 순간 효과가 꺼진다. 운명애는 태도이지 수단이 아니다. 단, 이 조건은 미래를 향한 예측으로만 쓸 수 있다 — 이미 벌어진 실패를 \"도구화했기 때문\"이라고 사후에 둘러대는 것은 금지된다.",
+      "source_ref": "SYNTHESIS.md#§5-도구화역설문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-06",
+      "chapter": 5,
+      "order": 6,
+      "title": "경계 조건 ② 흡수 상태",
+      "body": "긍정의 대상은 **회복 가능한 실패**뿐이다. 파산·비가역적 손상처럼 게임 자체가 끝나는 '흡수 상태'는 긍정이 아니라 회피의 대상이다. 죽음만이 유일하게 피할 수 없는 흡수 상태라서, 죽음에 대해서만 수용이 회피를 대신한다.",
+      "source_ref": "SYNTHESIS.md#§5-관할경계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-07",
+      "chapter": 5,
+      "order": 7,
+      "title": "경계 조건 ③ 무거운 꼬리",
+      "body": "실업·장애·사별처럼 불완전하게만 적응되는 영역에서는 '고통-권태' 진자 모형이 참이지만, 이 영역에 \"과정을 긍정하라\"는 처방이 실제로 통하는지는 검증된 바 없다. 힘든 영역일수록 이 책의 확신은 오히려 낮아진다.",
+      "source_ref": "SYNTHESIS.md#§5-회차54문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-08",
+      "chapter": 5,
+      "order": 8,
+      "title": "역효과가 나는 사람들",
+      "body": "최악의 상황을 미리 자세히 그려서 잘 대비해 온 사람들(방어적 비관주의)에게는, \"중요도를 낮추라\"는 이 처방이 오히려 수행을 해칠 수 있다. 이 세계관은 이 역효과 가능성을 공식적으로 인정한다.",
+      "source_ref": "SYNTHESIS.md#PROTOCOL-역효과문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c5-09",
+      "chapter": 5,
+      "order": 9,
+      "title": "타인이 주는 긍정",
+      "body": "도구화 역설에는 예외가 하나 있다 — 남이 나를 향해 해 주는 긍정(예언·사랑의 서약)은 내가 \"잘 되려고\" 스스로 만든 게 아니라서 역설을 우회한다. 무당의 예언이 실제로 자기실현을 만드는 원리도 이와 같다(7장에서 다시 다룬다).",
+      "source_ref": "SYNTHESIS.md#§5-도구화역설문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-01",
+      "chapter": 6,
+      "order": 1,
+      "title": "네 규모, 같은 문법?",
+      "body": "습관(개인)·사랑(2인 관계)·문화(공동체)·제도(문명) — 이 네 규모가 같은 문법(경로 의존· 온도·2차 경유)으로 기술될 수 있다는 관찰은 원래 '프랙탈 유비'로 소개됐다.",
+      "source_ref": "SYNTHESIS.md#§6-스케일불변성문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-02",
+      "chapter": 6,
+      "order": 2,
+      "title": "정확히 말하면, 무하중 은유",
+      "body": "이 아름다운 관찰은 재심에서 [은유] — 설명 하중 0으로 강등됐다. 규모 사이에 실제 측정 동치나 공통 상태공간은 없다. 목록은 명제가 아니라 같은 어휘를 반복 사용한 사례일 뿐이다. 이 항목은 앞으로도 신뢰도 값을 벌지 못한다.",
+      "source_ref": "SYNTHESIS.md#§6-스케일불변성문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-03",
+      "chapter": 6,
+      "order": 3,
+      "title": "사랑 = 미켈란젤로 현상",
+      "body": "사랑을 \"상대가 자신의 이상적 자기가 되도록 서로 돕는 계약\"으로 보는 관찰(미켈란젤로 현상)은 실제 현상으로는 확인됐지만(80%), '사랑의 정의'로 승격하는 것은 자기보고·연인 표본 기반이라 하중이 가볍다 — 두 지위를 섞지 않는다.",
+      "source_ref": "SYNTHESIS.md#§6-미켈란젤로문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-04",
+      "chapter": 6,
+      "order": 4,
+      "title": "타인 편집의 두 요건",
+      "body": "정당한 개입인지 조종인지는 두 요건을 **모두** 충족해야 판정된다. ① 투명성 — 기제를 공개해도 여전히 작동하는가. ② 주권 — 상대가 스스로 규칙을 고칠 능력을 강화하는가, 훼손하는가. 둘 다 통과해야 정당하다.",
+      "source_ref": "SYNTHESIS.md#§6-판별식문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-05",
+      "chapter": 6,
+      "order": 5,
+      "title": "무기화된 미켈란젤로",
+      "body": "이 두 요건 판별식에는 구멍이 있다. 투명하고 상대의 편집 능력도 강화하면서, 그 '이상적 자기'의 내용 자체를 몰래 조성하는 포획은 두 요건을 다 통과해 버린다. 이 판별식은 필요조건일 뿐 완전한 검사가 아니다.",
+      "source_ref": "SYNTHESIS.md#§6-회차50문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-06",
+      "chapter": 6,
+      "order": 6,
+      "title": "10건의 실전 판정",
+      "body": "저축 자동가입 넛지·심리치료·스포츠 코칭은 정당 판정, 다크패턴 해지 방해·참여 최적화 알고리즘 피드는 조종 판정 — 같은 '설득' 행위가 구조에 따라 정반대 판정을 받는다. 이것이 이 판별식의 실제 검증력이다(10건 중 8건 무모순).",
+      "source_ref": "SYNTHESIS.md#§6-사례배터리문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c6-07",
+      "chapter": 6,
+      "order": 7,
+      "title": "단일 윤리, 두 기둥",
+      "body": "\"자유의 정의에서 윤리가 논리적으로 도출된다\"는 강한 주장은 철회됐다 — 사실은 \"편집 주권이라는 가치를 채택하기로 하면\"이라는 전제 위에서만 성립하는 실천 지침이다. 쇼펜하우어의 연민 윤리까지 반영해 주권+연민, 두 기둥으로 남는다.",
+      "source_ref": "SYNTHESIS.md#§6-단일윤리문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-01",
+      "chapter": 7,
+      "order": 1,
+      "title": "돈과 운",
+      "body": "돈과 운의 관계도 이 분포 언어로 기술할 수 있다 — 다만 경제적 결핍이 편집 능력 자체를 침식하는지(대역폭 이론)는 재현 논쟁 중인 연구(Mani 2013 등)에 기대고 있어, 이 책은 이 다리를 아직 확정하지 않는다.",
+      "source_ref": "SYNTHESIS.md#§7-돈문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-02",
+      "chapter": 7,
+      "order": 2,
+      "title": "중독 = 편집의 납치",
+      "body": "중독은 [은유]로 표현하면 \"편집 주권의 신경학적 하이재킹\"이다. 정확히 말하면: 보상 예측 오차 회로의 실측 변화(신뢰도 80%)와, '갈망'과 '좋아함'이 신경적으로 분리된다는 논쟁 중인 이론이 함께 있다는 뜻이다. 이 표현이 처벌을 정당화하는 데 쓰이는 것은 금지된다.",
+      "source_ref": "SYNTHESIS.md#부록3-9기문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-03",
+      "chapter": 7,
+      "order": 3,
+      "title": "트라우마 = 과잉 각인",
+      "body": "트라우마는 강한 정서적 각성이 학습률(한 경험이 얼마나 깊이 새겨지는지)을 폭증시켜 66일 관성을 건너뛰고 곧바로 각인된 상태다. 회복은 그 각인이 만들어진 '재공고화 창'을 통해 맥락을 다시 배치하는 과정이다.",
+      "source_ref": "SYNTHESIS.md#부록3-11기문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-04",
+      "chapter": 7,
+      "order": 4,
+      "title": "꿈 = 오프라인 시뮬레이션",
+      "body": "꿈은 [은유]로 표현하면 \"자아라는 사전분포가 오프라인으로 고온(뾰족하지 않은, 자유로운) 탐색을 하는 시간\"이다. 낮의 편집을 위한 정련장으로 볼 수 있다는 가설적 서술이다.",
+      "source_ref": "SYNTHESIS.md#부록3-12기문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-05",
+      "chapter": 7,
+      "order": 5,
+      "title": "명상 = 사전분포의 이완",
+      "body": "명상은 \"자아라는 최상위 사전분포를 이완시키는\" 행위로 기술된다. 이 표현은 문법/틀 항목이라 확률이 아니라 **틀 채택 평가**로 다뤄야 하고, % 뱃지를 붙이지 않는다.",
+      "source_ref": "SYNTHESIS.md#부록3-12기문단",
+      "credence_ref": "명상 = 사전분포 이완",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c7-06",
+      "chapter": 7,
+      "order": 6,
+      "title": "예술 = 예측오차의 최적점",
+      "body": "트라우마와 아름다움은 사실 같은 축(예측 오차)의 양극단이라는 관찰이다 — 트라우마는 오차가 너무 크게 튄 상처이고, 아름다움은 적당한 오차가 주는 쾌감이라는 은유적 정리. [은유]로 제시하는 것이 정확하다.",
+      "source_ref": "SYNTHESIS.md#부록3-12기문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c7-07",
+      "chapter": 7,
+      "order": 7,
+      "title": "무당의 신점, 두 개의 진짜 기술",
+      "body": "초자연적 감지에 대한 이 책의 신뢰도는 5% 이하다. 그러나 적중은 실재하며, 정체는 두 가지 진짜 기술이다 — ① 기저율·콜드리딩으로 과거를 읽기 ② 예언이 실제로 확률을 바꾸는 개입 (자기실현적 예언).",
+      "source_ref": "SYNTHESIS.md#§7-신점문단",
+      "credence_ref": "신점의 초자연적 과거·미래 감지",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c7-08",
+      "chapter": 7,
+      "order": 8,
+      "title": "예언은 감지가 아니라 개입",
+      "body": "무당의 예언이 맞는 이유는 미래를 읽어서가 아니다. \"귀인이 온다\"는 말 자체가 듣는 사람의 행동 확률을 실제로 바꾼다 — 신점은 타인의 분포에 실행 의도를 대신 설치해 주는 오래된 전통 제도다.",
+      "source_ref": "SYNTHESIS.md#§7-신점문단",
+      "credence_ref": "신점 = 숙련된 조건부 분포 읽기 + 예언을 통한 개입",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c7-09",
+      "chapter": 7,
+      "order": 9,
+      "title": "영혼이라 느껴지는 것",
+      "body": "[이 세계관의 응답 — 신념도 뱃지 아님] 이 세계관에는 실체로서의 영혼이 없다. 그 직관이 가리키는 실제는 당신 분포에서 잘 안 변하는 무늬(불변량)와, 3층의 자기 서사다. 확장·확증이 아니라 설명일 뿐임을 밝힌다.",
+      "source_ref": "SYNTHESIS.md#앱반영-79회차-영혼문단",
+      "column": "explainer",
+      "lock": true
+    },
+    {
+      "id": "c7-10",
+      "chapter": 7,
+      "order": 10,
+      "title": "카르마라 불리는 것",
+      "body": "[이 세계관의 응답 — 신념도 뱃지 아님] 카르마는 초자연적 응보가 아니라, 과거 행동이 미래 성향을 만드는 **경로 의존**의 오래된 이름이다. 신비로운 인과가 아니라 통계적 습관의 누적이라는 설명이다.",
+      "source_ref": "SYNTHESIS.md#앱반영-79회차-카르마문단",
+      "column": "explainer",
+      "lock": true
+    },
+    {
+      "id": "c7-11",
+      "chapter": 7,
+      "order": 11,
+      "title": "차크라라 불리는 것",
+      "body": "[이 세계관의 응답 — 신념도 뱃지 아님] 차크라의 실증 근거는 없다. '에너지 센터'처럼 느껴지는 감각은 사실 내수용감각(몸 내부 상태를 느끼는 감각)이다. 장부(신념도 목록)에는 등재되지 않았지만, 설명은 여기서 해 둔다.",
+      "source_ref": "SYNTHESIS.md#앱반영-79회차-차크라문단",
+      "column": "explainer",
+      "lock": true
+    },
+    {
+      "id": "c8-01",
+      "chapter": 8,
+      "order": 1,
+      "title": "감정 = 계기판",
+      "body": "감정은 방해물이 아니라 분포가 스스로를 읽는 **계기판**이다 — 지금 상태가 예상(사전분포)에서 얼마나 벗어났는지 알려주는 신호. 성숙이란 이 계기판을 정확히 읽되, 그 눈금을 명령으로 착각하지 않는 것이다.",
+      "source_ref": "SYNTHESIS.md#§8-감정문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c8-02",
+      "chapter": 8,
+      "order": 2,
+      "title": "의미 = 최상위 지향",
+      "body": "의미는 우주에서 발견하는 사실도, 순수한 환상도 아니다. 분포가 스스로에게 부여하는 **최상위 지향** — 온도·정밀도·서사를 위에서 규정하는 설정값이다.",
+      "source_ref": "SYNTHESIS.md#§8-의미문단",
+      "credence_ref": "생성적 존재론 — 기술의 공리",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c8-03",
+      "chapter": 8,
+      "order": 3,
+      "title": "왜 타인을 향한 의미가 강한가",
+      "body": "자기 초월적 의미(타인·대의·창조를 향한 의미)가 유독 강한 이유는, 개인의 분포는 언젠가 끝나지만(죽음) 결합된 분포(가족·공동체·인류)에 자기를 정박시키면 그 끝을 건널 수 있기 때문이다.",
+      "source_ref": "SYNTHESIS.md#§8-의미문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c8-04",
+      "chapter": 8,
+      "order": 4,
+      "title": "원환이 닫히는 자리",
+      "body": "이 책의 여정은 \"모든 순간이 스스로 목표를 겨눈다\"는 철학적 출발점(화이트헤드)에서 시작했다. 84회차의 검증 끝에 만난 것은: 의미란 분포가 스스로 부여하는 지향이며, 인간이 그것을 제한적으로나마 쓸 수 있다는 것이 자유의 최종 형태라는 것이다.",
+      "source_ref": "SYNTHESIS.md#§8-의미문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-01",
+      "chapter": 9,
+      "order": 1,
+      "title": "이 장이 존재하는 이유",
+      "body": "이 장은 이 책의 다른 어떤 장보다 중요하다. 여기서는 이 세계관이 84번의 검증 회차 동안 얼마나 자주 얻어맞았고, 어디서 실제로 졌는지를 미화 없이 그대로 싣는다. 정답을 맞힌 기록이 아니라 스스로 틀렸을지 정직하게 적은 기록이다.",
+      "source_ref": "SYNTHESIS.md#§10-도입문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-02",
+      "chapter": 9,
+      "order": 2,
+      "title": "봉인했다가, 다시 열었다",
+      "body": "한때 이 프로젝트는 \"최종 완결판\"이라 스스로 선언하고 봉인했다. 그런데 다른 세션의 독립 검증자가 이 봉인을 다시 열었다 — 결함 14건을 제출했고, 저자는 방어 없이 대부분 수용했다. 핵심 신념도 7개가 그 자리에서 실제로 내려갔다.",
+      "source_ref": "SYNTHESIS.md#부록3-회차43문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-03",
+      "chapter": 9,
+      "order": 3,
+      "title": "판정 외주 30회",
+      "body": "\"내가 낸 결론을 내가 채점하면 후하게 준다\"는 문제를 풀기 위해, 이 프로젝트는 판정 자체를 별도의 독립 세션에 맡기는 절차를 만들었다. 지금까지 30번 실행됐다 — 저자는 그 판정을 집행만 할 뿐, 결과를 고르지 못한다.",
+      "source_ref": "SYNTHESIS.md#RED-TEAM-판정외주문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-04",
+      "chapter": 9,
+      "order": 4,
+      "title": "세 AI의 엇갈린 판정",
+      "body": "내부 판정은 줄곧 \"(b) 유용하나 과신\"이었다. 그런데 서로 다른 회사의 AI 둘 — GPT-5와 Grok 4.5 — 은 각각 독립적으로 \"(c) 반증 불가능한 유사이론\"이라고 판정했다. 이 셋을 평균 내지 않고, 충돌 그 자체를 데이터로 남긴다.",
+      "source_ref": "SYNTHESIS.md#§10-판정충돌문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-05",
+      "chapter": 9,
+      "order": 5,
+      "title": "공유 맹점의 확증",
+      "body": "\"내부와 다른 계열의 AI 둘이 같은 결론(c)에 이르면\"이라는 조건을 미리 정해 뒀는데, 실제로 그 조건이 채워졌다. 확증된 것은 \"이 책의 판정 등급이 판정자 계열에 의존한다\"는 사실이다 — 어느 판정이 맞는지는 여전히 미해결이다.",
+      "source_ref": "SYNTHESIS.md#§10-공유맹점문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-06",
+      "chapter": 9,
+      "order": 6,
+      "title": "F 지수, 두 번의 퇴행",
+      "body": "\"이 프로젝트가 실제로 새로운 것을 만들어내고 있는가\"를 재는 지수(F)가 있다. 외부에 전건 위탁해 채점한 결과, 최근 두 창구 모두 **퇴행** 판정을 받았다. 이 등급은 나중에 좋아져도 지워지지 않고 영구히 함께 표기된다.",
+      "source_ref": "SYNTHESIS.md#F지수문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-07",
+      "chapter": 9,
+      "order": 7,
+      "title": "물려받은 가격표의 최초 심사",
+      "body": "F 지수 퇴행이 확정되자, 이 책의 핵심 숫자 다섯 개(주파수·생성적 존재론 등)가 자동으로 재심에 부쳐져 실제로 5포인트씩 내려갔다. 이 하향은 저자의 선의가 아니라, 미리 정해 둔 규칙의 기계적 집행이었다.",
+      "source_ref": "SYNTHESIS.md#부록1-표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-08",
+      "chapter": 9,
+      "order": 8,
+      "title": "물리학의 유혹",
+      "body": "78회차, 이 이론에게 유혹이 왔다 — 양자역학·상대성·초끈이론으로 자기 자신을 꾸밀 기회. 독립 판정은 전부 기각했다. \"물리학으로 철학을 꾸미는 것은 유사과학의 원형이다.\"",
+      "source_ref": "SYNTHESIS.md#앱반영78회차-물리유혹문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-09",
+      "chapter": 9,
+      "order": 9,
+      "title": "물리 등치는 범주 오류다",
+      "body": "\"내 결정이 곧 미시세계 입자의 붕괴 현상과 같다\"거나 \"자아의 정체는 초미세 끈의 떨림이다\" 류의 물리학 등치 표현들이 회부됐지만 전량 기각됐다. 이 책의 '확률'은 언제나 상황마다 다르게 반응하는 성향적 확률이지, 양자물리학의 확률이 아니다 — 이 혼동을 명문으로 금지했다.",
+      "source_ref": "SYNTHESIS.md#worldview-확률미끄러짐문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-10",
+      "chapter": 9,
+      "order": 10,
+      "title": "진짜 신경과학조차 기각됐다",
+      "body": "자유에너지 원리(FEP)라는 실제 신경과학 이론까지 회부됐지만, \"이미 2회차에 등재된 신용의 재예치일 뿐 새로운 기제가 아니다\"라며 기각됐다. 물리학뿐 아니라 진짜 과학이어도 무비용 확장은 통과시키지 않는다.",
+      "source_ref": "SYNTHESIS.md#앱반영78회차-FEP문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-11",
+      "chapter": 9,
+      "order": 11,
+      "title": "세계로 나갔지만 신념도는 그대로",
+      "body": "80~84회차, 이 이론은 협력·경제·진화·기술·권력 다섯 분야로 자신을 넓히려 했다. 다섯 번의 확장에서 신념도는 **단 한 톨도 오르지 않았다.** 대부분의 새 연결은 '무비용 팽창'으로 기각됐다.",
+      "source_ref": "data/worldview.json#cycle_log-84",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-12",
+      "chapter": 9,
+      "order": 12,
+      "title": "남은 것은 다섯 개의 틀릴 자리",
+      "body": "다섯 번의 세계 확장에서 실제로 얻은 것은 확신이 아니라, \"자기가 앞으로 틀릴 수 있는 자리\" 다섯 개(예측 γ·δ·ε·ζ·η)뿐이었다. 넓힌다는 것은 더 많이 주장하는 게 아니라, 더 많이 틀릴 수 있게 되는 것이었다.",
+      "source_ref": "data/worldview.json#cycle_log-80-84",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-13",
+      "chapter": 9,
+      "order": 13,
+      "title": "다섯 번째 확장은 예측조차 없었다",
+      "body": "84회차, 권력·제도 분야 확장은 다섯 배치 중 처음으로 등재 가능한 예측을 하나도 얻지 못했다. 이것은 실패가 아니라, 방대한 문헌을 검토하고도 \"틀리면 실패할 예측\"이라는 문턱을 넘지 못하면 정말 아무것도 등재하지 않는 규율이 매번 똑같이 작동했다는 확증이다.",
+      "source_ref": "data/worldview.json#cycle_log-84",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-14",
+      "chapter": 9,
+      "order": 14,
+      "title": "고신뢰 핵심은 남의 것이었다",
+      "body": "이 책에서 확신도가 가장 높은 문장들은 새로운 발견이 아니라 동어반복이거나 차용한 연구다. 이 세계관이 스스로 조립한 고유 주장은 전부 55~68%대 — 아직 검증되지 않은 관절 위에 있다는 사실을 감추지 않는다.",
+      "source_ref": "SYNTHESIS.md#부록1-정직주석문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-15",
+      "chapter": 9,
+      "order": 15,
+      "title": "급소는 완충재였을 수도 있다",
+      "body": "가장 아픈 지적: \"급소를 명중당하고도 이론이 살아남으면, 그건 반증 관절이 아니라 완충재다.\" 이 이론이 공격을 매번 '수치 조금 내리고 말 바꾸기'로 흡수해 온 능력 자체가 진짜 급소일 수 있다는 혐의는 아직 벗겨지지 않았다.",
+      "source_ref": "RED-TEAM.md#외부보고서2-치명A문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-16",
+      "chapter": 9,
+      "order": 16,
+      "title": "반증 카드, 회복 아닌 재작성",
+      "body": "\"이 조건이 관찰되면 이 이론은 틀린 것이다\"라고 미리 적어 둔 반증 카드 2장이 있었다. 그중 1장은 조건이 잘못 설계돼 효력을 잃고 철회됐다. 다시 쓴 카드는 '회복'이 아니라 '미시험 재작성'이라고만 부른다 — 개선처럼 보이게 포장하지 않는다.",
+      "source_ref": "SYNTHESIS.md#§10-회차69-72문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-17",
+      "chapter": 9,
+      "order": 17,
+      "title": "흡수 기제, 한 번은 반증됐다",
+      "body": "\"이 프로젝트는 모든 공격을 공짜로 흡수하기만 한다\"는 혐의를 실제로 채점해 봤더니, 88.9% 의 수용이 진짜 대가(신념도 하향·주장 삭제)를 치른 것으로 확인됐다. 다만 이 결과는 초기 구간에 결함이 유독 많았던 덕일 수 있다는 한정도 함께 적었다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제22문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-18",
+      "chapter": 9,
+      "order": 18,
+      "title": "안 벗겨진 혐의 — 문법 문제",
+      "body": "가장 강력한 반론: \"이 체계의 고유 내용은 주장이 아니라 그냥 어휘일 수 있다 — 그렇다면 어떤 실험을 해도 이 틀 자체는 기각될 수 없다.\" 실측(11장의 66일 실험)을 완료해도 이 혐의는 벗겨지지 않는다고 이 책은 스스로 인정한다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제19문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c9-19",
+      "chapter": 9,
+      "order": 19,
+      "title": "이원 회계라는 자백",
+      "body": "장부 맨 위, 가장 확신도가 높아 보였던 항목들(공리 대부분)이 사실은 관측으로 움직이는 '확률'이 아니라 손익 계산으로 움직이는 '틀 채택 평가'였다는 것이 뒤늦게 밝혀졌다. 이 책의 %뱃지 규칙(경험 주장만 %, 나머지는 '틀 채택 평가')은 이 자백의 직접 결과다.",
+      "source_ref": "data/worldview.json#meta-ledger_identity",
+      "column": "functional",
+      "lock": true
+    },
+    {
+      "id": "c9-20",
+      "chapter": 9,
+      "order": 20,
+      "title": "정답을 맞힌 게 아니라",
+      "body": "이 장의 결론은 하나다. 이 책이 자랑할 것은 자신이 옳다는 확신이 아니라, 자신이 틀렸을 수 있는 자리를 정직하게 기록해 왔다는 사실뿐이다. 그 기록이 이 책의 유일한 신뢰 근거다.",
+      "source_ref": "SYNTHESIS.md#§10-도입문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-01",
+      "chapter": 10,
+      "order": 1,
+      "title": "닫힘 ≠ 해결",
+      "body": "이 장의 첫 규칙: \"닫혔다\"는 말은 \"풀렸다\"는 뜻이 아니다. 어떤 문제는 논증으로 닫히고(수용), 어떤 문제는 관할을 남에게 넘겨서 닫히고(위임), 어떤 문제는 주장을 줄여서 닫힌다(축소). 풀린 것은 그 중 일부뿐이다.",
+      "source_ref": "SYNTHESIS.md#부록4-도입문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-02",
+      "chapter": 10,
+      "order": 2,
+      "title": "닫힌 문제 15개, 그러나",
+      "body": "이 책은 15개의 문제를 \"닫혔다\"고 표기한다. 예를 들어 \"자유 개념의 권위 문제\"는 자유라는 단어의 무게를 줄여서 회피했을 뿐 풀린 게 아니다. 닫힌 문제 목록을 늘리는 것을 이 책은 진보로 착각하지 않는다.",
+      "source_ref": "SYNTHESIS.md#부록4-닫힌표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-03",
+      "chapter": 10,
+      "order": 3,
+      "title": "판정 충돌은 판정 완료로 닫혔다",
+      "body": "9장에서 본 세 AI의 엇갈린 판정(문제 #23)은 \"공유 맹점 확증\"으로 판정 완료돼 닫혔다. 이 닫힘의 뜻은 논쟁이 끝났다는 게 아니라, 미리 정한 판정 규칙이 기계적으로 집행됐다는 뜻이다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제23문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-04",
+      "chapter": 10,
+      "order": 4,
+      "title": "열린 문제 17개, 지금",
+      "body": "84회차 현재, 이 책이 스스로 인정하는 열린 문제는 17개다. 그 중 다섯 개(#28~#32)는 최근 세계 확장 배치에서 새로 등재됐다. 목록이 짧아지지 않고 오히려 늘어난 것을 이 책은 정직의 신호로 읽는다.",
+      "source_ref": "SYNTHESIS.md#부록4-열린표문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-05",
+      "chapter": 10,
+      "order": 5,
+      "title": "열린 문제 — 실험 미실행",
+      "body": "이 이론의 급소(CAPS-실행의도 다리)를 정말로 시험할 사전등록 실험 A·B는 아직 실행되지 않았다. \"반증 불가능한 유사이론\" 혐의는 이 실험이 끝나기 전까지 벗겨지지 않는다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제8문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-06",
+      "chapter": 10,
+      "order": 6,
+      "title": "열린 문제 — 책임의 기초 침식",
+      "body": "분포도 상황도 대부분 내가 정한 게 아니라면, 과거의 잘못에 대한 \"응분\" 기반 책임은 이 틀 안에서 정초되지 않는다. 미래를 향한 책임으로 대체하자는 제안은 있지만, 응분을 완전히 대신할 이론은 아직 완성되지 않았다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제15문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-07",
+      "chapter": 10,
+      "order": 7,
+      "title": "열린 문제 — 편집 접근성의 불평등",
+      "body": "2차 편집 능력 자체가 계급에 따라 불평등하게 분배된다면, 이 책의 처방은 누구를 위한 것인가? 실제로 저빈곤 지역 이주 효과가 13세 이전이냐 이후냐에 따라 완전히 달라진다는 실측(MTO 연구)이 이 문제를 더 무겁게 만든다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제16문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-08",
+      "chapter": 10,
+      "order": 8,
+      "title": "열린 문제 — 문법의 반증 불가능성",
+      "body": "9장에서 다룬 그 혐의(고유 내용이 명제가 아니라 어휘일 수 있다는 것)는 이 책에서 가장 무거운 미해결 문제다. 실측을 다 마쳐도 이 혐의만은 벗겨지지 않는다고 이 책 스스로 인정한다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제19문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-09",
+      "chapter": 10,
+      "order": 9,
+      "title": "열린 문제 — 반증 문턱",
+      "body": "반증 카드가 있어도, 그 발동 조건이 실무적으로 도달 불가능한 문턱(대규모 사전등록 실험 등) 으로만 설정돼 있으면 카드는 반증 장치가 아니라 장식(완충재)일 수 있다. 카드는 다시 쓰였지만, 실제 시험은 아직 완료되지 않았다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제21문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-10",
+      "chapter": 10,
+      "order": 10,
+      "title": "열린 문제 — 세계 확장의 여진",
+      "body": "세계 확장 다섯 배치가 남긴 문제들이다. 조건부 협력이 진짜 성향인지 학습 인공물인지 (#28), 넛지 개입의 실제 효과가 학계 인상보다 훨씬 작을 수 있는지(#29), 유전형이 편집 폭을 정말 제한하는지(#30), 추천 알고리즘이 성향을 실제로 조준하는지(#31) — 모두 예측 γ·δ·ε·η의 판정 결과를 기다리고 있다.",
+      "source_ref": "SYNTHESIS.md#부록4-문제28-31문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-11",
+      "chapter": 10,
+      "order": 11,
+      "title": "실험적 예측이란 무엇인가",
+      "body": "이 책에는 신념도가 아예 붙지 않은 문장 7개가 있다 — **실험적 예측**. \"아직 시험 전이라 값을 매길 수 없다\"는 뜻이다. 시험이 끝나기 전까지 이 예측들의 존재 자체를 이 책이 정직하다는 증거로 쓰는 것도 금지돼 있다.",
+      "source_ref": "data/worldview.json#registered_predictions",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c10-12",
+      "chapter": 10,
+      "order": 12,
+      "title": "예측 α — 운명애와 죽음의 공포",
+      "body": "[실험적 예측 α — 미시험] 죽음을 떠올리게 하는 자극 뒤에 나타나는 방어 반응(세계관 방어· 자존감 추구)을, 운명애 개입이 통제군보다 낮춰줄 것이라는 예측이다. 시험: 실험 A 확장.",
+      "source_ref": "data/worldview.json#registered_predictions-α",
+      "prediction_ref": "α",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-13",
+      "chapter": 10,
+      "order": 13,
+      "title": "예측 α — 실패하면 잃는 것",
+      "body": "이 예측이 실패하면(고유 효과가 사라지면), \"수용이 회피를 대신한다\"는 이 책의 핵심 관찰 하나를 경험적 주장으로 확장해 인용하는 것이 영구히 금지된다. 실패해도 아무것도 잃지 않는 예측은 장식일 뿐이라서, 이 손실을 미리 못박아 둔다.",
+      "source_ref": "data/worldview.json#registered_predictions-α",
+      "prediction_ref": "α",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-14",
+      "chapter": 10,
+      "order": 14,
+      "title": "예측 β — 의례의 힘",
+      "body": "[실험적 예측 β — 미시험] 시간과 맥락을 동일하게 고정한 상태에서, 신체 동작이나 상징을 더한 '의례화된' 실행 계획이 일반 계획보다 유지율이 높을 것이라는 예측이다.",
+      "source_ref": "data/worldview.json#registered_predictions-β",
+      "prediction_ref": "β",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-15",
+      "chapter": 10,
+      "order": 15,
+      "title": "예측 β — 실패하면 잃는 것",
+      "body": "일관성(시간·맥락)을 동일하게 통제한 뒤에도 실패하면, \"의례가 설치 강도를 높인다\"는 방향의 확장은 영구히 금지되고, 관련 항목(무속 의례 효능 관련 수치)이 재심(하향 검토)에 부쳐진다.",
+      "source_ref": "data/worldview.json#registered_predictions-β",
+      "prediction_ref": "β",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-16",
+      "chapter": 10,
+      "order": 16,
+      "title": "예측 γ — 협력의 조건부 기울기",
+      "body": "[실험적 예측 γ — 미시험] 상대의 평균 기여에 맞추는 실행 계획이, 반복되는 공공재 게임에서 협력이 시간이 갈수록 식는 속도를 늦출 것이라는 예측이다. 단, 무임승차자를 협력자로 완전히 바꾸지는 못한다는 한계도 함께 못박았다.",
+      "source_ref": "data/worldview.json#registered_predictions-γ",
+      "prediction_ref": "γ",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-17",
+      "chapter": 10,
+      "order": 17,
+      "title": "예측 δ — 결핍과 실행 계획",
+      "body": "[실험적 예측 δ — 미시험] 현금 지원과 실행 계획을 함께 받으면 습관 유지율이 높아질 것이라는 예측이다. 단 현금이 '진짜 위약(가짜 개입)'과 비교될 때만 의미가 있다는 엄격한 조건이 붙는다.",
+      "source_ref": "data/worldview.json#registered_predictions-δ",
+      "prediction_ref": "δ",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-18",
+      "chapter": 10,
+      "order": 18,
+      "title": "예측 ε — 생애사 전략과 지평",
+      "body": "[실험적 예측 ε — 미시험] 눈앞의 이익을 중시하는 성향이 강한 사람일수록, 6개월 뒤를 겨냥한 장기 실행 계획의 효과가 작을 것이라는 예측이다. 성격 특성(성실성 등)을 통제한 뒤에도 남는 효과만 인정한다.",
+      "source_ref": "data/worldview.json#registered_predictions-ε",
+      "prediction_ref": "ε",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-19",
+      "chapter": 10,
+      "order": 19,
+      "title": "예측 ζ — 우회 설계 앞에서",
+      "body": "[실험적 예측 ζ — 미시험] 실행 계획은 자동재생·무한스크롤 같은 '우회 설계' 앞에서 오히려 더 크게 작동할 것이라는 예측이다 — 방어가 가장 필요한 곳에서 가장 강하게 작동한다는 뜻.",
+      "source_ref": "data/worldview.json#registered_predictions-ζ",
+      "prediction_ref": "ζ",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-20",
+      "chapter": 10,
+      "order": 20,
+      "title": "예측 η — 경유냐 우회냐",
+      "body": "[실험적 예측 η — 미시험] 콘텐츠는 그대로 두고 인터페이스(자동 재생 vs 정지 확인)만 바꿔도, 화면에 머무는 시간의 변화 대부분이 콘텐츠가 아니라 설계 요인 때문임을 확인하려는 예측이다.",
+      "source_ref": "data/worldview.json#registered_predictions-η",
+      "prediction_ref": "η",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-21",
+      "chapter": 10,
+      "order": 21,
+      "title": "예측 ζ·η — 실패하면 잃는 것",
+      "body": "ζ가 실패하면(우회 조건에서 효과가 역전되면) 세계관의 방향 자체가 재심에 부쳐진다. η가 실패하면(중립 플랫폼에서도 태도 이동이 0이면), \"외부 알고리즘이 성향을 조준한다\"는 확장 전체가 좁은 범위로 축소돼야 한다.",
+      "source_ref": "data/worldview.json#registered_predictions-ζ",
+      "prediction_ref": "ζ",
+      "column": "prediction",
+      "lock": true
+    },
+    {
+      "id": "c10-22",
+      "chapter": 10,
+      "order": 22,
+      "title": "일곱 개의 틀릴 자리",
+      "body": "α부터 η까지, 이 일곱 예측이 이 책이 \"우리가 앞으로 틀릴 수 있는 자리\"로 자원해 등재한 곳들이다. 신념도가 없다는 것은 부족함이 아니라, 아직 아무것도 증명되지 않았다는 정직한 표시다.",
+      "source_ref": "data/worldview.json#registered_predictions",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-01",
+      "chapter": 11,
+      "order": 1,
+      "title": "이론에서 도구로",
+      "body": "이 장의 처방은 앞선 열 개 장의 논증에서 논리적으로 도출된 명령이 아니다 — 기술은 명령을 낳지 않는다. \"내 분포를 편집해 보겠다\"는 당신의 1인칭 결단을 전제로 할 때만 아래 단계가 지침으로 작동한다.",
+      "source_ref": "SYNTHESIS.md#§9-관할조항문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-02",
+      "chapter": 11,
+      "order": 2,
+      "title": "시작 전 게이트 — 안전 우선",
+      "body": "2주 이상 지속되는 불면·무기력·흥미 상실·식욕 변화가 있다면, 이 프로그램이 아니라 전문가의 평가가 다음 행동이다. 이 도구는 자기계발 도구이지 임상 도구가 아니며, 그렇게 쓰이면 진짜 문제를 가릴 위험이 있다.",
+      "source_ref": "PROTOCOL.md#시작전게이트문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-03",
+      "chapter": 11,
+      "order": 3,
+      "title": "0층 점검부터",
+      "body": "편집은 몸 위에서만 일어난다. 수면·회복이 무너지면 어떤 계획도 설치되지 않는다. 최근 1주 수면 시간과 움직임을 먼저 점검한다 — 여기가 부족하면 이번 사이클의 목표를 '0층 복구' 자체로 삼아도 좋다.",
+      "source_ref": "PROTOCOL.md#0단계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-04",
+      "chapter": 11,
+      "order": 4,
+      "title": "1단계 · 진단",
+      "body": "\"나는 게으르다\" 같은 평균적 자기평가 대신, \"상황 X에서 나는 Y를 했다\"는 조건부 기록을 2주간 남긴다. 판단하지 말고 관찰만 한다 — 이 2주가 지금 당신 분포의 실제 윤곽을 드러낸다.",
+      "source_ref": "PROTOCOL.md#1단계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-05",
+      "chapter": 11,
+      "order": 5,
+      "title": "2단계 · 설계",
+      "body": "시그니처 하나를 골라 \"if [구체적 단서] → then [구체적 행동]\" 형식의 실행 의도 1~3개를 만든다. 단서가 구체적일수록 강하다 — \"스트레스 받으면\"이 아니라 \"밤 11시에 폰을 집으면\" 처럼.",
+      "source_ref": "PROTOCOL.md#2단계문단",
+      "credence_ref": "분포 편집 기제 (CAPS + 실행 의도)",
+      "column": "credence",
+      "lock": true
+    },
+    {
+      "id": "c11-06",
+      "chapter": 11,
+      "order": 6,
+      "title": "3단계 · 실패 예산 [실험적]",
+      "body": "\"66일 중 이탈 몇 회까지는 정상 표본으로 본다\"고 미리 정한다. 이 처방은 아직 검증 대기 가설(M1, 60%)이다 — 단, 되돌릴 수 없는 것(흡수 상태)은 예산이 아니라 회피 대상이다.",
+      "source_ref": "PROTOCOL.md#3단계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-07",
+      "chapter": 11,
+      "order": 7,
+      "title": "4단계 · 운용 — 주간 체크",
+      "body": "9주 동안 매주 같은 요일, 규칙 준수 여부만 정직하게 기록한다(○/△/✗). 66은 상수가 아니라 관행적 재측정 주기일 뿐이다 — 더 늦어도 이상하지 않다.",
+      "source_ref": "PROTOCOL.md#4단계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-08",
+      "chapter": 11,
+      "order": 8,
+      "title": "안전 중단 규칙",
+      "body": "기분·수면·기능 중 2개 영역 이상의 악화가 동시에 관찰되면 즉시 중단하고 전문 평가로 간다. 이 규칙은 본인의 재량으로 미룰 수 없다 — 중단은 실패가 아니라 안전 장치의 정상 작동이다.",
+      "source_ref": "PROTOCOL.md#4단계-안전중단문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-09",
+      "chapter": 11,
+      "order": 9,
+      "title": "66일 후 재측정",
+      "body": "1단계를 다시 측정한다. 같은 상황에서 이제 어떻게 행동하는가? 규칙을 다 지켰는데도 변화가 없었다면 그것은 실패가 아니라 정보다 — 이 기법이 당신에게 안 맞는다는 결론도 유효한 데이터다.",
+      "source_ref": "PROTOCOL.md#재측정문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-10",
+      "chapter": 11,
+      "order": 10,
+      "title": "당신의 신념도를 적어라",
+      "body": "이 한 바퀴가 준 데이터로, \"실행 의도로 내 행동 확률을 바꿀 수 있다\"는 문장에 대한 당신 자신의 신념도를 적는다. 숨긴 확신보다 드러낸 확신이 교정 가능하다 — 이 프로젝트 전체가 그 원칙의 시범 운용이었다.",
+      "source_ref": "PROTOCOL.md#판정문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c11-11",
+      "chapter": 11,
+      "order": 11,
+      "title": "이 데이터가 진짜로 값진 이유",
+      "body": "이 세계관의 핵심 명제는 안락의자 논증이 아니라 실측으로만 진짜 움직인다. 62회차 넘게 모든 검증이 안락의자에서 이뤄졌던 이 프로젝트에서, 당신의 66일이 실제 데이터를 만드는 몇 안 되는 길 중 하나다.",
+      "source_ref": "PROTOCOL.md#머리말문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-01",
+      "chapter": 12,
+      "order": 1,
+      "title": "이 장이 다른 이유",
+      "body": "지금까지 이 책은 하나의 세계관을 보여줬다. 값진 것은 그 그림 자체가 아니라, 그 그림을 84번 두들겨 본 **방법**이다. 이 장은 그 방법을 당신에게 준다 — 세계관이 아니라, 세계관을 만드는 연장을.",
+      "source_ref": "book/CHAPTER-METHOD.md#머리말문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-02",
+      "chapter": 12,
+      "order": 2,
+      "title": "지도가 아니라 연필을",
+      "body": "이 프로젝트의 윤리 규칙 하나가 이 장의 모양을 정한다 — \"정당한 개입은 상대의 숙고를 거쳐야 지, 내 결론을 상대 머리에 심는 게 아니다.\" 그래서 이 장은 \"내 가치관을 받아라\"가 아니라 \"당신 것을 만들 연장을 가져가라\"이다. 이 구분을 장 전체가 지킨다.",
+      "source_ref": "book/CHAPTER-METHOD.md#머리말문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-03",
+      "chapter": 12,
+      "order": 3,
+      "title": "연장 1 · 믿음에 숫자를 붙여라",
+      "body": "\"믿는다/안 믿는다\"의 두 칸을 버리고, 얼마나 믿을 만한지를 0~100 사이 숫자(신념도)로 적는다. 90이나 100처럼 극단으로 적고 싶은 충동을 조심하라 — 100은 믿음이 아니라 벽이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장1문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-04",
+      "chapter": 12,
+      "order": 4,
+      "title": "연장 2 · 반증 조건을 먼저",
+      "body": "어떤 믿음을 갖기 전에, \"무엇이 관찰되면 이게 틀린 것인가\"를 먼저 적는다. 이걸 못 적는 믿음은 무엇으로도 반박할 수 없는 믿음 — 근사해 보여도 지식이 아니라 신앙이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장2문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-05",
+      "chapter": 12,
+      "order": 5,
+      "title": "연장 3 · 감사자와 피감사자를 분리",
+      "body": "자기 생각을 자기가 채점하지 마라. 가장 반대할 것 같은 사람에게 판정을 맡긴다. 판정이 나오면 반론은 문서로 남기되, 이번 숫자는 판정대로 반영한다 — 슬쩍 무시하지 않는다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장3문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-06",
+      "chapter": 12,
+      "order": 6,
+      "title": "연장 4 · 재분류는 증거가 아니다",
+      "body": "개념에 멋진 새 이름을 붙이거나 여러 개를 하나로 묶는 것만으로는 아무것도 증명되지 않는다. \"그래서 이게 틀렸다면 실패할 새 예측을 낳는가\"를 늘 물어야 한다 — 못 낳으면 그건 배움이 아니라 감상이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장4문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-07",
+      "chapter": 12,
+      "order": 7,
+      "title": "연장 5 · 차용과 고유를 구분",
+      "body": "남의 검증된 부품을 빌려 쓰는 것과 내 고유한 조립이 옳다는 것은 전혀 다른 일이다. 부품이 튼튼하다고 해서 그 부품들을 엮은 내 방식까지 옳은 건 아니다 — 감사 가능성과 반증 가능성을 섞지 마라.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장5문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-08",
+      "chapter": 12,
+      "order": 8,
+      "title": "연장 6 · 내린 것을 지우지 마라",
+      "body": "틀렸던 기록, 얻어맞은 판정, 내려간 점수를 삭제하지 말고 \"철회함\"이라 표시해 이력과 함께 남긴다. 틀린 이력을 지운 사람과 남긴 사람 중, 믿을 수 있는 쪽은 남긴 사람이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장6문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-09",
+      "chapter": 12,
+      "order": 9,
+      "title": "연장 7 · 닫힘은 해결이 아니다",
+      "body": "어떤 문제를 다뤘다고 해서 푼 게 아니다. 아직 안 풀린 문제는 '열린 문제'로 열어 둔 채 목록에 남긴다. 처리와 해결을 구분하지 못하면 마음은 편해지지만 배움은 멈춘다 — 목록은 정직할수록 오히려 길어질 수 있다.",
+      "source_ref": "book/CHAPTER-METHOD.md#연장7문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-10",
+      "chapter": 12,
+      "order": 10,
+      "title": "이 방법의 한계 — 느리고 불편하다",
+      "body": "숫자를 붙이고, 반증 조건을 정하고, 남에게 판정을 맡기는 일은 그냥 믿는 것보다 훨씬 오래 걸리고 불편하다. 이 방법의 최대 산출물은 \"확실히 옳다\"가 아니라 \"덜 틀렸다, 그리고 어디가 안 풀렸는지 안다\"이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#한계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-11",
+      "chapter": 12,
+      "order": 11,
+      "title": "이 방법의 한계 — 결국 나 자신",
+      "body": "판정을 남에게 맡겨도, 그 판정을 받아들일지 결정하는 건 결국 나다. 이 순환은 완전히 없앨 수 없다 — 가장 교묘한 함정은 \"반박을 소화하는 능력 자체가 급소일 수 있다\"는 것이다.",
+      "source_ref": "book/CHAPTER-METHOD.md#한계문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-12",
+      "chapter": 12,
+      "order": 12,
+      "title": "워크시트 · 당신의 믿음 하나",
+      "body": "\"나는 ___해야 행복하다\" 같은 믿음 하나를 골라 일곱 칸을 채운다 — 신념도, 반증 조건, 외부 판정, 재분류 점검, 차용/고유 구분, 이력 칸, 열린 꼬리. 다 채워도 옳은 믿음을 갖게 되는 건 아니다.",
+      "source_ref": "book/CHAPTER-METHOD.md#워크시트문단",
+      "column": "narrative",
+      "lock": true
+    },
+    {
+      "id": "c12-13",
+      "chapter": 12,
+      "order": 13,
+      "title": "끝맺음 — 지도가 아니라 지우개",
+      "body": "일곱 칸을 다 채우면, 당신은 옳은 믿음을 가진 사람이 아니라 자신의 믿음이 어디서 틀릴 수 있는지, 무엇이 아직 안 풀렸는지를 아는 사람이 된다. 이 책은 지도를 주지 않았다 — 지도를 직접 그리고 틀린 곳을 스스로 지우는 연필과 지우개를 주었다.",
+      "source_ref": "book/CHAPTER-METHOD.md#끝맺음문단",
+      "column": "narrative",
+      "lock": true
+    }
+  ]
+}
