@@ -17,7 +17,7 @@
 | 4 | conflict | 생성 대 블록 — 남은 균열 | 6 | 3 시간 | `04-TIME.md` | ☑ |
 | 5a | discoveries/A | 발견 A — 생성/블록 해소 | 1 | 3 시간 | `04-TIME.md` | ☑ |
 | 5b | discoveries/B | 발견 B — 자유=2차 편집 정의 | 1 | 4 자유 | `05-FREEDOM.md` | ☑ |
-| 5c | discoveries/C | 발견 C — 운명애 루프+사용조건 | 2 | 5 운명애 | | ☐ |
+| 5c | discoveries/C | 발견 C — 운명애 루프+사용조건 | 2 | 5 운명애 | `06-AMORFATI.md` | ☑ |
 | 5d | discoveries/D | 발견 D — 생성적 존재론=기술의 공리 | 1 | 1 확률의 구름 | `02-CLOUD.md` | ☑ |
 | 5e | discoveries/E | 발견 E — 삼중 재발명(→2갈래 정정) | 2 | 1 확률의 구름 | `02-CLOUD.md` | ☑ |
 | 5f | discoveries/F | 발견 F — 2차 편집 세 한계 조건 | 2 | 4 자유 | `05-FREEDOM.md` | ☑ |
@@ -33,7 +33,7 @@
 | 8 | protocol | 실천 프로토콜 | 7 | 11 당신의 66일 | | ☐ |
 | 9 | social | 세인·펜듈럼 | 5 | 6 관계·사회 | | ☐ |
 | 10 | prediction | 예측력 문제 (급소 — 축약 금지) | 4 | 9 자기 재판 | | ☐ |
-| 11 | finitude | 죽음과 유한성 | 5 | 5 운명애 | | ☐ |
+| 11 | finitude | 죽음과 유한성 | 5 | 5 운명애 | `06-AMORFATI.md` | ☑ |
 | 12 | shaman | 무당의 신점 | 4 | 7 삶의 부록 | | ☐ |
 | 13 | ethics | 타인의 분포 편집 윤리 | 4 | 6 관계·사회 | | ☐ |
 | 14 | ai | AI와 분포 | 4 | 6 관계·사회 | | ☐ |
