@@ -70,7 +70,7 @@
 | A3 | "물리학의 유혹" 에피소드(회차 78) | `redteam-archive/JUDGE-ROUND-24.md` | 9 자기 재판 | `10-TRIAL.md` | ☑ |
 | A4 | 영성 배치 처리(회차 79) | `redteam-archive/JUDGE-ROUND-25.md` | 9 자기 재판 | `10-TRIAL.md` | ☑ |
 | A5 | 세계 편 확장 5배치(회차 80–84, "신념도 0") | `redteam-archive/JUDGE-ROUND-26~30.md` | 9 자기 재판 | `10-TRIAL.md` | ☑ |
-| A6 | 방법론 7가지 + 워크시트 | `book/CHAPTER-METHOD.md` (직접 편입) | 12 방법론 | | ☐ |
+| A6 | 방법론 7가지 + 워크시트 | `book/CHAPTER-METHOD.md` (직접 편입) | 12 방법론 | `13-METHOD.md` | ☑ |
 
 ## 검증 절차 (P4)
 
