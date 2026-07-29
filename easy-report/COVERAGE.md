@@ -44,8 +44,8 @@
 | 19 | body | 몸과 건강 | 4 | 2 네 개의 층 | `03-LAYERS.md` | ☑ |
 | 20 | history | 집단과 역사 | 4 | 6 관계·사회 | `07-RELATIONS.md` | ☑ |
 | 21 | education | 교육과 양육 | 4 | 4 자유 | `05-FREEDOM.md` | ☑ |
-| 22 | emotion | 감정 | 4 | 8 감정과 의미 | | ☐ |
-| 23 | meaning | 의미와 목적 | 4 | 8 감정과 의미 | | ☐ |
+| 22 | emotion | 감정 | 4 | 8 감정과 의미 | `09-EMOTION.md` | ☑ |
+| 23 | meaning | 의미와 목적 | 4 | 8 감정과 의미 | `09-EMOTION.md` | ☑ |
 | 24 | toolkit | 자기 진단 워크시트 66일 | 9+8li | 11 당신의 66일 | | ☐ |
 | 25 | addiction | 중독 | 4 | 7 삶의 부록 | `08-APPENDIX.md` | ☑ |
 | 26 | play | 놀이와 의례 | 4 | 7 삶의 부록 | `08-APPENDIX.md` | ☑ |
